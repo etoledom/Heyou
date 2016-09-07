@@ -219,42 +219,38 @@ final class HYAlertView: UIView {
         if (buttonsTitles.count > 0) {
             button = normalButton(index)
             buttonTitle = buttonsTitles[index]
+            button.constraintLeading(to: buttonsView, margin: HYAlertStyle.sideMarging)
+            button.constraintTrailing(to: buttonsView, margin: HYAlertStyle.sideMarging)
         } else {
             switch buttons[index] {
             case .normal(let title):
                 button = normalButton(index)
                 buttonTitle = title
+                button.constraintLeading(to: buttonsView, margin: HYAlertStyle.sideMarging)
+                button.constraintTrailing(to: buttonsView, margin: HYAlertStyle.sideMarging)
+                
             case .main(let title):
                 button = mainButton(index)
                 buttonTitle = title
+                button.constraint(width: HYAlertStyle.mainButtonWidth)
+                (first: buttonsView, second: button) >>>- { $0.attribute = .CenterX }
+                
             }
         }
         button.setTitle(buttonTitle, forState: .Normal)
-        if index == 0 {
-            button.constraint(width: HYAlertStyle.mainButtonWidth)
-            (first: buttonsView, second: button) >>>- { $0.attribute = .CenterX }
-        } else {
-            button.constraintLeading(to: buttonsView, margin: HYAlertStyle.sideMarging)
-            button.constraintTrailing(to: buttonsView, margin: HYAlertStyle.sideMarging)
-        }
         
         
         if let topView = topView  {
              (base: buttonsView, first: topView, second: button) >>>- {
                 $0.attribute =   .Bottom
                 $0.secondAttribute =  .Top
+                $0.constant = -HYAlertStyle.buttonsSeparation
             }
         } else {
-             (first: buttonsView, second: button) >>>- {
-                $0.attribute =  .Top
-                $0.constant = CGFloat(HYAlertStyle.mainButtonMarging)
-            }
+            button.constraintTop(to: buttonsView, margin: HYAlertStyle.mainButtonMarging)
         }
         if let bottomView = bottomView {
-             (first: bottomView, second: button) >>>- {
-                $0.attribute =  .Bottom
-                $0.constant = -CGFloat(HYAlertStyle.sideMarging)
-            }
+            button.constraintBottom(to: bottomView, margin: HYAlertStyle.bottomMarging)
         }
         
         return button
