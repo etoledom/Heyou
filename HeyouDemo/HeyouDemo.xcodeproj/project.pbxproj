@@ -13,10 +13,11 @@
 		7E28F1501D80B1C2007C0263 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E28F14F1D80B1C2007C0263 /* ViewController.swift */; };
 		7E28F15C1D80B213007C0263 /* ConstraintsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E28F1591D80B213007C0263 /* ConstraintsHelper.swift */; };
 		7E28F15D1D80B213007C0263 /* HYAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E28F15A1D80B213007C0263 /* HYAlertView.swift */; };
-		7E28F15E1D80B213007C0263 /* HYAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E28F15B1D80B213007C0263 /* HYAlertViewController.swift */; };
+		7E28F15E1D80B213007C0263 /* HYAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E28F15B1D80B213007C0263 /* HYAlertController.swift */; };
 		7E28F1641D80B280007C0263 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E28F1631D80B280007C0263 /* Images.xcassets */; };
 		7E28F1661D80B29A007C0263 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E28F1651D80B29A007C0263 /* Main.storyboard */; };
 		7E28F1681D80B300007C0263 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E28F1671D80B300007C0263 /* Launch Screen.storyboard */; };
+		7E28F16A1D80B884007C0263 /* HYPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E28F1691D80B884007C0263 /* HYPresentationAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,10 +50,11 @@
 		7E28F14F1D80B1C2007C0263 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7E28F1591D80B213007C0263 /* ConstraintsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintsHelper.swift; sourceTree = "<group>"; };
 		7E28F15A1D80B213007C0263 /* HYAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertView.swift; sourceTree = "<group>"; };
-		7E28F15B1D80B213007C0263 /* HYAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertViewController.swift; sourceTree = "<group>"; };
+		7E28F15B1D80B213007C0263 /* HYAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertController.swift; sourceTree = "<group>"; };
 		7E28F1631D80B280007C0263 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7E28F1651D80B29A007C0263 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7E28F1671D80B300007C0263 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		7E28F1691D80B884007C0263 /* HYPresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYPresentationAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +139,8 @@
 			children = (
 				7E28F1591D80B213007C0263 /* ConstraintsHelper.swift */,
 				7E28F15A1D80B213007C0263 /* HYAlertView.swift */,
-				7E28F15B1D80B213007C0263 /* HYAlertViewController.swift */,
+				7E28F15B1D80B213007C0263 /* HYAlertController.swift */,
+				7E28F1691D80B884007C0263 /* HYPresentationAnimator.swift */,
 			);
 			name = Heyou;
 			path = ../Heyou;
@@ -274,9 +277,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E28F15E1D80B213007C0263 /* HYAlertViewController.swift in Sources */,
+				7E28F15E1D80B213007C0263 /* HYAlertController.swift in Sources */,
 				7E28F15D1D80B213007C0263 /* HYAlertView.swift in Sources */,
 				7E28F1501D80B1C2007C0263 /* ViewController.swift in Sources */,
+				7E28F16A1D80B884007C0263 /* HYPresentationAnimator.swift in Sources */,
 				7E28F15C1D80B213007C0263 /* ConstraintsHelper.swift in Sources */,
 				7E28F1221D80B191007C0263 /* AppDelegate.swift in Sources */,
 			);
@@ -404,6 +408,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HeyouDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.etoledom.HeyouDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -415,6 +420,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HeyouDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.etoledom.HeyouDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

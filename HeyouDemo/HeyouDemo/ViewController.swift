@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func onShowAlertPress(sender: UIButton) {
-        let controller = HYAlertViewController()
+        let controller = HYAlertController()
         
         switch sender.tag {
         case 0:
@@ -33,7 +33,8 @@ class ViewController: UIViewController {
             controller.buttons = [
                 .main("First main"),
                 .main("Second main"),
-                .normal("Normal button")
+                .normal("Normal button"),
+                .main("Last button")
             ]
 
         case 1:
@@ -60,7 +61,7 @@ class ViewController: UIViewController {
         default:
             controller.elements = [
                 .title("Title"),
-                .image(named: "contacts"),
+                .image(named: "house"),
                 .subTitle("A Subtitle"),
                 .description("Description text")
             ]
@@ -77,7 +78,8 @@ class ViewController: UIViewController {
             }
         }
         
-        showViewController(controller, sender: nil)
+        controller.showOnViewController(self)
+        
     }
 }
 

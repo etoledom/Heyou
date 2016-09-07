@@ -120,7 +120,7 @@ public struct HYAlertStyleDefaults {
 
 
 
-public class HYAlertViewController: UIViewController {
+public class HYAlertController: UIViewController, HYPresentationAnimatable {
     
     ///Array of UI Elements to show
     public var elements      = [HYAlertElement]()
@@ -136,13 +136,26 @@ public class HYAlertViewController: UIViewController {
     ///Default: true
     public var dismissOnLastButton = true
     
-    private var alertView: HYAlertView?
     
+    var topView: UIView {
+        get {
+            guard let view = alertView else { assertionFailure("alertView is nil"); return UIView() }
+            return view
+        }
+    }
+    var backgroundView: UIView {
+        get { return view }
+    }
+    var alertView: HYAlertView?
+    var animator = HYModalAlertAnimator()
     
+    private weak var presentingVC: UIViewController?
+
     override public func viewDidLoad() {
         super.viewDidLoad()
         
         let alertView = HYAlertView(buttonsLayout: buttonsLayout)
+        self.alertView = alertView
         alertView.elements = elements
         alertView.buttonsTitles = buttonsTitles
         alertView.buttons = buttons
@@ -156,12 +169,34 @@ public class HYAlertViewController: UIViewController {
         }
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.onTap(_:)) )
-        view.addGestureRecognizer(tap)
         view.backgroundColor = UIColor.blackColor()
         view.addSubview(alertView)
         
         for attribute in [Layout.CenterX, Layout.CenterY] {
             (first: view, second: alertView) >>>- { $0.attribute = attribute }
+        }
+        
+        if #available(iOS 8.0, *)
+        {
+            view.backgroundColor = UIColor.clearColor()
+            let effect = UIBlurEffect(style: .Dark)
+            let effectView = UIVisualEffectView(effect: effect)
+            effectView.frame = view.bounds
+            view.insertSubview(effectView, atIndex: 0)
+            effectView.addGestureRecognizer(tap)
+
+        }
+        else //Use black translusent background for iOS 7
+        {
+            let screenshot = takeScreenshot()
+            let screenshotView = UIView(frame: view.bounds)
+            screenshotView.backgroundColor = UIColor(patternImage: screenshot)
+            view.insertSubview(screenshotView, atIndex: 0)
+            
+            let dimView = UIView(frame: view.bounds)
+            dimView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.8)
+            view.insertSubview(dimView, atIndex: 1)
+            dimView.addGestureRecognizer(tap)
         }
     }
     
@@ -172,4 +207,47 @@ public class HYAlertViewController: UIViewController {
     func onTap(tap: UITapGestureRecognizer) {
         dismiss()
     }
+    
+    
+    /**
+     Make the alert be presendted by the given view controller. Use this method to use the custom presentation animation.
+     
+     - parameter vc: View Controller that will present this alert.
+     */
+    func showOnViewController(vc: UIViewController)
+    {
+        presentingVC = vc
+        vc.definesPresentationContext = true
+        self.transitioningDelegate = self
+        animator.presenting = true
+        if #available(iOS 8.0, *){
+            self.modalPresentationStyle = UIModalPresentationStyle.OverFullScreen
+        } else {
+            self.modalPresentationStyle = UIModalPresentationStyle.FullScreen
+        }
+        presentingVC?.presentViewController(self, animated: true, completion: nil)
+    }
+}
+
+extension HYAlertController: UIViewControllerTransitioningDelegate {
+    public func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning?
+    {
+        return animator
+    }
+    
+    public func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning?
+    {
+        animator.presenting = false
+        return animator
+    }
+}
+
+private func takeScreenshot() -> UIImage
+{
+    let layer = UIApplication.sharedApplication().keyWindow!.layer
+    let scale = UIScreen.mainScreen().scale
+    UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, scale);
+    
+    layer.renderInContext(UIGraphicsGetCurrentContext()!)
+    return UIGraphicsGetImageFromCurrentImageContext()
 }
