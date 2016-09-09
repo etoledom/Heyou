@@ -26,7 +26,7 @@ class HYModalAlertAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
         
-        let containerView = transitionContext.containerView()!
+        let containerView = transitionContext.containerView()
         
         let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)
         let toView = toViewController?.view

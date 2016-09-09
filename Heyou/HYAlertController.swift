@@ -249,5 +249,5 @@ private func takeScreenshot() -> UIImage
     UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, scale);
     
     layer.renderInContext(UIGraphicsGetCurrentContext()!)
-    return UIGraphicsGetImageFromCurrentImageContext()
+    return UIGraphicsGetImageFromCurrentImageContext()!
 }
