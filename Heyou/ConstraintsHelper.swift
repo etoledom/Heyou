@@ -9,21 +9,21 @@
 import UIKit
 
 struct ConstraintInfo {
-    var attribute: NSLayoutAttribute = .Left
-    var secondAttribute: NSLayoutAttribute = .NotAnAttribute
+    var attribute: NSLayoutAttribute = .left
+    var secondAttribute: NSLayoutAttribute = .notAnAttribute
     var constant: CGFloat = 0
     var identifier: String?
-    var relation: NSLayoutRelation = .Equal
+    var relation: NSLayoutRelation = .equal
 }
 
 infix operator >>>- { associativity left precedence 150 }
 
 typealias Constraint = NSLayoutAttribute
 
-func >>>- <T: UIView> (left: (T, T), @noescape block: (inout ConstraintInfo) -> ()) -> NSLayoutConstraint {
+func >>>- <T: UIView> (left: (T, T), block: (inout ConstraintInfo) -> ()) -> NSLayoutConstraint {
     var info = ConstraintInfo()
     block(&info)
-    info.secondAttribute = info.secondAttribute == .NotAnAttribute ? info.attribute : info.secondAttribute
+    info.secondAttribute = info.secondAttribute == .notAnAttribute ? info.attribute : info.secondAttribute
     
     let constraint = NSLayoutConstraint(item: left.1,
                                         attribute: info.attribute,
@@ -38,7 +38,7 @@ func >>>- <T: UIView> (left: (T, T), @noescape block: (inout ConstraintInfo) -> 
     return constraint
 }
 
-func >>>- <T: UIView> (left: T, @noescape block: (inout ConstraintInfo) -> ()) -> NSLayoutConstraint {
+func >>>- <T: UIView> (left: T, block: (inout ConstraintInfo) -> ()) -> NSLayoutConstraint {
     var info = ConstraintInfo()
     block(&info)
     
@@ -54,10 +54,10 @@ func >>>- <T: UIView> (left: T, @noescape block: (inout ConstraintInfo) -> ()) -
     return constraint
 }
 
-func >>>- <T: UIView> (left: (T, T, T), @noescape block: (inout ConstraintInfo) -> ()) -> NSLayoutConstraint {
+func >>>- <T: UIView> (left: (T, T, T), block: (inout ConstraintInfo) -> ()) -> NSLayoutConstraint {
     var info = ConstraintInfo()
     block(&info)
-    info.secondAttribute = info.secondAttribute == .NotAnAttribute ? info.attribute : info.secondAttribute
+    info.secondAttribute = info.secondAttribute == .notAnAttribute ? info.attribute : info.secondAttribute
     
     let constraint = NSLayoutConstraint(item: left.1,
                                         attribute: info.attribute,
@@ -73,16 +73,16 @@ func >>>- <T: UIView> (left: (T, T, T), @noescape block: (inout ConstraintInfo) 
 
 extension UIView {
     func constraintEdges(to superView: UIView) {
-        for attribute: Constraint in [.Top, .Bottom, .Leading, .Trailing] {
+        for attribute: Constraint in [.top, .bottom, .leading, .trailing] {
             (superView, self) >>>- { $0.attribute = attribute }
         }
     }
     
     func centeredHorizontally(to superView: UIView) {
-        (superView, self) >>>- { $0.attribute = .CenterX }
+        (superView, self) >>>- { $0.attribute = .centerX }
     }
     func centeredVertically(to superView: UIView) {
-        (superView, self) >>>- { $0.attribute = .CenterY }
+        (superView, self) >>>- { $0.attribute = .centerY }
     }
     func contraintCentered(to superView: UIView) {
         self.centeredHorizontally(to: superView)
@@ -90,39 +90,39 @@ extension UIView {
     }
     
     func constraintTop(to superView: UIView, margin: CGFloat = 0) {
-        (superView, self) >>>- { $0.attribute = .Top; $0.constant = margin }
+        (superView, self) >>>- { $0.attribute = .top; $0.constant = margin }
     }
     func constraintBottom(to superView: UIView, margin: CGFloat = 0) {
-        (superView, self) >>>- { $0.attribute = .Bottom; $0.constant = -margin }
+        (superView, self) >>>- { $0.attribute = .bottom; $0.constant = -margin }
     }
     func constraintLeading(to superView: UIView, margin: CGFloat = 0) {
-        (superView, self) >>>- { $0.attribute = .Leading; $0.constant = margin }
+        (superView, self) >>>- { $0.attribute = .leading; $0.constant = margin }
     }
     func constraintTrailing(to superView: UIView, margin: CGFloat = 0) {
-        (superView, self) >>>- { $0.attribute = .Trailing; $0.constant = -margin }
+        (superView, self) >>>- { $0.attribute = .trailing; $0.constant = -margin }
     }
     
-    func constraint(height height: CGFloat, width: CGFloat) {
+    func constraint(height: CGFloat, width: CGFloat) {
         constraint(height: height)
         constraint(width: width)
     }
     
-    func constraint(height height: CGFloat) {
-        self >>>- { $0.attribute = .Height; $0.constant = height }
+    func constraint(height: CGFloat) {
+        self >>>- { $0.attribute = .height; $0.constant = height }
     }
-    func constraint(width width: CGFloat) {
-        self >>>- { $0.attribute = .Width; $0.constant = width }
+    func constraint(width: CGFloat) {
+        self >>>- { $0.attribute = .width; $0.constant = width }
     }
 }
 
 extension UIViewController {
-    func constraintTopLayoutGuide(view view: UIView, margin: CGFloat = 0) {
+    func constraintTopLayoutGuide(view: UIView, margin: CGFloat = 0) {
         let constraint = NSLayoutConstraint(
             item: view,
-            attribute: .Top,
-            relatedBy: .Equal,
+            attribute: .top,
+            relatedBy: .equal,
             toItem: self.topLayoutGuide,
-            attribute: .Bottom,
+            attribute: .bottom,
             multiplier: 1,
             constant: margin
         )

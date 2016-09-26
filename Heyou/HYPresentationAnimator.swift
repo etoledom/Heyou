@@ -20,20 +20,20 @@ class HYModalAlertAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     var presenting  = true
     var originFrame = CGRect.zero
     
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?)-> NSTimeInterval {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?)-> TimeInterval {
         return duration
     }
     
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         
-        let containerView = transitionContext.containerView()
+        let containerView = transitionContext.containerView
         
-        let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)
+        let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
         let toView = toViewController?.view
         
         let _modalVC = presenting ?
-            transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) :
-            transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)
+            transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) :
+            transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)
         
         guard let modalVC = _modalVC as? HYPresentationAnimatable else { fatalError("Wrong VC to present") }
         
@@ -45,12 +45,12 @@ class HYModalAlertAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         originFrame = alertView.frame
         
         if #available(iOS 8.0, *) {
-            if let toView = toView where presenting == true {
+            if let toView = toView , presenting == true {
                 containerView.addSubview(toView)
             }
         } else {
             if let toView = toView {
-                containerView.insertSubview(toView, atIndex: 0)
+                containerView.insertSubview(toView, at: 0)
             }
         }
         
@@ -64,38 +64,38 @@ class HYModalAlertAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         
     }
     
-    private func presentAnimation(backgroundView backgroundView: UIView, alertView: UIView, containerView: UIView, context: UIViewControllerContextTransitioning) {
+    fileprivate func presentAnimation(backgroundView: UIView, alertView: UIView, containerView: UIView, context: UIViewControllerContextTransitioning) {
         
-        alertView.transform = CGAffineTransformMakeScale(0.0, 0.0)
-        alertView.center = CGPoint(x: CGRectGetMidX(originFrame),
-                                   y: CGRectGetMidY(originFrame))
+        alertView.transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
+        alertView.center = CGPoint(x: originFrame.midX,
+                                   y: originFrame.midY)
         alertView.clipsToBounds = true
         
         backgroundView.alpha = 0
-        containerView.bringSubviewToFront(backgroundView)
+        containerView.bringSubview(toFront: backgroundView)
         
-        UIView.animateWithDuration(0.2, animations:
+        UIView.animate(withDuration: 0.2, animations:
             {
                 backgroundView.alpha = CGFloat(1)
             },
                                    completion: nil)
         
-        UIView.animateWithDuration(duration - 0.3, delay:0.2,
+        UIView.animate(withDuration: duration - 0.3, delay:0.2,
                                    usingSpringWithDamping: 0.9,
                                    initialSpringVelocity: 0.0,
                                    options: [],
                                    animations:
             {
-                alertView.transform = CGAffineTransformIdentity
+                alertView.transform = CGAffineTransform.identity
         }) { //Completion
             _ in context.completeTransition(true)
         }
     }
     
-    private func dismissAnimation(backgroundView backgroundView: UIView, alertView: UIView, containerView: UIView, context: UIViewControllerContextTransitioning)
+    fileprivate func dismissAnimation(backgroundView: UIView, alertView: UIView, containerView: UIView, context: UIViewControllerContextTransitioning)
     {
         //        let scaleAnimation = POP
-        UIView.animateWithDuration(0.5, delay:0,
+        UIView.animate(withDuration: 0.5, delay:0,
                                    usingSpringWithDamping: 0.9,
                                    initialSpringVelocity: 0.0,
                                    options: [],
@@ -103,10 +103,10 @@ class HYModalAlertAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             {
                 //            alertView.transform = CGAffineTransformMakeTranslation(0, -alertView.frame.size.height)
                 alertView.alpha = 0
-                alertView.transform = CGAffineTransformMakeScale(0.1, 0.1)
+                alertView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
             },completion: nil)
         
-        UIView.animateWithDuration(duration - 0.3, delay: 0.3, options: [], animations:
+        UIView.animate(withDuration: duration - 0.3, delay: 0.3, options: [], animations:
             {
                 backgroundView.alpha = CGFloat(0)
             })
