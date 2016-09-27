@@ -16,10 +16,17 @@ struct ConstraintInfo {
     var relation: NSLayoutRelation = .equal
 }
 
-infix operator >>>- { associativity left precedence 150 }
+precedencegroup constOp {
+    associativity: left
+    higherThan: AssignmentPrecedence
+}
+
+infix operator >>>- : constOp
+
 
 typealias Constraint = NSLayoutAttribute
 
+@discardableResult
 func >>>- <T: UIView> (left: (T, T), block: (inout ConstraintInfo) -> ()) -> NSLayoutConstraint {
     var info = ConstraintInfo()
     block(&info)
@@ -38,6 +45,7 @@ func >>>- <T: UIView> (left: (T, T), block: (inout ConstraintInfo) -> ()) -> NSL
     return constraint
 }
 
+@discardableResult
 func >>>- <T: UIView> (left: T, block: (inout ConstraintInfo) -> ()) -> NSLayoutConstraint {
     var info = ConstraintInfo()
     block(&info)
@@ -54,6 +62,7 @@ func >>>- <T: UIView> (left: T, block: (inout ConstraintInfo) -> ()) -> NSLayout
     return constraint
 }
 
+@discardableResult
 func >>>- <T: UIView> (left: (T, T, T), block: (inout ConstraintInfo) -> ()) -> NSLayoutConstraint {
     var info = ConstraintInfo()
     block(&info)
@@ -73,16 +82,16 @@ func >>>- <T: UIView> (left: (T, T, T), block: (inout ConstraintInfo) -> ()) -> 
 
 extension UIView {
     func constraintEdges(to superView: UIView) {
-        for attribute: Constraint in [.top, .bottom, .leading, .trailing] {
-            (superView, self) >>>- { $0.attribute = attribute }
+        for attribute: NSLayoutAttribute in [.top, .bottom, .leading, .trailing] {
+            (superView, self) >>>- { $0.attribute = attribute; return }
         }
     }
     
     func centeredHorizontally(to superView: UIView) {
-        (superView, self) >>>- { $0.attribute = .centerX }
+        (superView, self) >>>- { $0.attribute = .centerX; return }
     }
     func centeredVertically(to superView: UIView) {
-        (superView, self) >>>- { $0.attribute = .centerY }
+        (superView, self) >>>- { $0.attribute = .centerY; return }
     }
     func contraintCentered(to superView: UIView) {
         self.centeredHorizontally(to: superView)
@@ -90,16 +99,16 @@ extension UIView {
     }
     
     func constraintTop(to superView: UIView, margin: CGFloat = 0) {
-        (superView, self) >>>- { $0.attribute = .top; $0.constant = margin }
+        (superView, self) >>>- { $0.attribute = .top; $0.constant = margin; return }
     }
     func constraintBottom(to superView: UIView, margin: CGFloat = 0) {
-        (superView, self) >>>- { $0.attribute = .bottom; $0.constant = -margin }
+        (superView, self) >>>- { $0.attribute = .bottom; $0.constant = -margin; return }
     }
     func constraintLeading(to superView: UIView, margin: CGFloat = 0) {
-        (superView, self) >>>- { $0.attribute = .leading; $0.constant = margin }
+        (superView, self) >>>- { $0.attribute = .leading; $0.constant = margin; return }
     }
     func constraintTrailing(to superView: UIView, margin: CGFloat = 0) {
-        (superView, self) >>>- { $0.attribute = .trailing; $0.constant = -margin }
+        (superView, self) >>>- { $0.attribute = .trailing; $0.constant = -margin; return }
     }
     
     func constraint(height: CGFloat, width: CGFloat) {
@@ -108,10 +117,10 @@ extension UIView {
     }
     
     func constraint(height: CGFloat) {
-        self >>>- { $0.attribute = .height; $0.constant = height }
+        self >>>- { $0.attribute = .height; $0.constant = height; return }
     }
     func constraint(width: CGFloat) {
-        self >>>- { $0.attribute = .width; $0.constant = width }
+        self >>>- { $0.attribute = .width; $0.constant = width; return }
     }
 }
 
