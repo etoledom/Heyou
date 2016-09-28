@@ -172,8 +172,7 @@ open class HYAlertController: UIViewController, HYPresentationAnimatable {
         view.backgroundColor = UIColor.black
         view.addSubview(alertView)
         
-        (view, alertView) >>>- { $0.attribute = NSLayoutAttribute.centerX; return }
-        (view, alertView) >>>- { $0.attribute = NSLayoutAttribute.centerY; return }
+        alertView.constraintCentered(to: view)
         
         if #available(iOS 8.0, *)
         {

@@ -55,7 +55,7 @@ final class HYAlertView: UIView {
     }
     
     fileprivate func createLayout() {
-        self >>>- { $0.attribute =  .width; $0.constant = CGFloat(HYAlertStyleDefaults.alertWidth); return }
+        self.constraint(width: CGFloat(HYAlertStyleDefaults.alertWidth))
     }
     
     fileprivate func createSubviews() {
@@ -69,9 +69,7 @@ final class HYAlertView: UIView {
         self.addSubview(topView)
         
         topView.backgroundColor = UIColor.clear
-//        for attribute in [Layout .top, Layout .leading, Layout .trailing] {
-//            (first: self, second: topView) >>>- { $0.attribute = attribute }
-//        }
+
         topView.constraintLeading(to: self)
         topView.constraintTrailing(to: self)
         topView.constraintTop(to: self)
@@ -116,12 +114,7 @@ final class HYAlertView: UIView {
                 view.constraintTop(to: topView, margin: HYAlertStyle.topMarging)
             } else {
                 let previousView = createdViews[index - 1]
-                (base:topView, first: previousView, second: view) >>>- {
-                    $0.attribute =  .bottom
-                    $0.secondAttribute =  .top
-                    $0.constant = -CGFloat(HYAlertStyle.labelSeparation)
-                    return
-                }
+                topView.constraintSubviewsVertically(top: previousView, bottom: view, space: CGFloat(HYAlertStyle.labelSeparation))
             }
             
             let isLastElement = (index + 1 == elements.count)
@@ -146,7 +139,7 @@ final class HYAlertView: UIView {
         separator.constraintTrailing(to: buttonsView, margin: HYAlertStyleDefaults.separatorMarging)
         separator.constraintTop(to: buttonsView)
         
-        (buttonsView, separator) >>>- { $0.attribute = .centerX; return }
+        separator.constraintCenteredHorizontally(to: buttonsView)
     }
     
     fileprivate func createButtonsView(_ layout: HYAlertButtonsLayout) {
@@ -156,11 +149,7 @@ final class HYAlertView: UIView {
         
         buttonsView.backgroundColor = UIColor.clear
         
-         (self, topView, buttonsView) >>>- {
-            $0.attribute =  .bottom
-            $0.secondAttribute =  .top
-            return
-        }
+        self.constraintSubviewsVertically(top: topView, bottom: buttonsView)
         buttonsView.constraintBottom(to: self)
         buttonsView.constraintLeading(to: self)
         buttonsView.constraintTrailing(to: self)
@@ -208,10 +197,7 @@ final class HYAlertView: UIView {
         
         if layout == .horizontal && buttonsCount > 1 {
             for view in buttonsCreated where view != buttonsCreated.first! {
-                 (base: buttonsView, first: view, second: buttonsCreated.first!) >>>- {
-                    $0.attribute =  .width
-                    return
-                }
+                buttonsView.constraintSubviews(attribute: .width, first: view, second: buttonsCreated.first!)
             }
         }
     }
@@ -239,20 +225,14 @@ final class HYAlertView: UIView {
                 button = mainButton(index)
                 buttonTitle = title
                 button.constraint(width: HYAlertStyle.mainButtonWidth)
-                (first: buttonsView, second: button) >>>- { $0.attribute = .centerX; return }
-                
+                button.constraintCenteredHorizontally(to: buttonsView)
             }
         }
         button.setTitle(buttonTitle, for: UIControlState())
         
         
         if let topView = topView  {
-             (base: buttonsView, first: topView, second: button) >>>- {
-                $0.attribute =   .bottom
-                $0.secondAttribute =  .top
-                $0.constant = -HYAlertStyle.buttonsSeparation
-                return
-            }
+            buttonsView.constraintSubviewsVertically(top: topView, bottom: button, space: HYAlertStyle.buttonsSeparation)
         } else {
             button.constraintTop(to: buttonsView, margin: HYAlertStyle.mainButtonMarging)
         }
@@ -273,11 +253,7 @@ final class HYAlertView: UIView {
         button.constraintTop(to: buttonsView, margin: HYAlertStyle.topMarging)
 
         if let left = leftView {
-             (base: buttonsView, first: left, second: button) >>>- {
-                $0.attribute =  .trailing
-                $0.secondAttribute =  .leading
-                return
-            }
+            buttonsView.constraintSubviewsHorizontally(left: left, right: button)
         } else {
             button.constraintLeading(to: buttonsView, margin: HYAlertStyle.sideMarging)
         }
