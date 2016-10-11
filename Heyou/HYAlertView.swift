@@ -27,6 +27,8 @@ final class HYAlertView: UIView {
         didSet{ createButtonsView(buttonsLayout) }
     }
     
+    var drawSeparator = true
+    
     
     init(buttonsLayout layout: HYAlertButtonsLayout) {
         buttonsLayout = layout
@@ -60,7 +62,9 @@ final class HYAlertView: UIView {
     
     fileprivate func createSubviews() {
         createTopView()
-        createSeparator()
+        if drawSeparator {
+            createSeparator()
+        }
     }
     
     fileprivate func createTopView() {

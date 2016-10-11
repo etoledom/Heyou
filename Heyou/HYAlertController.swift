@@ -137,6 +137,8 @@ open class HYAlertController: UIViewController, HYPresentationAnimatable {
     ///Default: true
     open var dismissOnLastButton = true
     
+    open var drawLineSeparator = true
+    
     
     open func addNormalButton(name: String) {
         buttons.append(.normal(name))
@@ -186,6 +188,7 @@ open class HYAlertController: UIViewController, HYPresentationAnimatable {
         alertView.elements = elements
         alertView.buttonsTitles = buttonsTitles
         alertView.buttons = buttons
+        alertView.drawSeparator = drawLineSeparator
         alertView.onButtonPressed = {[weak self] (index, title) in
             guard let weakSelf = self else { return }
             
