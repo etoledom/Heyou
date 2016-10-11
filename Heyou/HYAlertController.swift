@@ -124,8 +124,9 @@ open class HYAlertController: UIViewController, HYPresentationAnimatable {
     
     ///Array of UI Elements to show
     open var elements      = [HYAlertElement]()
-    ///Array of buttons titles
+    ///Array of buttons titles. This is not compatible with 'self.buttons'
     open var buttonsTitles = [String]()
+    /// Array of buttons with its style. This is not compatible with 'self.buttonsTitles'
     open var buttons = [HYAlertButtonStyle]()
     ///Layout of buttons. If it's set to .horizontal but the total width of all buttons is too big, 
     ///it will be automatically resetted to .vertical. Default: .vertical
@@ -135,6 +136,32 @@ open class HYAlertController: UIViewController, HYPresentationAnimatable {
     ///True if the last button acts as a "Cancel" button, automatically dismissing the Alert.
     ///Default: true
     open var dismissOnLastButton = true
+    
+    
+    open func addNormalButton(name: String) {
+        buttons.append(.normal(name))
+    }
+    
+    open func addMainButton(name: String) {
+        buttons.append(.main(name))
+    }
+    
+    open func addTitle(_ title: String) {
+        elements.append(.title(title))
+    }
+    
+    open func addSubtitle(_ subtitle: String) {
+        elements.append(.subTitle(subtitle))
+    }
+    
+    open func addImage(name: String) {
+        elements.append(.image(named: name))
+    }
+    
+    open func addDescription(_ description: String) {
+        elements.append(.description(description))
+    }
+    
     
     
     var topView: UIView {
@@ -224,6 +251,17 @@ open class HYAlertController: UIViewController, HYPresentationAnimatable {
             self.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         }
         presentingVC?.present(self, animated: true, completion: nil)
+    }
+    
+    func show() {
+        if var topController = UIApplication.shared.keyWindow?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
+            
+            showOnViewController(topController)
+            // topController should now be your topmost view controller
+        }
     }
 }
 
