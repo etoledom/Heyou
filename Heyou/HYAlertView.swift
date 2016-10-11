@@ -10,12 +10,12 @@ import UIKit
 
 final class HYAlertView: UIView {
     
-    private let topView     = UIView()
-    private let buttonsView = UIView()
+    fileprivate let topView     = UIView()
+    fileprivate let buttonsView = UIView()
 
     let buttonsLayout : HYAlertButtonsLayout
     
-    var onButtonPressed: (index: Int, title: String) -> () = {_,_ in}
+    var onButtonPressed: (_ index: Int, _ title: String) -> () = {_,_ in}
     var elements: [HYAlertElement] = [] {
         didSet { createSubviews() }
     }
@@ -47,33 +47,34 @@ final class HYAlertView: UIView {
         super.init(coder: aDecoder)
     }
     
-    func onBackgroundTap(tap: UITapGestureRecognizer) {}
+    func onBackgroundTap(_ tap: UITapGestureRecognizer) {}
     
-    func onButtonTap(sender: UIButton) {
-        onButtonPressed(index: sender.tag, title: sender.titleLabel?.text ?? "")
+    func onButtonTap(_ sender: UIButton) {
+        onButtonPressed(sender.tag, sender.titleLabel?.text ?? "")
         print("Button Pressed at Index: \(sender.tag)")
     }
     
-    private func createLayout() {
-        self >>>- { $0.attribute =  .Width; $0.constant = CGFloat(HYAlertStyleDefaults.alertWidth) }
+    fileprivate func createLayout() {
+        self.constraint(width: CGFloat(HYAlertStyleDefaults.alertWidth))
     }
     
-    private func createSubviews() {
+    fileprivate func createSubviews() {
         createTopView()
         createSeparator()
     }
     
-    private func createTopView() {
+    fileprivate func createTopView() {
         // TOP VIEW
         topView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(topView)
         
-        topView.backgroundColor = UIColor.clearColor()
-        for attribute in [Layout .Top, Layout .Leading, Layout .Trailing] {
-            (first: self, second: topView) >>>- { $0.attribute = attribute }
-        }
+        topView.backgroundColor = UIColor.clear
+
+        topView.constraintLeading(to: self)
+        topView.constraintTrailing(to: self)
+        topView.constraintTop(to: self)
         
-        func createLabel(type: HYAlertElement, text: String) -> UIView {
+        func createLabel(_ type: HYAlertElement, text: String) -> UIView {
             let label = UILabel()
             label.translatesAutoresizingMaskIntoConstraints = false
             topView.addSubview(label)
@@ -83,15 +84,15 @@ final class HYAlertView: UIView {
             return label
         }
         
-        func imageView(name: String) -> UIView {
+        func imageView(_ name: String) -> UIView {
             let imageView = UIImageView(image: UIImage(named: name))
             imageView.translatesAutoresizingMaskIntoConstraints = false
-            imageView.contentMode = .ScaleAspectFit
+            imageView.contentMode = .scaleAspectFit
             topView.addSubview(imageView)
             return imageView
         }
         
-        func viewForElement(element: HYAlertElement) -> UIView {
+        func viewForElement(_ element: HYAlertElement) -> UIView {
             switch element {
             case .title(let content):
                 return createLabel(element, text: content)
@@ -105,7 +106,7 @@ final class HYAlertView: UIView {
         }
         
         var createdViews = [UIView]()
-        for (index, element) in elements.enumerate() {
+        for (index, element) in elements.enumerated() {
             let view = viewForElement(element)
             
             let isFirstElement = (index == 0)
@@ -113,11 +114,7 @@ final class HYAlertView: UIView {
                 view.constraintTop(to: topView, margin: HYAlertStyle.topMarging)
             } else {
                 let previousView = createdViews[index - 1]
-                (base:topView, first: previousView, second: view) >>>- {
-                    $0.attribute =  .Bottom
-                    $0.secondAttribute =  .Top
-                    $0.constant = -CGFloat(HYAlertStyle.labelSeparation)
-                }
+                topView.constraintSubviewsVertically(top: previousView, bottom: view, space: CGFloat(HYAlertStyle.labelSeparation))
             }
             
             let isLastElement = (index + 1 == elements.count)
@@ -131,7 +128,7 @@ final class HYAlertView: UIView {
         }
     }
     
-    private func createSeparator() {
+    fileprivate func createSeparator() {
         let separator = UIView()
         separator.backgroundColor = HYAlertStyleDefaults.separatorColor
         separator.translatesAutoresizingMaskIntoConstraints = false
@@ -142,20 +139,17 @@ final class HYAlertView: UIView {
         separator.constraintTrailing(to: buttonsView, margin: HYAlertStyleDefaults.separatorMarging)
         separator.constraintTop(to: buttonsView)
         
-        (buttonsView, separator) >>>- { $0.attribute = .CenterX }
+        separator.constraintCenteredHorizontally(to: buttonsView)
     }
     
-    private func createButtonsView(layout: HYAlertButtonsLayout) {
+    fileprivate func createButtonsView(_ layout: HYAlertButtonsLayout) {
         
         buttonsView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(buttonsView)
         
-        buttonsView.backgroundColor = UIColor.clearColor()
+        buttonsView.backgroundColor = UIColor.clear
         
-         (self, topView, buttonsView) >>>- {
-            $0.attribute =  .Bottom
-            $0.secondAttribute =  .Top
-        }
+        self.constraintSubviewsVertically(top: topView, bottom: buttonsView)
         buttonsView.constraintBottom(to: self)
         buttonsView.constraintLeading(to: self)
         buttonsView.constraintTrailing(to: self)
@@ -163,7 +157,7 @@ final class HYAlertView: UIView {
         createButtons(layout)
     }
     
-    private func mainButton(index: Int) -> UIButton {
+    fileprivate func mainButton(_ index: Int) -> UIButton {
         let button = normalButton(0)
         HYAlertStyleDefaults.styleMainButton(button)
         button.removeConstraints(button.constraints)
@@ -172,19 +166,19 @@ final class HYAlertView: UIView {
         return button
     }
     
-    private func normalButton(index: Int) -> UIButton {
-        let button = UIButton(type: .System)
+    fileprivate func normalButton(_ index: Int) -> UIButton {
+        let button = UIButton(type: .system)
         HYAlertStyleDefaults.styleNormalButton(button)
         button.translatesAutoresizingMaskIntoConstraints = false
         buttonsView.addSubview(button)
-        button.addTarget(self, action: #selector(onButtonTap(_:)), forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(onButtonTap(_:)), for: .touchUpInside)
         button.constraint(height: HYAlertStyle.normalButtonHeight)
 
         button.tag = index
         return button
     }
     
-    private func createButtons(layout: HYAlertButtonsLayout) {
+    fileprivate func createButtons(_ layout: HYAlertButtonsLayout) {
         let buttonsCount = buttons.count + buttonsTitles.count
         guard buttonsCount > 0 else { return }
         var buttonsCreated = [UIButton]()
@@ -203,16 +197,14 @@ final class HYAlertView: UIView {
         
         if layout == .horizontal && buttonsCount > 1 {
             for view in buttonsCreated where view != buttonsCreated.first! {
-                 (base: buttonsView, first: view, second: buttonsCreated.first!) >>>- {
-                    $0.attribute =  .Width
-                }
+                buttonsView.constraintSubviews(attribute: .width, first: view, second: buttonsCreated.first!)
             }
         }
     }
     
 
     
-    private func createButton(index: Int, topView: UIView?, bottomView: UIView? = nil) -> UIButton {
+    fileprivate func createButton(_ index: Int, topView: UIView?, bottomView: UIView? = nil) -> UIButton {
         
         let button: UIButton
         let buttonTitle: String
@@ -233,19 +225,14 @@ final class HYAlertView: UIView {
                 button = mainButton(index)
                 buttonTitle = title
                 button.constraint(width: HYAlertStyle.mainButtonWidth)
-                (first: buttonsView, second: button) >>>- { $0.attribute = .CenterX }
-                
+                button.constraintCenteredHorizontally(to: buttonsView)
             }
         }
-        button.setTitle(buttonTitle, forState: .Normal)
+        button.setTitle(buttonTitle, for: UIControlState())
         
         
         if let topView = topView  {
-             (base: buttonsView, first: topView, second: button) >>>- {
-                $0.attribute =   .Bottom
-                $0.secondAttribute =  .Top
-                $0.constant = -HYAlertStyle.buttonsSeparation
-            }
+            buttonsView.constraintSubviewsVertically(top: topView, bottom: button, space: HYAlertStyle.buttonsSeparation)
         } else {
             button.constraintTop(to: buttonsView, margin: HYAlertStyle.mainButtonMarging)
         }
@@ -256,20 +243,17 @@ final class HYAlertView: UIView {
         return button
     }
     
-    private func createButton(index: Int, leftView: UIView?, rightView: UIView? = nil) -> UIButton {
+    fileprivate func createButton(_ index: Int, leftView: UIView?, rightView: UIView? = nil) -> UIButton {
         
         let button = normalButton(index)
         let title = buttonsTitles[index]
-        button.setTitle(title, forState: .Normal)
+        button.setTitle(title, for: UIControlState())
         
         button.constraintBottom(to: buttonsView, margin: HYAlertStyle.bottomMarging)
         button.constraintTop(to: buttonsView, margin: HYAlertStyle.topMarging)
 
         if let left = leftView {
-             (base: buttonsView, first: left, second: button) >>>- {
-                $0.attribute =  .Trailing
-                $0.secondAttribute =  .Leading
-            }
+            buttonsView.constraintSubviewsHorizontally(left: left, right: button)
         } else {
             button.constraintLeading(to: buttonsView, margin: HYAlertStyle.sideMarging)
         }
