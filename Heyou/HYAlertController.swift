@@ -29,7 +29,7 @@ public enum HYAlertButtonStyle {
 
 struct HYAlertStyle {
     //Globals
-    static let sideMarging:   CGFloat = 8
+    static let sideMarging:   CGFloat = 16
     static let topMarging:    CGFloat = 12
     static let bottomMarging: CGFloat = 12
     //Labels
@@ -50,9 +50,9 @@ public struct HYAlertStyleDefaults {
     static var cornerRadius    = 10
     
     //Labels
-    static var titleFont            = UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline).withSize(20)
+    static var titleFont            = UIFont.preferredFont(forTextStyle: UIFontTextStyle.subheadline).withSize(22)
     static var titleTextColor       = UIColor.black
-    static var subTitleFont         = UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline).withSize(16)
+    static var subTitleFont         = UIFont.preferredFont(forTextStyle: UIFontTextStyle.subheadline).withSize(16)
     static var subTitleTextColor    = UIColor.black
     static var descriptionFont      = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
     static var descriptionTextColor = UIColor.black
@@ -94,13 +94,13 @@ public struct HYAlertStyleDefaults {
             assertionFailure("\(type) case not implemented")
         }
     }
-
+    
     static func styleMainButton(_ button: UIButton) {
         button.titleLabel?.font = HYAlertStyleDefaults.mainButtonFont
         button.backgroundColor = HYAlertStyleDefaults.mainButtonBackgroundColor
         let textColor = HYAlertStyleDefaults.mainButtonTextColor
         button.setTitleColor(textColor, for: UIControlState())
-
+        
         
         if HYAlertStyleDefaults.mainButtonObal {
             button.layer.cornerRadius = CGFloat(HYAlertStyle.mainButtonHeight) / 2
@@ -128,20 +128,28 @@ open class HYAlertController: UIViewController, HYPresentationAnimatable {
     open var buttonsTitles = [String]()
     /// Array of buttons with its style. This is not compatible with 'self.buttonsTitles'
     open var buttons = [HYAlertButtonStyle]()
-    ///Layout of buttons. If it's set to .horizontal but the total width of all buttons is too big, 
+    ///Layout of buttons. If it's set to .horizontal but the total width of all buttons is too big,
     ///it will be automatically resetted to .vertical. Default: .vertical
     open var buttonsLayout = HYAlertButtonsLayout.vertical
     ///Closure to call when a button is tapped. The return indicates if the alert should be dismissed after pressing the button.
     open var onButtonTap: (_ index: Int, _ title: String) -> Bool = {_,_ in return true }
+    
+    ///Closure to call after the completion animation is finished when the dismiss is trigered by a button press.
+    ///Dismiss triggered by tapping the background does not trigger this closure
+    open var onDismissCompletion: (_ index: Int, _ title: String) -> () = {_,_ in return }
     ///True if the last button acts as a "Cancel" button, automatically dismissing the Alert.
+    
+    
     ///Default: true
     open var dismissOnLastButton = true
     
+    /// Default: true
     open var drawLineSeparator = true
     
-    open var onDismissCompletion: ((Int, String) -> ())?
     
-    
+    /// Adds a normal button with the given name. This is mostly used on Obj-c side
+    ///
+    /// - parameter name: <#name description#>
     open func addNormalButton(name: String) {
         buttons.append(.normal(name))
     }
@@ -181,7 +189,7 @@ open class HYAlertController: UIViewController, HYPresentationAnimatable {
     var animator = HYModalAlertAnimator()
     
     fileprivate weak var presentingVC: UIViewController?
-
+    
     override open func viewDidLoad() {
         super.viewDidLoad()
         
@@ -196,7 +204,9 @@ open class HYAlertController: UIViewController, HYPresentationAnimatable {
             
             let showldDismiss = weakSelf.onButtonTap(index, title)
             if showldDismiss {
-                weakSelf.dismiss(index: index, title: title)
+                weakSelf.dismiss() {
+                    weakSelf.onDismissCompletion(index, title)
+                }
             }
         }
         
@@ -214,7 +224,7 @@ open class HYAlertController: UIViewController, HYPresentationAnimatable {
             effectView.frame = view.bounds
             view.insertSubview(effectView, at: 0)
             effectView.addGestureRecognizer(tap)
-
+            
         }
         else //Use black translusent background for iOS 7
         {
@@ -230,15 +240,13 @@ open class HYAlertController: UIViewController, HYPresentationAnimatable {
         }
     }
     
-    func dismiss(index: Int, title: String) {
-        onDismissCompletion?(index, title)
-        presentingViewController?.dismiss(animated: true, completion: nil)
+    func dismiss(completion: (()->())? = nil) {
+        presentingViewController?.dismiss(animated: true, completion: completion)
     }
     
     func onTap(_ tap: UITapGestureRecognizer) {
-        dismiss(index: -1, title: "")
+        dismiss()
     }
-    
     
     /**
      Make the alert be presendted by the given view controller. Use this method to use the custom presentation animation.
