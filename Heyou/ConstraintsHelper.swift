@@ -101,8 +101,9 @@ extension UIView {
     func constraintTop(to superView: UIView, margin: CGFloat = 0) {
         (superView, self) >>>- { $0.attribute = .top; $0.constant = margin; return }
     }
-    func constraintBottom(to superView: UIView, margin: CGFloat = 0) {
-        (superView, self) >>>- { $0.attribute = .bottom; $0.constant = -margin; return }
+    @discardableResult
+    func constraintBottom(to superView: UIView, margin: CGFloat = 0) -> NSLayoutConstraint {
+        return (superView, self) >>>- { $0.attribute = .bottom; $0.constant = -margin; return }
     }
     @discardableResult
     func constraintLeading(to superView: UIView, margin: CGFloat = 0) -> NSLayoutConstraint {
@@ -121,8 +122,9 @@ extension UIView {
     func constraint(height: CGFloat) -> NSLayoutConstraint {
         return self >>>- { $0.attribute = .height; $0.constant = height; return }
     }
-    func constraint(width: CGFloat) {
-        self >>>- { $0.attribute = .width; $0.constant = width; return }
+    @discardableResult
+    func constraint(width: CGFloat) -> NSLayoutConstraint {
+        return self >>>- { $0.attribute = .width; $0.constant = width; return }
     }
     
     func constraint(to view: UIView, attribute: NSLayoutAttribute, constant: CGFloat = 0) {
@@ -138,8 +140,9 @@ extension UIView {
             return
         }
     }
-    func constraintSubviewsVertically(top: UIView, bottom: UIView, space: CGFloat = 0) {
-        (self, top, bottom) >>>- {
+    @discardableResult
+    func constraintSubviewsVertically(top: UIView, bottom: UIView, space: CGFloat = 0) -> NSLayoutConstraint {
+        return (self, top, bottom) >>>- {
             $0.attribute = .bottom
             $0.secondAttribute = .top
             $0.constant = -space

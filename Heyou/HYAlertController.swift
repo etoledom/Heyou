@@ -139,6 +139,8 @@ open class HYAlertController: UIViewController, HYPresentationAnimatable {
     
     open var drawLineSeparator = true
     
+    open var onDismissCompletion: ((Int, String) -> ())?
+    
     
     open func addNormalButton(name: String) {
         buttons.append(.normal(name))
@@ -194,7 +196,7 @@ open class HYAlertController: UIViewController, HYPresentationAnimatable {
             
             let showldDismiss = weakSelf.onButtonTap(index, title)
             if showldDismiss {
-                weakSelf.dismiss()
+                weakSelf.dismiss(index: index, title: title)
             }
         }
         
@@ -228,12 +230,13 @@ open class HYAlertController: UIViewController, HYPresentationAnimatable {
         }
     }
     
-    func dismiss() {
+    func dismiss(index: Int, title: String) {
+        onDismissCompletion?(index, title)
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     func onTap(_ tap: UITapGestureRecognizer) {
-        dismiss()
+        dismiss(index: -1, title: "")
     }
     
     
