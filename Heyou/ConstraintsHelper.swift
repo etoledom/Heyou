@@ -14,6 +14,7 @@ struct ConstraintInfo {
     var constant: CGFloat = 0
     var identifier: String?
     var relation: NSLayoutRelation = .equal
+    var priority: UILayoutPriority = UILayoutPriorityRequired
 }
 
 precedencegroup constOp {
@@ -41,6 +42,7 @@ func >>>- <T: UIView> (left: (T, T), block: (inout ConstraintInfo) -> ()) -> NSL
                                         constant: info.constant)
 
     constraint.identifier = info.identifier
+    constraint.priority = info.priority
     left.0.addConstraint(constraint)
     return constraint
 }
@@ -58,6 +60,7 @@ func >>>- <T: UIView> (left: T, block: (inout ConstraintInfo) -> ()) -> NSLayout
                                         multiplier: 1,
                                         constant: info.constant)
     constraint.identifier = info.identifier
+    constraint.priority = info.priority
     left.addConstraint(constraint)
     return constraint
 }
