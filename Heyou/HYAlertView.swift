@@ -49,9 +49,9 @@ final class HYAlertView: UIView {
         super.init(coder: aDecoder)
     }
     
-    func onBackgroundTap(_ tap: UITapGestureRecognizer) {}
+    @objc func onBackgroundTap(_ tap: UITapGestureRecognizer) {}
     
-    func onButtonTap(_ sender: UIButton) {
+    @objc func onButtonTap(_ sender: UIButton) {
         onButtonPressed(sender.tag, sender.titleLabel?.text ?? "")
         print("Button Pressed at Index: \(sender.tag)")
     }

@@ -14,7 +14,7 @@ struct ConstraintInfo {
     var constant: CGFloat = 0
     var identifier: String?
     var relation: NSLayoutRelation = .equal
-    var priority: UILayoutPriority = UILayoutPriorityRequired
+    var priority: UILayoutPriority = UILayoutPriority.required
 }
 
 precedencegroup constOp {

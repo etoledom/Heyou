@@ -244,7 +244,7 @@ open class HYAlertController: UIViewController, HYPresentationAnimatable {
         presentingViewController?.dismiss(animated: true, completion: completion)
     }
     
-    func onTap(_ tap: UITapGestureRecognizer) {
+    @objc func onTap(_ tap: UITapGestureRecognizer) {
         dismiss()
     }
     
