@@ -29,6 +29,7 @@ class HYModalAlertAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         let containerView = transitionContext.containerView
         
         let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
+        let fromController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)
         let toView = toViewController?.view
         
         let _modalVC = presenting ?
@@ -56,6 +57,7 @@ class HYModalAlertAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         
         
         if presenting {
+            fromController?.definesPresentationContext = true
             presentAnimation(backgroundView: backgroundView, alertView: alertView, containerView: containerView, context: transitionContext)
         }
         else {

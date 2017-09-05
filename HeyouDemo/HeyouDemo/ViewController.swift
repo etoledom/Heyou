@@ -7,67 +7,86 @@
 //
 
 import UIKit
+import Heyou
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
     
-    @IBAction func onShowAlertPress(sender: UIButton) {
-        let controller = HYAlertController()
+    let examples: [String] = [
+        "First",
+        "Second"
+    ]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.tableFooterView = UIView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("View Will Appear")
+    }
+    
+    func onShowAlertPress(indexPath: IndexPath) {
+        let alertController = HYAlertController()
         
-        switch sender.tag {
+        switch indexPath.row {
         case 0:
-            controller.elements = [
+            alertController.elements = [
                 .title("Title"),
-                .description("Description text")
+                .subTitle("A Subtitle"),
+                .image(named: "house"),
+                .description("A long description text goes here.")
             ]
-            controller.buttons = [
-                .main("First main"),
-                .main("Second main"),
-                .normal("Normal button"),
-                .main("Last button")
-            ]
+            
+            let mainAction = HYAlertAction(title: "First main", style: .main)
+            let normalAction = HYAlertAction(title: "Normal button", style: .default)
+            let secondMainAction = HYAlertAction(title: "Second main", style: .main)
+
+            alertController.addAction(mainAction)
+            alertController.addAction(normalAction)
+            alertController.addAction(secondMainAction)
 
         case 1:
-            controller.elements = [
-                .title("Title"),
-                .description("Description text")
-            ]
-            controller.buttonsTitles = [
-                "First button",
-                "Second button"
-            ]
-            controller.buttonsLayout = .horizontal
-            
-        case 2:
-            controller.elements = [
-                .title("Title"),
-                .subTitle("A Subtitle"),
-                .description("Description text")
-            ]
-            controller.buttonsTitles = [
-                "First button",
-                "Second button"
-            ]
-        default:
-            controller.elements = [
-                .title("Title"),
+            print("a")
+            alertController.elements = [
                 .image(named: "house"),
-                .subTitle("A Subtitle"),
+                .title("Title"),
                 .description("Description text")
             ]
-            controller.buttonsTitles = [
-                "Print",
-                "Dismiss"
-            ]
-            controller.onButtonTap = { (index,_) in
-                if index == 0 {
-                    print("Printing")
-                    return false
-                }
-                return true
+            let mainAction = HYAlertAction(title: "First main", style: .main)
+
+            let normalAction = HYAlertAction(title: "Normal button", style: .default) { (action) in
+                print("HELLO WORLD!")
             }
+            alertController.addAction(mainAction)
+            alertController.addAction(normalAction)
+        default: break
         }
         
-        controller.show()
+        alertController.showOnViewController(self)
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        onShowAlertPress(indexPath: indexPath)
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return examples.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let title = examples[indexPath.row]
+        cell.textLabel?.text = title
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70.0
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Examples"
     }
 }
 

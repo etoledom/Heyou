@@ -1,9 +1,7 @@
 //
 //  ConstraintsHelper.swift
-//  panicbutton
 //
 //  Created by E. Toledo on 7/8/16.
-//  Copyright © 2016 Sosafe. All rights reserved.
 //
 
 import UIKit

@@ -46,26 +46,26 @@ public struct HYAlertStyleDefaults {
     
     //Globals
     static var alertWidth      = 300
-    static var backgroundColor = UIColor(white: 0.95, alpha: 1)
+    static var backgroundColor = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1.0)
     static var cornerRadius    = 10
     
     //Labels
-    static var titleFont            = UIFont.preferredFont(forTextStyle: UIFontTextStyle.subheadline).withSize(22)
-    static var titleTextColor       = UIColor.black
-    static var subTitleFont         = UIFont.preferredFont(forTextStyle: UIFontTextStyle.subheadline).withSize(16)
-    static var subTitleTextColor    = UIColor.black
+    static var titleFont            = UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)
+    static var titleTextColor       = UIColor(red:0.20, green:0.27, blue:0.30, alpha:1.0)
+    static var subTitleFont         = UIFont.preferredFont(forTextStyle: UIFontTextStyle.subheadline)
+    static var subTitleTextColor    = UIColor(red:0.20, green:0.27, blue:0.30, alpha:1.0)
     static var descriptionFont      = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
-    static var descriptionTextColor = UIColor.black
+    static var descriptionTextColor = UIColor(red:0.20, green:0.27, blue:0.30, alpha:1.0)
     
     //Buttons
     static var mainButtonCornerRadius    = 0
     static var mainButtonObal            = true
-    static var mainButtonBackgroundColor = UIColor.blue
+    static var mainButtonBackgroundColor = UIColor(red:0.00, green:0.45, blue:1.00, alpha:1.0)
     static var mainButtonFont            = UIFont.boldSystemFont(ofSize: 16)
     static var mainButtonTextColor       = UIColor.white
     
     static var normalButtonFont      = UIFont.boldSystemFont(ofSize: 16)
-    static var normalButtonTextColor = UIColor.black
+    static var normalButtonTextColor = UIColor(red:0.00, green:0.45, blue:1.00, alpha:1.0)
     
     //Extras
     static var separatorColor            = UIColor(white: 0.85, alpha: 1)
@@ -126,8 +126,6 @@ open class HYAlertController: UIViewController, HYPresentationAnimatable {
     open var elements      = [HYAlertElement]()
     ///Array of buttons titles. This is not compatible with 'self.buttons'
     open var buttonsTitles = [String]()
-    /// Array of buttons with its style. This is not compatible with 'self.buttonsTitles'
-    open var buttons = [HYAlertButtonStyle]()
     ///Layout of buttons. If it's set to .horizontal but the total width of all buttons is too big,
     ///it will be automatically resetted to .vertical. Default: .vertical
     open var buttonsLayout = HYAlertButtonsLayout.vertical
@@ -146,16 +144,8 @@ open class HYAlertController: UIViewController, HYPresentationAnimatable {
     /// Default: true
     open var drawLineSeparator = true
     
-    
-    /// Adds a normal button with the given name. This is mostly used on Obj-c side
-    ///
-    /// - parameter name: <#name description#>
-    open func addNormalButton(name: String) {
-        buttons.append(.normal(name))
-    }
-    
-    open func addMainButton(name: String) {
-        buttons.append(.main(name))
+    open func addAction(_ action: HYAlertAction) {
+        buttons.append(action)
     }
     
     open func addTitle(_ title: String) {
@@ -175,7 +165,6 @@ open class HYAlertController: UIViewController, HYPresentationAnimatable {
     }
     
     
-    
     var topView: UIView {
         get {
             guard let view = alertView else { assertionFailure("alertView is nil"); return UIView() }
@@ -188,16 +177,35 @@ open class HYAlertController: UIViewController, HYPresentationAnimatable {
     var alertView: HYAlertView?
     var animator = HYModalAlertAnimator()
     
+    fileprivate var buttons = [HYAlertAction]()
     fileprivate weak var presentingVC: UIViewController?
     
     override open func viewDidLoad() {
         super.viewDidLoad()
-        
-        let alertView = HYAlertView(buttonsLayout: buttonsLayout)
+        createAlertView()
+        createEffectView()
+        view.backgroundColor = UIColor.clear
+    }
+    
+    func createEffectView() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.onTap(_:)) )
+        let effect = UIBlurEffect(style: .dark)
+        let effectView = UIVisualEffectView(effect: effect)
+        effectView.translatesAutoresizingMaskIntoConstraints = false
+        view.insertSubview(effectView, at: 0)
+        effectView.constraintEdges(to: view)
+        effectView.addGestureRecognizer(tap)
+    }
+    func createAlertView() {
+        let alertView = HYAlertView(buttonsLayout: buttonsLayout, actions: buttons)
         self.alertView = alertView
         alertView.elements = elements
-        alertView.buttonsTitles = buttonsTitles
-        alertView.buttons = buttons
+        alertView.buttonActions = buttons
+        
+        alertView.buttons.forEach {
+            $0.addTarget(self, action: #selector(onButtonPressed(sender:)), for: .touchUpInside)
+        }
+        
         alertView.drawSeparator = drawLineSeparator
         alertView.onButtonPressed = {[weak self] (index, title) in
             guard let weakSelf = self else { return }
@@ -210,34 +218,9 @@ open class HYAlertController: UIViewController, HYPresentationAnimatable {
             }
         }
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.onTap(_:)) )
-        view.backgroundColor = UIColor.black
         view.addSubview(alertView)
         
         alertView.constraintCentered(to: view)
-        
-        if #available(iOS 8.0, *)
-        {
-            view.backgroundColor = UIColor.clear
-            let effect = UIBlurEffect(style: .dark)
-            let effectView = UIVisualEffectView(effect: effect)
-            effectView.frame = view.bounds
-            view.insertSubview(effectView, at: 0)
-            effectView.addGestureRecognizer(tap)
-            
-        }
-        else //Use black translusent background for iOS 7
-        {
-            let screenshot = takeScreenshot()
-            let screenshotView = UIView(frame: view.bounds)
-            screenshotView.backgroundColor = UIColor(patternImage: screenshot)
-            view.insertSubview(screenshotView, at: 0)
-            
-            let dimView = UIView(frame: view.bounds)
-            dimView.backgroundColor = UIColor.black.withAlphaComponent(0.8)
-            view.insertSubview(dimView, at: 1)
-            dimView.addGestureRecognizer(tap)
-        }
     }
     
     func dismiss(completion: (()->())? = nil) {
@@ -253,21 +236,16 @@ open class HYAlertController: UIViewController, HYPresentationAnimatable {
      
      - parameter vc: View Controller that will present this alert.
      */
-    func showOnViewController(_ vc: UIViewController)
-    {
+    open func showOnViewController(_ vc: UIViewController) {
         presentingVC = vc
         vc.definesPresentationContext = true
         self.transitioningDelegate = self
         animator.presenting = true
-        if #available(iOS 8.0, *){
-            self.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
-        } else {
-            self.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-        }
+        modalPresentationStyle = UIModalPresentationStyle.overFullScreen
         presentingVC?.present(self, animated: true, completion: nil)
     }
     
-    func show() {
+    open func show() {
         if var topController = UIApplication.shared.keyWindow?.rootViewController {
             while let presentedViewController = topController.presentedViewController {
                 topController = presentedViewController
@@ -275,6 +253,15 @@ open class HYAlertController: UIViewController, HYPresentationAnimatable {
             
             showOnViewController(topController)
             // topController should now be your topmost view controller
+        }
+    }
+    
+    @objc private func onButtonPressed(sender: UIButton) {
+        let action = buttons[sender.tag]
+        if let handler = action.handler {
+            handler(action)
+        } else {
+            dismiss()
         }
     }
 }
@@ -290,14 +277,4 @@ extension HYAlertController: UIViewControllerTransitioningDelegate {
         animator.presenting = false
         return animator
     }
-}
-
-private func takeScreenshot() -> UIImage
-{
-    let layer = UIApplication.shared.keyWindow!.layer
-    let scale = UIScreen.main.scale
-    UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, scale);
-    
-    layer.render(in: UIGraphicsGetCurrentContext()!)
-    return UIGraphicsGetImageFromCurrentImageContext()!
 }
