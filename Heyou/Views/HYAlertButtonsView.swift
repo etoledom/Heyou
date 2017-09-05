@@ -9,7 +9,7 @@
 import UIKit
 class HYAlertButtonsView: UIView {
     var buttons: [UIButton] = []
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
@@ -18,23 +18,23 @@ class HYAlertButtonsView: UIView {
         super.init(frame: CGRect.zero)
         translatesAutoresizingMaskIntoConstraints = false
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         translatesAutoresizingMaskIntoConstraints = false
     }
-    
+
     func addButtons(actions: [HYAlertAction]) {
         actions.forEach(addButton)
     }
-    
+
     private func addButton(action: HYAlertAction) {
         let button = createButton(style: action.style)
         button.setTitle(action.title, for: UIControlState.normal)
         button.tag = buttons.count
         buttons.append(button)
     }
-    
+
     fileprivate func createButton(style: HYAlertActionStyle ) -> UIButton {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -43,7 +43,7 @@ class HYAlertButtonsView: UIView {
         layoutButtonVertically(button)
         return button
     }
-    
+
     func layoutButtonHorizontally(_ button: UIButton) {
         button.constraint(height: HYAlertStyle.normalButtonHeight)
         if let lastButton = buttons.last {
@@ -59,7 +59,7 @@ class HYAlertButtonsView: UIView {
         }
         button.constraintTrailing(to: self)
     }
-    
+
     func layoutButtonVertically(_ button: UIButton) {
         button.constraint(height: HYAlertStyle.normalButtonHeight)
         if let lastButton = buttons.last {
@@ -76,7 +76,7 @@ class HYAlertButtonsView: UIView {
         button.constraintTrailing(to: self, margin: HYAlertStyle.sideMarging)
         button.constraintBottom(to: self, margin: HYAlertStyle.bottomMarging)
     }
-    
+
     func styleButton(_ button: UIButton, style: HYAlertActionStyle) {
         switch style {
         case .default:

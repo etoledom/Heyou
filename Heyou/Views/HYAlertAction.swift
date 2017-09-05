@@ -21,7 +21,7 @@ public struct HYAlertAction {
     public var isEnabled: Bool = true
 
     internal let handler: ((HYAlertAction) -> Void)?
-    
+
     public init(title: String?, style: HYAlertActionStyle, handler: ((HYAlertAction) -> Void)? = nil) {
         self.handler = handler
         self.title = title
