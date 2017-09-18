@@ -176,18 +176,11 @@ open class HYAlertController: UIViewController, HYPresentationAnimatable {
     override open func viewDidLoad() {
         super.viewDidLoad()
         createAlertView()
-        createEffectView()
-        //view.backgroundColor = UIColor.clear
+        setBackground()
     }
 
-    func createEffectView() {
+    func setBackground() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.onTap(_:)) )
-        // let effect = UIBlurEffect(style: .dark)
-        // let effectView = UIVisualEffectView(effect: effect)
-        // effectView.translatesAutoresizingMaskIntoConstraints = false
-        // view.insertSubview(effectView, at: 0)
-        // effectView.constraintEdges(to: view)
-        // effectView.addGestureRecognizer(tap)
         view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         view.addGestureRecognizer(tap)
     }
@@ -232,7 +225,7 @@ open class HYAlertController: UIViewController, HYPresentationAnimatable {
 
      - parameter vc: View Controller that will present this alert.
      */
-    open func showOnViewController(_ viewController: UIViewController) {
+    open func show(onViewController viewController: UIViewController) {
         presentingVC = viewController
         viewController.definesPresentationContext = true
         self.transitioningDelegate = self
@@ -247,7 +240,7 @@ open class HYAlertController: UIViewController, HYPresentationAnimatable {
                 topController = presentedViewController
             }
 
-            showOnViewController(topController)
+            show(onViewController: topController)
             // topController should now be your topmost view controller
         }
     }

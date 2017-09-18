@@ -41,6 +41,7 @@
 		7EACBAF41F54B11900570F91 /* HYAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HYAlertController.swift; sourceTree = "<group>"; };
 		7EACBAF61F54B11900570F91 /* ConstraintsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintsHelper.swift; sourceTree = "<group>"; };
 		7EACBAF71F54B11900570F91 /* HYPresentationAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HYPresentationAnimator.swift; sourceTree = "<group>"; };
+		7EB2755C1F6F4C1000A3D178 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +66,7 @@
 		7EACBACB1F54AF7A00570F91 = {
 			isa = PBXGroup;
 			children = (
+				7EB2755C1F6F4C1000A3D178 /* README.md */,
 				7EACBAD71F54AF7A00570F91 /* Heyou */,
 				7EACBAE21F54AF7A00570F91 /* HeyouTests */,
 				7EACBAD61F54AF7A00570F91 /* Products */,

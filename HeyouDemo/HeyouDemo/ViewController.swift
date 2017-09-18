@@ -27,7 +27,7 @@ class ViewController: UITableViewController {
         print("View Will Appear")
     }
 
-    func onShowAlertPress(indexPath: IndexPath) {
+    func onShowAlertPressed(indexPath: IndexPath) {
 
         switch indexPath.row {
         case 0:
@@ -47,7 +47,7 @@ class ViewController: UITableViewController {
             alertController.addAction(normalAction)
             alertController.addAction(secondMainAction)
 
-            alertController.showOnViewController(self)
+            alertController.show(onViewController: self)
         case 1:
             let alertController = HYAlertController()
             alertController.elements = [
@@ -63,7 +63,7 @@ class ViewController: UITableViewController {
             alertController.addAction(mainAction)
             alertController.addAction(normalAction)
 
-            alertController.showOnViewController(self)
+            alertController.show(onViewController: self)
 
         case 2:
             let alertController = UIAlertController(title: "Normal alert", message: "Borring normal alert", preferredStyle: .alert)
@@ -80,11 +80,10 @@ class ViewController: UITableViewController {
 
         default: break
         }
-
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        onShowAlertPress(indexPath: indexPath)
+        onShowAlertPressed(indexPath: indexPath)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

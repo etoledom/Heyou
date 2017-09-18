@@ -76,37 +76,26 @@ class HYModalAlertAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 
         UIView.animate(withDuration: 0.1, animations: {
                 backgroundView.alpha = CGFloat(1)
-        },
-                       completion: nil)
+        }, completion: nil)
 
-        UIView.animate(withDuration: duration, delay:0,
-                       usingSpringWithDamping: 0.9,
-                       initialSpringVelocity: 0.0,
-                       options: [],
-                       animations: {
-                alertView.transform = CGAffineTransform.identity
-                alertView.alpha = 1
-        }) { _ in //Completion
+        UIView.animate(withDuration: duration, delay:0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.0, options: [], animations: {
+            alertView.transform = CGAffineTransform.identity
+            alertView.alpha = 1
+        }, completion: { _ in
             context.completeTransition(true)
-        }
+        })
     }
 
     fileprivate func dismissAnimation(backgroundView: UIView, alertView: UIView, containerView: UIView, context: UIViewControllerContextTransitioning) {
         // let scaleAnimation = POP
-        UIView.animate(withDuration: duration * 0.8, delay:0,
-                       usingSpringWithDamping: 0.9,
-                       initialSpringVelocity: 0.0,
-                       options: [],
-                       animations: {
-                // alertView.transform = CGAffineTransformMakeTranslation(0, -alertView.frame.size.height)
-                alertView.alpha = 0
-                // alertView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        UIView.animate(withDuration: duration * 0.8, delay:0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.0, options: [], animations: {
+            alertView.alpha = 0
         }, completion: nil)
 
         UIView.animate(withDuration: duration * 0.8, delay: 0, options: [], animations: {
                 backgroundView.alpha = CGFloat(0)
-        }) { _ in //Completion
+        }, completion: { _ in
             context.completeTransition(true)
-        }
+        })
     }
 }
