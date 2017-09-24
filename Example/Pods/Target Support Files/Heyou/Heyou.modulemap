@@ -1,0 +1,6 @@
+framework module Heyou {
+  umbrella header "Heyou-umbrella.h"
+
+  export *
+  module * { export * }
+}
