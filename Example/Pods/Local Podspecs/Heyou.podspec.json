@@ -1,0 +1,22 @@
+{
+  "name": "Heyou",
+  "version": "0.1.0",
+  "summary": "A short description of Heyou.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/etoledom/Heyou",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "etoledom": "etoledom@icloud.com"
+  },
+  "source": {
+    "git": "https://github.com/etoledom/Heyou.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Heyou/Classes/**/*"
+}
