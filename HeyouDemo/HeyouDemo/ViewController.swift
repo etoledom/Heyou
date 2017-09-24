@@ -7,79 +7,101 @@
 //
 
 import UIKit
+import Heyou
 
-class ViewController: UIViewController {
-    
+class ViewController: UITableViewController {
+
+    let examples: [String] = [
+        "First",
+        "Second",
+        "Normal alert"
+    ]
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        tableView.tableFooterView = UIView()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("View Will Appear")
     }
-    
-    
-    @IBAction func onShowAlertPress(sender: UIButton) {
-        let controller = HYAlertController()
-        
-        switch sender.tag {
+
+    func onShowAlertPressed(indexPath: IndexPath) {
+
+        switch indexPath.row {
         case 0:
-            controller.elements = [
+            let alertController = HYAlertController()
+            alertController.elements = [
                 .title("Title"),
-                .description("Description text")
-            ]
-            controller.buttons = [
-                .main("First main"),
-                .main("Second main"),
-                .normal("Normal button"),
-                .main("Last button")
+                .subTitle("A Subtitle"),
+                .image(named: "house"),
+                .description("A long description text goes here.")
             ]
 
+            let mainAction = HYAlertAction(title: "First main", style: .main)
+            let normalAction = HYAlertAction(title: "Normal button", style: .default)
+            let secondMainAction = HYAlertAction(title: "Second main", style: .main)
+
+            alertController.addAction(mainAction)
+            alertController.addAction(normalAction)
+            alertController.addAction(secondMainAction)
+
+            alertController.show(onViewController: self)
         case 1:
-            controller.elements = [
-                .title("Title"),
-                .description("Description text")
-            ]
-            controller.buttonsTitles = [
-                "First button",
-                "Second button"
-            ]
-            controller.buttonsLayout = .horizontal
-            
-        case 2:
-            controller.elements = [
-                .title("Title"),
-                .subTitle("A Subtitle"),
-                .description("Description text")
-            ]
-            controller.buttonsTitles = [
-                "First button",
-                "Second button"
-            ]
-        default:
-            controller.elements = [
-                .title("Title"),
+            let alertController = HYAlertController()
+            alertController.elements = [
                 .image(named: "house"),
-                .subTitle("A Subtitle"),
+                .title("Title"),
                 .description("Description text")
             ]
-            controller.buttonsTitles = [
-                "Print",
-                "Dismiss"
-            ]
-            controller.onButtonTap = { (index,_) in
-                if index == 0 {
-                    print("Printing")
-                    return false
-                }
-                return true
+            let mainAction = HYAlertAction(title: "First main", style: .main)
+
+            let normalAction = HYAlertAction(title: "Normal button", style: .default) { (_) in
+                print("HELLO WORLD!")
             }
+            alertController.addAction(mainAction)
+            alertController.addAction(normalAction)
+
+            alertController.show(onViewController: self)
+
+        case 2:
+            let alertController = UIAlertController(title: "Normal alert", message: "Borring normal alert", preferredStyle: .alert)
+
+            let action01 = UIAlertAction(title: "Default", style: .default)
+            let action02 = UIAlertAction(title: "Destructive", style: .destructive)
+            let action03 = UIAlertAction(title: "Cancel", style: .cancel)
+
+            alertController.addAction(action01)
+            alertController.addAction(action02)
+            alertController.addAction(action03)
+
+            present(alertController, animated: true, completion: nil)
+
+        default: break
         }
-        
-        controller.showOnViewController(self)
-        
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        onShowAlertPressed(indexPath: indexPath)
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return examples.count
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let title = examples[indexPath.row]
+        cell.textLabel?.text = title
+        return cell
+    }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70.0
+    }
+
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Examples"
     }
 }
-

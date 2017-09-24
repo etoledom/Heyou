@@ -1,15 +1,15 @@
 //
-//  HeyouDemoTests.swift
-//  HeyouDemoTests
+//  HeyouTests.swift
+//  HeyouTests
 //
-//  Created by E. Toledo on 9/7/16.
-//  Copyright © 2016 eToledoM. All rights reserved.
+//  Created by eToledom on 8/28/17.
+//  Copyright © 2017 etoledom. All rights reserved.
 //
 
 import XCTest
-@testable import HeyouDemo
+@testable import Heyou
 
-class HeyouDemoTests: XCTestCase {
+class HeyouTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
@@ -32,5 +32,4 @@ class HeyouDemoTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }
