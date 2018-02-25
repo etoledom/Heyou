@@ -154,4 +154,8 @@ final class HYAlertView: UIView {
         buttonsView.constraintLeading(to: self)
         buttonsView.constraintTrailing(to: self)
     }
+
+    private func configureScrollView() {
+
+    }
 }
