@@ -32,7 +32,7 @@ public extension Heyou {
             return view
         }
 
-        //MARK: - Helpers
+        // MARK: - Helpers
 
         private func createScrollView() -> UIScrollView {
             let scrollView = UIScrollView()

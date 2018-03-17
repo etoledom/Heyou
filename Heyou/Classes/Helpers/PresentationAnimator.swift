@@ -45,14 +45,8 @@ class ModalAlertAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 
         originFrame = alertView.frame
 
-        if #available(iOS 8.0, *) {
-            if let toView = toView, presenting == true {
-                containerView.addSubview(toView)
-            }
-        } else {
-            if let toView = toView {
-                containerView.insertSubview(toView, at: 0)
-            }
+        if let toView = toView, presenting == true {
+            containerView.addSubview(toView)
         }
 
         if presenting {
