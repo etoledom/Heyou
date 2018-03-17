@@ -51,7 +51,7 @@ class ViewController: UITableViewController {
             Heyou.Section(elements: [
                 Heyou.Title(text: "Title"),
                 Heyou.Body(text: "A long description text goes here."),
-                Heyou.Button(text: "Secondary", style: Heyou.ButtonStyle.default),
+                Heyou.Button(text: "Secondary", style: Heyou.ButtonStyle.default)
             ]),
             Heyou.Section(elements: [
                 Heyou.Image(image: UIImage(named: "alert")!),

@@ -80,7 +80,7 @@ public extension Heyou {
         static func styleCancelButton(_ button: UIButton) {
             let textColor = StyleDefaults.normalButtonTextColor
             button.setTitleColor(textColor, for: UIControlState())
-            
+
             if let font = button.titleLabel?.font {
                 let newFont = UIFont.boldSystemFont(ofSize: font.pointSize)
                 button.titleLabel?.font = newFont
