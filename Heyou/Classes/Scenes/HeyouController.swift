@@ -10,14 +10,6 @@ import UIKit
 
 typealias Layout = NSLayoutAttribute
 
-extension Heyou {
-    public enum ButtonStyle {
-        case main
-        case normal
-    }
-}
-
-
 public extension Heyou {
     struct Style {
         //Globals
@@ -65,7 +57,7 @@ public extension Heyou {
         static var separatorColor = UIColor(white: 0.85, alpha: 1)
         static var separatorMarging: CGFloat = 8
 
-        static func styleMainButton(_ button: UIButton) {
+        static func styleActionButton(_ button: UIButton) {
             button.titleLabel?.font = StyleDefaults.mainButtonFont
             button.backgroundColor = StyleDefaults.mainButtonBackgroundColor
             let textColor = StyleDefaults.mainButtonTextColor
@@ -82,6 +74,21 @@ public extension Heyou {
 
         static func styleNormalButton(_ button: UIButton) {
             let textColor = StyleDefaults.normalButtonTextColor
+            button.setTitleColor(textColor, for: UIControlState())
+        }
+
+        static func styleCancelButton(_ button: UIButton) {
+            let textColor = StyleDefaults.normalButtonTextColor
+            button.setTitleColor(textColor, for: UIControlState())
+
+            if let font = button.titleLabel?.font {
+                let newFont = UIFont.boldSystemFont(ofSize: font.pointSize)
+                button.titleLabel?.font = newFont
+            }
+        }
+
+        static func styleDestructiveButton(_ button: UIButton) {
+            let textColor = UIColor.red
             button.setTitleColor(textColor, for: UIControlState())
         }
     }
