@@ -34,8 +34,9 @@ public extension Heyou {
             let stackView = UIStackView()
             stackView.translatesAutoresizingMaskIntoConstraints = false
             stackView.axis = .vertical
-//            stackView.layoutMargins = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+            stackView.layoutMargins = UIEdgeInsets(top: 24, left: 24, bottom: 24, right: 24)
             stackView.isLayoutMarginsRelativeArrangement = true
+            stackView.spacing = 5
 
             return stackView
         }
@@ -44,8 +45,6 @@ public extension Heyou {
             let view = UIView()
             view.translatesAutoresizingMaskIntoConstraints = false
             view.backgroundColor = StyleDefaults.backgroundColor
-//            view.layer.cornerRadius = CGFloat(StyleDefaults.cornerRadius)
-//            view.layer.masksToBounds = true
             return view
         }
 

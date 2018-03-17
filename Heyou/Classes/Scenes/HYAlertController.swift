@@ -106,7 +106,7 @@ open class Heyou: UIViewController {
 
     // MARK: - ViewController life cycle
 
-    public init(elements: [Section]) {
+    public init(elements: [SectionProtocol & ElementProtocol]) {
         self.elements = elements
         super.init(nibName: nil, bundle: nil)
     }
