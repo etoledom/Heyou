@@ -10,206 +10,134 @@ import UIKit
 
 typealias Layout = NSLayoutAttribute
 
-public enum HYAlertButtonsLayout {
-    case horizontal
-    case vertical
+extension Heyou {
+    public enum ButtonStyle {
+        case main
+        case normal
+    }
 }
 
-public enum HYAlertElement {
-    case title(String)
-    case subTitle(String)
-    case description(String)
-    case image(named: String)
+
+public extension Heyou {
+    struct Style {
+        //Globals
+        static let sideMarging: CGFloat = 16
+        static let topMarging: CGFloat = 12
+        static let bottomMarging: CGFloat = 12
+        //Labels
+        static let labelSeparation: CGFloat = 10
+        //Buttons
+        static let mainButtonMarging: CGFloat = 16
+        static let mainButtonHeight: CGFloat = 44
+        static let mainButtonWidth: CGFloat = 250
+        static let normalButtonHeight: CGFloat = 44
+        static let buttonsSeparation: CGFloat = 8
+    }
 }
 
-public enum HYAlertButtonStyle {
-    case main(String)
-    case normal(String)
-}
+public extension Heyou {
+    public struct StyleDefaults {
 
-struct HYAlertStyle {
-    //Globals
-    static let sideMarging: CGFloat = 16
-    static let topMarging: CGFloat = 12
-    static let bottomMarging: CGFloat = 12
-    //Labels
-    static let labelSeparation: CGFloat = 10
-    //Buttons
-    static let mainButtonMarging: CGFloat = 16
-    static let mainButtonHeight: CGFloat = 44
-    static let mainButtonWidth: CGFloat = 250
-    static let normalButtonHeight: CGFloat = 44
-    static let buttonsSeparation: CGFloat = 8
-}
+        //Globals
+        static var alertWidth  = 300
+        static var backgroundColor = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1.0)
+        static var cornerRadius = 10
 
-public struct HYAlertStyleDefaults {
+        //Labels
+        static var titleFont = UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)
+        static var titleTextColor = UIColor(red:0.20, green:0.27, blue:0.30, alpha:1.0)
+        static var subTitleFont = UIFont.preferredFont(forTextStyle: UIFontTextStyle.subheadline)
+        static var subTitleTextColor = UIColor(red:0.20, green:0.27, blue:0.30, alpha:1.0)
+        static var descriptionFont = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
+        static var descriptionTextColor = UIColor(red:0.20, green:0.27, blue:0.30, alpha:1.0)
 
-    //Globals
-    static var alertWidth  = 300
-    static var backgroundColor = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1.0)
-    static var cornerRadius = 10
+        //Buttons
+        static var mainButtonCornerRadius = 0
+        static var mainButtonObal = true
+        static var mainButtonBackgroundColor = UIColor(red:0.00, green:0.45, blue:1.00, alpha:1.0)
+        static var mainButtonFont = UIFont.boldSystemFont(ofSize: 16)
+        static var mainButtonTextColor = UIColor.white
 
-    //Labels
-    static var titleFont = UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)
-    static var titleTextColor = UIColor(red:0.20, green:0.27, blue:0.30, alpha:1.0)
-    static var subTitleFont = UIFont.preferredFont(forTextStyle: UIFontTextStyle.subheadline)
-    static var subTitleTextColor = UIColor(red:0.20, green:0.27, blue:0.30, alpha:1.0)
-    static var descriptionFont = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
-    static var descriptionTextColor = UIColor(red:0.20, green:0.27, blue:0.30, alpha:1.0)
+        static var normalButtonFont = UIFont.boldSystemFont(ofSize: 16)
+        static var normalButtonTextColor = UIColor(red:0.00, green:0.45, blue:1.00, alpha:1.0)
 
-    //Buttons
-    static var mainButtonCornerRadius = 0
-    static var mainButtonObal = true
-    static var mainButtonBackgroundColor = UIColor(red:0.00, green:0.45, blue:1.00, alpha:1.0)
-    static var mainButtonFont = UIFont.boldSystemFont(ofSize: 16)
-    static var mainButtonTextColor = UIColor.white
+        //Extras
+        static var separatorColor = UIColor(white: 0.85, alpha: 1)
+        static var separatorMarging: CGFloat = 8
 
-    static var normalButtonFont = UIFont.boldSystemFont(ofSize: 16)
-    static var normalButtonTextColor = UIColor(red:0.00, green:0.45, blue:1.00, alpha:1.0)
+        static func styleMainButton(_ button: UIButton) {
+            button.titleLabel?.font = StyleDefaults.mainButtonFont
+            button.backgroundColor = StyleDefaults.mainButtonBackgroundColor
+            let textColor = StyleDefaults.mainButtonTextColor
+            button.setTitleColor(textColor, for: UIControlState())
 
-    //Extras
-    static var separatorColor = UIColor(white: 0.85, alpha: 1)
-    static var separatorMarging: CGFloat = 8
+            if StyleDefaults.mainButtonObal {
+                button.layer.cornerRadius = CGFloat(Style.mainButtonHeight) / 2
+            } else {
+                button.layer.cornerRadius = CGFloat(StyleDefaults.mainButtonCornerRadius)
+            }
 
-    //Applaying style
+            button.layer.masksToBounds = true
+        }
 
-    static func style(_ label: UILabel, type: HYAlertElement) {
-        switch type {
-        case .title:
-            label.numberOfLines = 2
-            label.font  = HYAlertStyleDefaults.titleFont
-            label.textColor = HYAlertStyleDefaults.titleTextColor
-            label.textAlignment = .center
-        case .subTitle:
-            label.numberOfLines = 2
-            label.font  = HYAlertStyleDefaults.subTitleFont
-            label.textColor = HYAlertStyleDefaults.subTitleTextColor
-            label.textAlignment = .center
-        case .description:
-            label.numberOfLines = 5
-            label.font  = HYAlertStyleDefaults.descriptionFont
-            label.textColor = HYAlertStyleDefaults.descriptionTextColor
-            label.textAlignment = .center
-        default:
-            assertionFailure("\(type) case not implemented")
+        static func styleNormalButton(_ button: UIButton) {
+            let textColor = StyleDefaults.normalButtonTextColor
+            button.setTitleColor(textColor, for: UIControlState())
         }
     }
 
-    static func styleMainButton(_ button: UIButton) {
-        button.titleLabel?.font = HYAlertStyleDefaults.mainButtonFont
-        button.backgroundColor = HYAlertStyleDefaults.mainButtonBackgroundColor
-        let textColor = HYAlertStyleDefaults.mainButtonTextColor
-        button.setTitleColor(textColor, for: UIControlState())
-
-        if HYAlertStyleDefaults.mainButtonObal {
-            button.layer.cornerRadius = CGFloat(HYAlertStyle.mainButtonHeight) / 2
-        } else {
-            button.layer.cornerRadius = CGFloat(HYAlertStyleDefaults.mainButtonCornerRadius)
-        }
-
-        button.layer.masksToBounds = true
-    }
-
-    static func styleNormalButton(_ button: UIButton) {
-        button.titleLabel?.font = HYAlertStyleDefaults.normalButtonFont
-        let textColor = HYAlertStyleDefaults.normalButtonTextColor
-        button.setTitleColor(textColor, for: UIControlState())
-    }
 }
 
-open class HYAlertController: UIViewController, HYPresentationAnimatable {
+open class Heyou: UIViewController {
 
     ///Array of UI Elements to show
-    open var elements  = [HYAlertElement]()
-    ///Array of buttons titles. This is not compatible with 'self.buttons'
-    open var buttonsTitles = [String]()
-    ///Layout of buttons. If it's set to .horizontal but the total width of all buttons is too big,
-    ///it will be automatically resetted to .vertical. Default: .vertical
-    open var buttonsLayout = HYAlertButtonsLayout.vertical
+    let elements: [ElementProtocol]
     ///Closure to call when a button is tapped. The return indicates if the alert should be dismissed after pressing the button.
     open var onButtonTap: (_ index: Int, _ title: String) -> Bool = {_, _ in return true }
 
     ///Closure to call after the completion animation is finished when the dismiss is trigered by a button press.
     ///Dismiss triggered by tapping the background does not trigger this closure
     open var onDismissCompletion: (_ index: Int, _ title: String) -> Void = {_, _ in return }
-    ///True if the last button acts as a "Cancel" button, automatically dismissing the Alert.
 
-    ///Default: true
-    open var dismissOnLastButton = true
-
-    /// Default: true
-    open var drawLineSeparator = true
-
-    open func addAction(_ action: HYAlertAction) {
-        buttons.append(action)
-    }
-
-    open func addTitle(_ title: String) {
-        elements.append(.title(title))
-    }
-
-    open func addSubtitle(_ subtitle: String) {
-        elements.append(.subTitle(subtitle))
-    }
-
-    open func addImage(name: String) {
-        elements.append(.image(named: name))
-    }
-
-    open func addDescription(_ description: String) {
-        elements.append(.description(description))
-    }
-
-    var topView: UIView {
-        guard let view = alertView else { assertionFailure("alertView is nil"); return UIView() }
-        return view
-    }
-    var backgroundView: UIView {
-        return view
-    }
-    var alertView: HYAlertView?
     var animator = HYModalAlertAnimator()
+    private var alertView: AlertView?
 
-    fileprivate var buttons = [HYAlertAction]()
-    fileprivate weak var presentingVC: UIViewController?
+    private weak var presentingVC: UIViewController?
+
+    // MARK: - ViewController life cycle
+
+    public init(elements: [Section]) {
+        self.elements = elements
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        self.elements = []
+        super.init(coder: aDecoder)
+    }
 
     override open func viewDidLoad() {
         super.viewDidLoad()
-        createAlertView()
-        setBackground()
+        configureAlertView()
+        configureBackground()
     }
 
-    func setBackground() {
+    func configureBackground() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.onTap(_:)) )
         view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         view.addGestureRecognizer(tap)
     }
 
-    func createAlertView() {
-        let alertView = HYAlertView(buttonsLayout: buttonsLayout, actions: buttons)
+    func configureAlertView() {
+        let alertView = AlertView(elements: elements)
         self.alertView = alertView
-        alertView.elements = elements
-        alertView.buttonActions = buttons
-
-        alertView.buttons.forEach {
-            $0.addTarget(self, action: #selector(onButtonPressed(sender:)), for: .touchUpInside)
-        }
-
-        alertView.drawSeparator = drawLineSeparator
-        alertView.onButtonPressed = {[weak self] (index, title) in
-            guard let weakSelf = self else { return }
-
-            let showldDismiss = weakSelf.onButtonTap(index, title)
-            if showldDismiss {
-                weakSelf.dismiss {
-                    weakSelf.onDismissCompletion(index, title)
-                }
-            }
-        }
 
         view.addSubview(alertView)
 
-        alertView.constraintCentered(to: view)
+        NSLayoutConstraint.activate([
+            view.centerXAnchor.constraint(equalTo: alertView.centerXAnchor),
+            view.centerYAnchor.constraint(equalTo: alertView.centerYAnchor),
+        ])
     }
 
     func dismiss(completion: (() -> Void)? = nil) {
@@ -241,21 +169,21 @@ open class HYAlertController: UIViewController, HYPresentationAnimatable {
             }
 
             show(onViewController: topController)
-            // topController should now be your topmost view controller
-        }
-    }
-
-    @objc private func onButtonPressed(sender: UIButton) {
-        let action = buttons[sender.tag]
-        if let handler = action.handler {
-            handler(action)
-        } else {
-            dismiss()
         }
     }
 }
 
-extension HYAlertController: UIViewControllerTransitioningDelegate {
+extension Heyou: HYPresentationAnimatable {
+    var topView: UIView {
+        guard let view = alertView else { assertionFailure("alertView is nil"); return UIView() }
+        return view
+    }
+    var backgroundView: UIView {
+        return view
+    }
+}
+
+extension Heyou: UIViewControllerTransitioningDelegate {
     public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return animator
     }

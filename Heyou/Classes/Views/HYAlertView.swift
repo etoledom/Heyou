@@ -8,154 +8,92 @@
 
 import UIKit
 
-final class HYAlertView: UIView {
+extension Heyou {
+    final class AlertView: UIView {
 
-    fileprivate let topView = UIView()
-    fileprivate let buttonsView = HYAlertButtonsView()
-    var buttons: [UIButton] {
-        return buttonsView.buttons
-    }
-    let buttonsLayout: HYAlertButtonsLayout
+        private let rootStackView: UIStackView = {
+            
+            let stackView = UIStackView()
+            stackView.translatesAutoresizingMaskIntoConstraints = false
+            stackView.axis = .vertical
+            stackView.alignment = .fill
+            stackView.distribution = .fill
 
-    var onButtonPressed: (_ index: Int, _ title: String) -> Void = {_, _ in}
-    var elements: [HYAlertElement] = [] {
-        didSet { createSubviews() }
-    }
+            return stackView
+        }()
 
-    var buttonActions: [HYAlertAction] = []
-    var drawSeparator = true
+        private let elements: [ElementProtocol]
 
-    init(buttonsLayout layout: HYAlertButtonsLayout, actions: [HYAlertAction]) {
-        buttonsLayout = layout
-        super.init(frame: CGRect.zero)
+        private var buttonActions: [UIButton: Button] = [:]
 
-        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.onBackgroundTap(_:))))
-        self.translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = HYAlertStyleDefaults.backgroundColor
-        layer.cornerRadius = CGFloat(HYAlertStyleDefaults.cornerRadius)
-        layer.masksToBounds = true
+        init(elements: [ElementProtocol]) {
+            self.elements = elements
 
-        createLayout()
-        createSubviews()
-        createButtonsView(actions)
-        buttonActions = actions
-    }
+            super.init(frame: CGRect.zero)
 
-    required init?(coder aDecoder: NSCoder) {
-        buttonsLayout = .horizontal
-        super.init(coder: aDecoder)
-    }
-
-    @objc func onBackgroundTap(_ tap: UITapGestureRecognizer) {}
-
-    @objc func onButtonTap(_ sender: UIButton) {
-        onButtonPressed(sender.tag, sender.titleLabel?.text ?? "")
-        print("Button Pressed at Index: \(sender.tag)")
-    }
-
-    fileprivate func createLayout() {
-        self.constraint(width: CGFloat(HYAlertStyleDefaults.alertWidth))
-    }
-
-    fileprivate func createSubviews() {
-        createTopView()
-        if drawSeparator {
-            createSeparator()
+            configureView()
+            configureStackView()
+            configureHerarchy()
+            createLayout()
         }
-    }
 
-    private func createLabel(_ type: HYAlertElement, text: String) -> UIView {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        topView.addSubview(label)
-        label.text = text
-        HYAlertStyleDefaults.style(label, type: type)
-        label.sizeToFit()
-        return label
-    }
-
-    private func imageView(_ name: String) -> UIView {
-        let imageView = UIImageView(image: UIImage(named: name))
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
-        topView.addSubview(imageView)
-        return imageView
-    }
-
-    private func viewForElement(_ element: HYAlertElement) -> UIView {
-        switch element {
-        case .title(let content):
-            return createLabel(element, text: content)
-        case .subTitle(let content):
-            return createLabel(element, text: content)
-        case .description(let content):
-            return createLabel(element, text: content)
-        case .image(let content):
-            return imageView(content)
+        required init?(coder aDecoder: NSCoder) {
+            self.elements = []
+            super.init(coder: aDecoder)
         }
-    }
 
-    private func createTopView() {
-        // TOP VIEW
-        topView.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(topView)
+        @objc func onBackgroundTap(_ tap: UITapGestureRecognizer) {}
 
-        topView.backgroundColor = UIColor.clear
+        fileprivate func createLayout() {
+            widthAnchor.constraint(equalToConstant: CGFloat(StyleDefaults.alertWidth)).isActive = true
+        }
 
-        topView.constraintLeading(to: self)
-        topView.constraintTrailing(to: self)
-        topView.constraintTop(to: self)
+        private func viewForElement(_ element: ElementProtocol) -> UIView {
+            return element.renderize()
+        }
 
-        var createdViews = [UIView]()
-        for (index, element) in elements.enumerated() {
-            let view = viewForElement(element)
+        private func configureView() {
+            addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.onBackgroundTap(_:))))
+            translatesAutoresizingMaskIntoConstraints = false
+            backgroundColor = .clear
+            layer.cornerRadius = 10
+            layer.masksToBounds = true
+        }
 
-            let isFirstElement = (index == 0)
-            if isFirstElement {
-                view.constraintTop(to: topView, margin: HYAlertStyle.topMarging)
-            } else {
-                let previousView = createdViews[index - 1]
-                topView.constraintSubviewsVertically(top: previousView, bottom: view, space: CGFloat(HYAlertStyle.labelSeparation))
+        private func configureHerarchy() {
+            elements.forEach {
+                configure(element: $0)
             }
-
-            let isLastElement = (index + 1 == elements.count)
-            if isLastElement {
-                view.constraintBottom(to: topView, margin: HYAlertStyle.bottomMarging)
-            }
-            view.constraintLeading(to: topView, margin: HYAlertStyle.sideMarging)
-            view.constraintTrailing(to: topView, margin: HYAlertStyle.sideMarging)
-
-            createdViews.append(view)
         }
-    }
 
-    fileprivate var separatorView: UIView = {
-        let separator = UIView()
-        separator.backgroundColor = HYAlertStyleDefaults.separatorColor
-        separator.translatesAutoresizingMaskIntoConstraints = false
-        return separator
-    }()
+        private func configure(element: ElementProtocol) {
+            let view = element.renderize()
+            if let button = view as? UIButton, let buttonElement = element as? Button {
+                configureButtonTargetAction(for: button, with: buttonElement)
+            }
+            rootStackView.addArrangedSubview(view)
+        }
 
-    fileprivate func createSeparator() {
-        addSubview(separatorView)
+        private func configureButtonTargetAction(for button: UIButton, with element: Button) {
+            button.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
+            buttonActions[button] = element
+        }
 
-        separatorView.constraint(height: 1)
-        separatorView.constraintLeading(to: self, margin: HYAlertStyleDefaults.separatorMarging)
-        separatorView.constraintTrailing(to: self, margin: HYAlertStyleDefaults.separatorMarging)
-        constraintSubviewsVertically(top: topView, bottom: separatorView, space: 0)
-    }
+        @objc func buttonPressed(sender: UIButton) {
+            guard let buttonElement = buttonActions[sender] else {
+                return
+            }
+            buttonElement.handler?(buttonElement)
+        }
 
-    fileprivate func createButtonsView(_ buttons: [HYAlertAction]) {
-        buttonsView.addButtons(actions: buttons)
-        addSubview(buttonsView)
-
-        constraintSubviewsVertically(top: separatorView, bottom: buttonsView)
-        buttonsView.constraintBottom(to: self)
-        buttonsView.constraintLeading(to: self)
-        buttonsView.constraintTrailing(to: self)
-    }
-
-    private func configureScrollView() {
-
+        private func configureStackView() {
+            addSubview(rootStackView)
+            NSLayoutConstraint.activate([
+                rootStackView.topAnchor.constraint(equalTo: topAnchor),
+                rootStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+                rootStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+                rootStackView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            ])
+        }
     }
 }

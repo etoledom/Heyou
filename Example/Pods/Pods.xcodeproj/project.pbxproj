@@ -15,13 +15,17 @@
 		45AAE205A49E7A4BF0F82E801B84EEC9 /* HYAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D77172DCFFEA46710BACBDE42A38A2 /* HYAlertController.swift */; };
 		49789502B515CF55F8C6B5EB30D5B976 /* Pods-Heyou_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 30EA1F3797D6F20954540976BFAE42C2 /* Pods-Heyou_Example-dummy.m */; };
 		4B6B2DCACD7A5052389E2BA6CC2A5396 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		7E8EF0392042E68600C3FBB3 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8EF0382042E68600C3FBB3 /* Element.swift */; };
+		7E8EF03B2042E6F100C3FBB3 /* TitleElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8EF03A2042E6F100C3FBB3 /* TitleElement.swift */; };
+		7E8EF03D2042E7C000C3FBB3 /* BodyElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8EF03C2042E7C000C3FBB3 /* BodyElement.swift */; };
+		7E8EF03F2042E91800C3FBB3 /* ButtonElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8EF03E2042E91800C3FBB3 /* ButtonElement.swift */; };
+		7E8EF0412042EAE500C3FBB3 /* SectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8EF0402042EAE500C3FBB3 /* SectionElement.swift */; };
+		7EB3CB202059F34E00FFFBAA /* ButtonsSectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB3CB1F2059F34E00FFFBAA /* ButtonsSectionElement.swift */; };
+		7EEF20DD2059CDA500884F48 /* ImageElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF20DC2059CDA500884F48 /* ImageElement.swift */; };
 		85B63FB7AB650CF55AD04DB368ED42B0 /* HYPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBBDDDAD98B8BC48DF4D8F7707B4BDE /* HYPresentationAnimator.swift */; };
-		8850F9D56C5AF74B0144D35424F33C55 /* ConstraintsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40F666D59C7397896DA01BF34EB73F1 /* ConstraintsHelper.swift */; };
 		9F373FBB0B9FA8C334B3DFDD8E4E5379 /* Pods-Heyou_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 082E4E3C0410552652EDCC820BCF6726 /* Pods-Heyou_Tests-dummy.m */; };
 		CBFD18BCEE3DB11C7D699922232F65A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		CE8981C3764F897643E00452F7009C39 /* Pods-Heyou_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F5BEE9A635F6EA87184090104301D16F /* Pods-Heyou_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DBBAB6DC867321F8F2CF881F2A903EE6 /* HYAlertButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE68D006646FEFD90FE310E504F69B1 /* HYAlertButtonsView.swift */; };
-		FE1A46CDF9E09F513B25C7DF28DF8C95 /* HYAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D933550143EE61A22D0368A1494CAF /* HYAlertAction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,29 +41,34 @@
 /* Begin PBXFileReference section */
 		079B70FE6010F31AEE1DC8336AF2D9F2 /* Pods-Heyou_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Heyou_Example.release.xcconfig"; sourceTree = "<group>"; };
 		082E4E3C0410552652EDCC820BCF6726 /* Pods-Heyou_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Heyou_Tests-dummy.m"; sourceTree = "<group>"; };
-		0FF78743F73E6D43B294579C7205C073 /* Pods-Heyou_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Heyou_Example.modulemap"; sourceTree = "<group>"; };
-		1AE68D006646FEFD90FE310E504F69B1 /* HYAlertButtonsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HYAlertButtonsView.swift; sourceTree = "<group>"; };
+		0FF78743F73E6D43B294579C7205C073 /* Pods-Heyou_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Heyou_Example.modulemap"; sourceTree = "<group>"; };
 		1BA13AE753CDDF256FDD1E89AD5E1EEC /* Heyou.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Heyou.xcconfig; sourceTree = "<group>"; };
-		21B8A3D6794753876BCAC06F027F5641 /* Pods_Heyou_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Heyou_Tests.framework; path = "Pods-Heyou_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21B8A3D6794753876BCAC06F027F5641 /* Pods_Heyou_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heyou_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24D77172DCFFEA46710BACBDE42A38A2 /* HYAlertController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HYAlertController.swift; sourceTree = "<group>"; };
 		2BE03F818988A673BDF26B905A3A311A /* Pods-Heyou_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Heyou_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		30EA1F3797D6F20954540976BFAE42C2 /* Pods-Heyou_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Heyou_Example-dummy.m"; sourceTree = "<group>"; };
 		32B3B54CBF89868A6A84FCB2CF0DC866 /* HYAlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HYAlertView.swift; sourceTree = "<group>"; };
 		373BD0068F2B3E6B4491F66941A56DD2 /* Pods-Heyou_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Heyou_Example-resources.sh"; sourceTree = "<group>"; };
 		3E156761608041D4260D3F84591DAF37 /* Pods-Heyou_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Heyou_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		415D3D5967977838C66966584FA69796 /* Pods_Heyou_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Heyou_Example.framework; path = "Pods-Heyou_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4270792BABE48FA2962EFFF385AD25C7 /* Heyou.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Heyou.modulemap; sourceTree = "<group>"; };
-		51CEB1B19312619903E8A4BC6E6137FA /* Pods-Heyou_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Heyou_Tests.modulemap"; sourceTree = "<group>"; };
+		415D3D5967977838C66966584FA69796 /* Pods_Heyou_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heyou_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4270792BABE48FA2962EFFF385AD25C7 /* Heyou.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Heyou.modulemap; sourceTree = "<group>"; };
+		51CEB1B19312619903E8A4BC6E6137FA /* Pods-Heyou_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Heyou_Tests.modulemap"; sourceTree = "<group>"; };
 		5820E1BEBF662446738B4C913ABCC251 /* Pods-Heyou_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Heyou_Example-frameworks.sh"; sourceTree = "<group>"; };
 		5C1DD7E169AEA468E6AA82039F5CFD02 /* Pods-Heyou_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Heyou_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		62A5D68A2BB8E144A419D45E25C1EB62 /* Pods-Heyou_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Heyou_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6620093BBB0FB2D5B6217F7A0725D96C /* Pods-Heyou_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Heyou_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		692C74A0DBCBA8D98CAF1270DD8C4B06 /* Heyou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Heyou.framework; path = Heyou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		692C74A0DBCBA8D98CAF1270DD8C4B06 /* Heyou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Heyou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75E7577427B4449B5BB707A8DC39B363 /* Pods-Heyou_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Heyou_Tests-umbrella.h"; sourceTree = "<group>"; };
 		7C396EC5D4F1243A70AC9099015A4370 /* Heyou-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Heyou-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		93D933550143EE61A22D0368A1494CAF /* HYAlertAction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HYAlertAction.swift; sourceTree = "<group>"; };
+		7E8EF0382042E68600C3FBB3 /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
+		7E8EF03A2042E6F100C3FBB3 /* TitleElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleElement.swift; sourceTree = "<group>"; };
+		7E8EF03C2042E7C000C3FBB3 /* BodyElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyElement.swift; sourceTree = "<group>"; };
+		7E8EF03E2042E91800C3FBB3 /* ButtonElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonElement.swift; sourceTree = "<group>"; };
+		7E8EF0402042EAE500C3FBB3 /* SectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionElement.swift; sourceTree = "<group>"; };
+		7EB3CB1F2059F34E00FFFBAA /* ButtonsSectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsSectionElement.swift; sourceTree = "<group>"; };
+		7EEF20DC2059CDA500884F48 /* ImageElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageElement.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		97B4F27FA36045BD985633DA3AB20119 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B088FD96DD7B4267960338E47C0B6BD /* Heyou-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Heyou-umbrella.h"; sourceTree = "<group>"; };
 		A0A358E43B98C40441322AAF5C372926 /* Heyou-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Heyou-prefix.pch"; sourceTree = "<group>"; };
@@ -67,7 +76,6 @@
 		CDBBDDDAD98B8BC48DF4D8F7707B4BDE /* HYPresentationAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HYPresentationAnimator.swift; sourceTree = "<group>"; };
 		CE12E0405B0D258ABCA3A5BD0AD0153D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAF7E4426B5327DAA2110685D5F80E09 /* Pods-Heyou_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Heyou_Tests-resources.sh"; sourceTree = "<group>"; };
-		E40F666D59C7397896DA01BF34EB73F1 /* ConstraintsHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstraintsHelper.swift; sourceTree = "<group>"; };
 		EAE76E6ACAC38DC149EAE6B58C555205 /* Pods-Heyou_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Heyou_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F549C6C3505FC45F26D29505173FB824 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5BEE9A635F6EA87184090104301D16F /* Pods-Heyou_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Heyou_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -123,7 +131,6 @@
 		25CA72CF1E621B5E28D90A28AB202067 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				E40F666D59C7397896DA01BF34EB73F1 /* ConstraintsHelper.swift */,
 				CDBBDDDAD98B8BC48DF4D8F7707B4BDE /* HYPresentationAnimator.swift */,
 			);
 			name = Helpers;
@@ -142,8 +149,6 @@
 		714CFAF6298E6F54251703460F7BF862 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				93D933550143EE61A22D0368A1494CAF /* HYAlertAction.swift */,
-				1AE68D006646FEFD90FE310E504F69B1 /* HYAlertButtonsView.swift */,
 				32B3B54CBF89868A6A84FCB2CF0DC866 /* HYAlertView.swift */,
 			);
 			name = Views;
@@ -167,6 +172,20 @@
 				98C3E8606E9F414B34CB68D1D537DB5D /* Products */,
 				E21CE0869F75A4558C33756010F6C94E /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		7E8EF0372042E23200C3FBB3 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				7E8EF0382042E68600C3FBB3 /* Element.swift */,
+				7E8EF03A2042E6F100C3FBB3 /* TitleElement.swift */,
+				7E8EF03C2042E7C000C3FBB3 /* BodyElement.swift */,
+				7E8EF03E2042E91800C3FBB3 /* ButtonElement.swift */,
+				7EEF20DC2059CDA500884F48 /* ImageElement.swift */,
+				7E8EF0402042EAE500C3FBB3 /* SectionElement.swift */,
+				7EB3CB1F2059F34E00FFFBAA /* ButtonsSectionElement.swift */,
+			);
+			path = Elements;
 			sourceTree = "<group>";
 		};
 		841038670445654A41AB24CE1C053061 /* Pods-Heyou_Tests */ = {
@@ -208,10 +227,11 @@
 		C7CE0CDE271211063E7BA1E37E0E27E2 /* Heyou */ = {
 			isa = PBXGroup;
 			children = (
+				7E8EF0372042E23200C3FBB3 /* Elements */,
 				25CA72CF1E621B5E28D90A28AB202067 /* Helpers */,
 				662B01EB286F4BDD0A6638E2A72E5D69 /* Scenes */,
-				E3B5FDC743B288F5CA9D6C9B807577BC /* Support Files */,
 				714CFAF6298E6F54251703460F7BF862 /* Views */,
+				E3B5FDC743B288F5CA9D6C9B807577BC /* Support Files */,
 			);
 			name = Heyou;
 			path = ../..;
@@ -379,13 +399,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8850F9D56C5AF74B0144D35424F33C55 /* ConstraintsHelper.swift in Sources */,
 				1F980AA1CA89443A8568233880F5740B /* Heyou-dummy.m in Sources */,
-				FE1A46CDF9E09F513B25C7DF28DF8C95 /* HYAlertAction.swift in Sources */,
-				DBBAB6DC867321F8F2CF881F2A903EE6 /* HYAlertButtonsView.swift in Sources */,
+				7E8EF0392042E68600C3FBB3 /* Element.swift in Sources */,
+				7E8EF03B2042E6F100C3FBB3 /* TitleElement.swift in Sources */,
+				7EB3CB202059F34E00FFFBAA /* ButtonsSectionElement.swift in Sources */,
+				7E8EF03D2042E7C000C3FBB3 /* BodyElement.swift in Sources */,
 				45AAE205A49E7A4BF0F82E801B84EEC9 /* HYAlertController.swift in Sources */,
 				120908882343C770C47CCF9C29237186 /* HYAlertView.swift in Sources */,
 				85B63FB7AB650CF55AD04DB368ED42B0 /* HYPresentationAnimator.swift in Sources */,
+				7E8EF0412042EAE500C3FBB3 /* SectionElement.swift in Sources */,
+				7EEF20DD2059CDA500884F48 /* ImageElement.swift in Sources */,
+				7E8EF03F2042E91800C3FBB3 /* ButtonElement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
