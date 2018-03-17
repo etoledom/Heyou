@@ -15,6 +15,7 @@
 		45AAE205A49E7A4BF0F82E801B84EEC9 /* HeyouController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D77172DCFFEA46710BACBDE42A38A2 /* HeyouController.swift */; };
 		49789502B515CF55F8C6B5EB30D5B976 /* Pods-Heyou_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 30EA1F3797D6F20954540976BFAE42C2 /* Pods-Heyou_Example-dummy.m */; };
 		4B6B2DCACD7A5052389E2BA6CC2A5396 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		7E4AA88A205D3A72006D1A86 /* ScrollableSectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4AA889205D3A72006D1A86 /* ScrollableSectionElement.swift */; };
 		7E8EF0392042E68600C3FBB3 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8EF0382042E68600C3FBB3 /* Element.swift */; };
 		7E8EF03B2042E6F100C3FBB3 /* TitleElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8EF03A2042E6F100C3FBB3 /* TitleElement.swift */; };
 		7E8EF03D2042E7C000C3FBB3 /* BodyElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8EF03C2042E7C000C3FBB3 /* BodyElement.swift */; };
@@ -61,6 +62,7 @@
 		692C74A0DBCBA8D98CAF1270DD8C4B06 /* Heyou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Heyou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75E7577427B4449B5BB707A8DC39B363 /* Pods-Heyou_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Heyou_Tests-umbrella.h"; sourceTree = "<group>"; };
 		7C396EC5D4F1243A70AC9099015A4370 /* Heyou-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Heyou-dummy.m"; sourceTree = "<group>"; };
+		7E4AA889205D3A72006D1A86 /* ScrollableSectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableSectionElement.swift; sourceTree = "<group>"; };
 		7E8EF0382042E68600C3FBB3 /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
 		7E8EF03A2042E6F100C3FBB3 /* TitleElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleElement.swift; sourceTree = "<group>"; };
 		7E8EF03C2042E7C000C3FBB3 /* BodyElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyElement.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				7E8EF03E2042E91800C3FBB3 /* ButtonElement.swift */,
 				7EEF20DC2059CDA500884F48 /* ImageElement.swift */,
 				7E8EF0402042EAE500C3FBB3 /* SectionElement.swift */,
+				7E4AA889205D3A72006D1A86 /* ScrollableSectionElement.swift */,
 				7EB3CB1F2059F34E00FFFBAA /* ButtonsSectionElement.swift */,
 			);
 			path = Elements;
@@ -406,6 +409,7 @@
 				7E8EF03D2042E7C000C3FBB3 /* BodyElement.swift in Sources */,
 				45AAE205A49E7A4BF0F82E801B84EEC9 /* HeyouController.swift in Sources */,
 				120908882343C770C47CCF9C29237186 /* HeyouView.swift in Sources */,
+				7E4AA88A205D3A72006D1A86 /* ScrollableSectionElement.swift in Sources */,
 				85B63FB7AB650CF55AD04DB368ED42B0 /* PresentationAnimator.swift in Sources */,
 				7E8EF0412042EAE500C3FBB3 /* SectionElement.swift in Sources */,
 				7EEF20DD2059CDA500884F48 /* ImageElement.swift in Sources */,

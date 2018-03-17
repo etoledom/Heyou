@@ -23,6 +23,7 @@ public extension Heyou {
             if #available(iOS 10.0, *) {
                 label.adjustsFontForContentSizeCategory = true
             }
+            label.setContentHuggingPriority(.required, for: .vertical)
             return label
         }
     }

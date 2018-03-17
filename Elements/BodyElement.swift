@@ -16,6 +16,7 @@ public extension Heyou {
 
         public func renderize() -> UIView {
             let label = UILabel()
+            label.translatesAutoresizingMaskIntoConstraints = false
             label.text = text
             label.textAlignment = .center
             label.numberOfLines = 0

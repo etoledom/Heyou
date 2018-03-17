@@ -16,6 +16,7 @@ class ViewController: UITableViewController {
         "Second",
         "Simple",
         "Buttons section",
+        "Long system alert",
         "Normal alert"
     ]
 
@@ -35,6 +36,8 @@ class ViewController: UITableViewController {
             showExample_02()
         case 3:
             showExample_03()
+        case 4:
+            showLongDefault()
         default:
             showDefault()
         }
@@ -44,18 +47,27 @@ class ViewController: UITableViewController {
 
     func showExample_00() {
         let alertController = Heyou(elements: [
-            Heyou.Section(elements: [
-                Heyou.Image(image: UIImage(named: "alert")!),
-                Heyou.Body(text: "Some text behind the button"),
-            ]),
-            Heyou.Section(elements: [
-                Heyou.Title(text: "Title"),
-                Heyou.Body(text: "A long description text goes here."),
-            ]),
-            Heyou.Section(elements: [
-                Heyou.Body(text: "Some text behind the button"),
-                Heyou.Button(text: "Button", style: .default),
-                Heyou.Button(text: "Cancel", style: .cancel)
+            Heyou.ScrollableSection(sections: [
+                Heyou.Section(elements: [
+                    Heyou.Image(image: UIImage(named: "alert")!),
+                    Heyou.Body(text: "Some text behind the button"),
+                    ]),
+                Heyou.Section(elements: [
+                    Heyou.Title(text: "Title"),
+                    Heyou.Body(text: "A long description text goes here."),
+                    ]),
+
+                Heyou.Section(elements: [
+                    Heyou.Button(text: "Button", style: .default),
+                    Heyou.Button(text: "Button", style: .default),
+                    Heyou.Button(text: "Button", style: .default),
+                    Heyou.Button(text: "Button", style: .default),
+                    Heyou.Button(text: "Button", style: .default),
+                    Heyou.Button(text: "Button", style: .default),
+                    Heyou.Button(text: "Button", style: .default),
+                    Heyou.Button(text: "Button", style: .default),
+                    Heyou.Button(text: "Cancel", style: .cancel)
+                ])
             ])
         ])
 
@@ -80,8 +92,8 @@ class ViewController: UITableViewController {
             Heyou.Section(elements: [
                 Heyou.Title(text: "Title"),
                 Heyou.Body(text: "Description text"),
-                Heyou.Button(text: "OK"),
-                Heyou.Button(text: "Cancel", style: .cancel)
+//                Heyou.Button(text: "OK"),
+//                Heyou.Button(text: "Cancel", style: .cancel)
             ])
         ])
 
@@ -102,6 +114,20 @@ class ViewController: UITableViewController {
         ])
 
         alertController.show(onViewController: self)
+    }
+
+    func showLongDefault() {
+        let alertController = UIAlertController(title: "Normal alert", message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", preferredStyle: .alert)
+
+        let action01 = UIAlertAction(title: "Default", style: .default)
+        let action02 = UIAlertAction(title: "Destructive", style: .destructive)
+        let action03 = UIAlertAction(title: "Cancel", style: .cancel)
+
+        alertController.addAction(action01)
+        alertController.addAction(action02)
+        alertController.addAction(action03)
+
+        present(alertController, animated: true, completion: nil)
     }
 
     func showDefault() {
