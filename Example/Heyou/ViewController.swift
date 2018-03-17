@@ -45,17 +45,17 @@ class ViewController: UITableViewController {
     func showExample_00() {
         let alertController = Heyou(elements: [
             Heyou.Section(elements: [
-                Heyou.Button(text: "Main", style: .main),
+                Heyou.Image(image: UIImage(named: "alert")!),
                 Heyou.Body(text: "Some text behind the button"),
             ]),
             Heyou.Section(elements: [
                 Heyou.Title(text: "Title"),
                 Heyou.Body(text: "A long description text goes here."),
-                Heyou.Button(text: "Secondary", style: Heyou.ButtonStyle.normal),
             ]),
             Heyou.Section(elements: [
-                Heyou.Image(image: UIImage(named: "alert")!),
                 Heyou.Body(text: "Some text behind the button"),
+                Heyou.Button(text: "Button", style: .default),
+                Heyou.Button(text: "Cancel", style: .cancel)
             ])
         ])
 
@@ -68,7 +68,7 @@ class ViewController: UITableViewController {
                 Heyou.Image(image: UIImage(named: "alert")!),
                 Heyou.Title(text: "Title"),
                 Heyou.Body(text: "Description text"),
-                Heyou.Button(text: "OK", style: .normal)
+                Heyou.Button(text: "OK")
             ])
         ])
 
@@ -80,8 +80,8 @@ class ViewController: UITableViewController {
             Heyou.Section(elements: [
                 Heyou.Title(text: "Title"),
                 Heyou.Body(text: "Description text"),
-                Heyou.Button(text: "OK", style: .normal),
-                Heyou.Button(text: "Cancel", style: .normal)
+                Heyou.Button(text: "OK"),
+                Heyou.Button(text: "Cancel")
             ])
         ])
 
@@ -95,9 +95,9 @@ class ViewController: UITableViewController {
                 Heyou.Body(text: "Description text")
             ]),
             Heyou.ButtonsSection(buttons: [
-                Heyou.Button(text: "Default", style: .normal),
-                Heyou.Button(text: "Destructive", style: .normal),
-                Heyou.Button(text: "Cancel", style: .normal)
+                Heyou.Button(text: "Default", style: .default),
+                Heyou.Button(text: "Destructive", style: .destructive),
+                Heyou.Button(text: "Cancel", style: .cancel)
             ])
         ])
 
