@@ -168,6 +168,7 @@
 			buildPhases = (
 				AC6E3CD256923A50E9AD7E93 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
+				7E4AA88B205D48C6006D1A86 /* SwiftLint */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				F6AF9F01DD4A1D0E3C4AE62E /* [CP] Embed Pods Frameworks */,
@@ -311,6 +312,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Heyou_Example/Pods-Heyou_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		7E4AA88B205D48C6006D1A86 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		8F01CCE257300962C59FF8CB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

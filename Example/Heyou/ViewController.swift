@@ -43,7 +43,7 @@ class ViewController: UITableViewController {
         }
     }
 
-    //MARK: - Examples
+    // MARK: - Examples
 
     func showExample_00() {
         let alertController = Heyou(elements: [
@@ -131,7 +131,10 @@ class ViewController: UITableViewController {
     }
 
     func showDefault() {
-        let alertController = UIAlertController(title: "Normal alert", message: "Borring normal alert", preferredStyle: .alert)
+        let alertController = UIAlertController(
+            title: "Normal alert",
+            message: "Borring normal alert",
+            preferredStyle: .alert)
 
         let action01 = UIAlertAction(title: "Default", style: .default)
         let action02 = UIAlertAction(title: "Destructive", style: .destructive)
@@ -144,7 +147,7 @@ class ViewController: UITableViewController {
         present(alertController, animated: true, completion: nil)
     }
 
-    //MARK: - Table view
+    // MARK: - Table view
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         onShowAlertPressed(indexPath: indexPath)
