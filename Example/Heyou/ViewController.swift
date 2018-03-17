@@ -45,17 +45,17 @@ class ViewController: UITableViewController {
     func showExample_00() {
         let alertController = Heyou(elements: [
             Heyou.Section(elements: [
-                Heyou.Button(text: "Main", style: .action),
+                Heyou.Image(image: UIImage(named: "alert")!),
                 Heyou.Body(text: "Some text behind the button"),
             ]),
             Heyou.Section(elements: [
                 Heyou.Title(text: "Title"),
                 Heyou.Body(text: "A long description text goes here."),
-                Heyou.Button(text: "Secondary", style: Heyou.ButtonStyle.default)
             ]),
             Heyou.Section(elements: [
-                Heyou.Image(image: UIImage(named: "alert")!),
                 Heyou.Body(text: "Some text behind the button"),
+                Heyou.Button(text: "Button", style: .default),
+                Heyou.Button(text: "Cancel", style: .cancel),
             ])
         ])
 
