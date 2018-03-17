@@ -43,8 +43,6 @@ public extension Heyou {
             let view = UIView()
             view.translatesAutoresizingMaskIntoConstraints = false
             view.backgroundColor = StyleDefaults.backgroundColor
-//            view.layer.cornerRadius = CGFloat(StyleDefaults.cornerRadius)
-//            view.layer.masksToBounds = true
             return view
         }
 
