@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0346E0E99802F6CB0C537D144DB6D816 /* Heyou-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B088FD96DD7B4267960338E47C0B6BD /* Heyou-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		120908882343C770C47CCF9C29237186 /* HYAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B3B54CBF89868A6A84FCB2CF0DC866 /* HYAlertView.swift */; };
+		120908882343C770C47CCF9C29237186 /* HeyouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B3B54CBF89868A6A84FCB2CF0DC866 /* HeyouView.swift */; };
 		1F87479B05C44160BA404F36B73D015D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		1F980AA1CA89443A8568233880F5740B /* Heyou-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C396EC5D4F1243A70AC9099015A4370 /* Heyou-dummy.m */; };
 		3E15F8233100621577621B1754A2E929 /* Pods-Heyou_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 75E7577427B4449B5BB707A8DC39B363 /* Pods-Heyou_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		45AAE205A49E7A4BF0F82E801B84EEC9 /* HYAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D77172DCFFEA46710BACBDE42A38A2 /* HYAlertController.swift */; };
+		45AAE205A49E7A4BF0F82E801B84EEC9 /* HeyouController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D77172DCFFEA46710BACBDE42A38A2 /* HeyouController.swift */; };
 		49789502B515CF55F8C6B5EB30D5B976 /* Pods-Heyou_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 30EA1F3797D6F20954540976BFAE42C2 /* Pods-Heyou_Example-dummy.m */; };
 		4B6B2DCACD7A5052389E2BA6CC2A5396 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		7E8EF0392042E68600C3FBB3 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8EF0382042E68600C3FBB3 /* Element.swift */; };
@@ -22,7 +22,7 @@
 		7E8EF0412042EAE500C3FBB3 /* SectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8EF0402042EAE500C3FBB3 /* SectionElement.swift */; };
 		7EB3CB202059F34E00FFFBAA /* ButtonsSectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB3CB1F2059F34E00FFFBAA /* ButtonsSectionElement.swift */; };
 		7EEF20DD2059CDA500884F48 /* ImageElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF20DC2059CDA500884F48 /* ImageElement.swift */; };
-		85B63FB7AB650CF55AD04DB368ED42B0 /* HYPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBBDDDAD98B8BC48DF4D8F7707B4BDE /* HYPresentationAnimator.swift */; };
+		85B63FB7AB650CF55AD04DB368ED42B0 /* PresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBBDDDAD98B8BC48DF4D8F7707B4BDE /* PresentationAnimator.swift */; };
 		9F373FBB0B9FA8C334B3DFDD8E4E5379 /* Pods-Heyou_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 082E4E3C0410552652EDCC820BCF6726 /* Pods-Heyou_Tests-dummy.m */; };
 		CBFD18BCEE3DB11C7D699922232F65A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		CE8981C3764F897643E00452F7009C39 /* Pods-Heyou_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F5BEE9A635F6EA87184090104301D16F /* Pods-Heyou_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -44,10 +44,10 @@
 		0FF78743F73E6D43B294579C7205C073 /* Pods-Heyou_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Heyou_Example.modulemap"; sourceTree = "<group>"; };
 		1BA13AE753CDDF256FDD1E89AD5E1EEC /* Heyou.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Heyou.xcconfig; sourceTree = "<group>"; };
 		21B8A3D6794753876BCAC06F027F5641 /* Pods_Heyou_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heyou_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		24D77172DCFFEA46710BACBDE42A38A2 /* HYAlertController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HYAlertController.swift; sourceTree = "<group>"; };
+		24D77172DCFFEA46710BACBDE42A38A2 /* HeyouController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HeyouController.swift; sourceTree = "<group>"; };
 		2BE03F818988A673BDF26B905A3A311A /* Pods-Heyou_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Heyou_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		30EA1F3797D6F20954540976BFAE42C2 /* Pods-Heyou_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Heyou_Example-dummy.m"; sourceTree = "<group>"; };
-		32B3B54CBF89868A6A84FCB2CF0DC866 /* HYAlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HYAlertView.swift; sourceTree = "<group>"; };
+		32B3B54CBF89868A6A84FCB2CF0DC866 /* HeyouView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HeyouView.swift; sourceTree = "<group>"; };
 		373BD0068F2B3E6B4491F66941A56DD2 /* Pods-Heyou_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Heyou_Example-resources.sh"; sourceTree = "<group>"; };
 		3E156761608041D4260D3F84591DAF37 /* Pods-Heyou_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Heyou_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		415D3D5967977838C66966584FA69796 /* Pods_Heyou_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heyou_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,7 +73,7 @@
 		9B088FD96DD7B4267960338E47C0B6BD /* Heyou-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Heyou-umbrella.h"; sourceTree = "<group>"; };
 		A0A358E43B98C40441322AAF5C372926 /* Heyou-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Heyou-prefix.pch"; sourceTree = "<group>"; };
 		A6B7DDDF24F039F09891404F9CCC4901 /* Pods-Heyou_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Heyou_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		CDBBDDDAD98B8BC48DF4D8F7707B4BDE /* HYPresentationAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HYPresentationAnimator.swift; sourceTree = "<group>"; };
+		CDBBDDDAD98B8BC48DF4D8F7707B4BDE /* PresentationAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PresentationAnimator.swift; sourceTree = "<group>"; };
 		CE12E0405B0D258ABCA3A5BD0AD0153D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAF7E4426B5327DAA2110685D5F80E09 /* Pods-Heyou_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Heyou_Tests-resources.sh"; sourceTree = "<group>"; };
 		EAE76E6ACAC38DC149EAE6B58C555205 /* Pods-Heyou_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Heyou_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,7 +131,7 @@
 		25CA72CF1E621B5E28D90A28AB202067 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				CDBBDDDAD98B8BC48DF4D8F7707B4BDE /* HYPresentationAnimator.swift */,
+				CDBBDDDAD98B8BC48DF4D8F7707B4BDE /* PresentationAnimator.swift */,
 			);
 			name = Helpers;
 			path = Heyou/Classes/Helpers;
@@ -140,7 +140,7 @@
 		662B01EB286F4BDD0A6638E2A72E5D69 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				24D77172DCFFEA46710BACBDE42A38A2 /* HYAlertController.swift */,
+				24D77172DCFFEA46710BACBDE42A38A2 /* HeyouController.swift */,
 			);
 			name = Scenes;
 			path = Heyou/Classes/Scenes;
@@ -149,7 +149,7 @@
 		714CFAF6298E6F54251703460F7BF862 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				32B3B54CBF89868A6A84FCB2CF0DC866 /* HYAlertView.swift */,
+				32B3B54CBF89868A6A84FCB2CF0DC866 /* HeyouView.swift */,
 			);
 			name = Views;
 			path = Heyou/Classes/Views;
@@ -404,9 +404,9 @@
 				7E8EF03B2042E6F100C3FBB3 /* TitleElement.swift in Sources */,
 				7EB3CB202059F34E00FFFBAA /* ButtonsSectionElement.swift in Sources */,
 				7E8EF03D2042E7C000C3FBB3 /* BodyElement.swift in Sources */,
-				45AAE205A49E7A4BF0F82E801B84EEC9 /* HYAlertController.swift in Sources */,
-				120908882343C770C47CCF9C29237186 /* HYAlertView.swift in Sources */,
-				85B63FB7AB650CF55AD04DB368ED42B0 /* HYPresentationAnimator.swift in Sources */,
+				45AAE205A49E7A4BF0F82E801B84EEC9 /* HeyouController.swift in Sources */,
+				120908882343C770C47CCF9C29237186 /* HeyouView.swift in Sources */,
+				85B63FB7AB650CF55AD04DB368ED42B0 /* PresentationAnimator.swift in Sources */,
 				7E8EF0412042EAE500C3FBB3 /* SectionElement.swift in Sources */,
 				7EEF20DD2059CDA500884F48 /* ImageElement.swift in Sources */,
 				7E8EF03F2042E91800C3FBB3 /* ButtonElement.swift in Sources */,

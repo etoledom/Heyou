@@ -80,8 +80,8 @@ class ViewController: UITableViewController {
             Heyou.Section(elements: [
                 Heyou.Title(text: "Title"),
                 Heyou.Body(text: "Description text"),
-                Heyou.Button(text: "OK", style: .normal),
-                Heyou.Button(text: "Cancel", style: .normal)
+                Heyou.Button(text: "OK"),
+                Heyou.Button(text: "Cancel", style: .cancel)
             ])
         ])
 

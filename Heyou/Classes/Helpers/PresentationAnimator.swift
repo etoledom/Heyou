@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol HYPresentationAnimatable {
+protocol PresentationAnimatable {
     var topView: UIView { get }
     var backgroundView: UIView { get }
-    var animator: HYModalAlertAnimator { get set }
+    var animator: ModalAlertAnimator { get set }
 }
 
-class HYModalAlertAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+class ModalAlertAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 
     let duration = 0.4
     var presenting  = true
@@ -36,7 +36,7 @@ class HYModalAlertAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) :
             transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)
 
-        guard let modalVC = _modalVC as? HYPresentationAnimatable else { fatalError("Wrong VC to present") }
+        guard let modalVC = _modalVC as? PresentationAnimatable else { fatalError("Wrong VC to present") }
 
         let backgroundView = modalVC.backgroundView
 

@@ -99,7 +99,7 @@ open class Heyou: UIViewController {
     ///Dismiss triggered by tapping the background does not trigger this closure
     open var onDismissCompletion: (_ index: Int, _ title: String) -> Void = {_, _ in return }
 
-    var animator = HYModalAlertAnimator()
+    var animator = ModalAlertAnimator()
     private var alertView: AlertView?
 
     private weak var presentingVC: UIViewController?
@@ -173,7 +173,7 @@ open class Heyou: UIViewController {
     }
 }
 
-extension Heyou: HYPresentationAnimatable {
+extension Heyou: PresentationAnimatable {
     var topView: UIView {
         guard let view = alertView else { assertionFailure("alertView is nil"); return UIView() }
         return view
