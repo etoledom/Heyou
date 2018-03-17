@@ -40,17 +40,17 @@ class ViewController: UITableViewController {
         }
     }
 
-    //MARK: - Examples
+    // MARK: - Examples
 
     func showExample_00() {
         let alertController = Heyou(elements: [
             Heyou.Section(elements: [
                 Heyou.Image(image: UIImage(named: "alert")!),
-                Heyou.Body(text: "Some text behind the button"),
+                Heyou.Body(text: "Some text behind the button")
             ]),
             Heyou.Section(elements: [
                 Heyou.Title(text: "Title"),
-                Heyou.Body(text: "A long description text goes here."),
+                Heyou.Body(text: "A long description text goes here.")
             ]),
             Heyou.Section(elements: [
                 Heyou.Body(text: "Some text behind the button"),
@@ -105,7 +105,10 @@ class ViewController: UITableViewController {
     }
 
     func showDefault() {
-        let alertController = UIAlertController(title: "Normal alert", message: "Borring normal alert", preferredStyle: .alert)
+        let alertController = UIAlertController(
+            title: "Normal alert",
+            message: "Borring normal alert",
+            preferredStyle: .alert)
 
         let action01 = UIAlertAction(title: "Default", style: .default)
         let action02 = UIAlertAction(title: "Destructive", style: .destructive)
@@ -118,7 +121,7 @@ class ViewController: UITableViewController {
         present(alertController, animated: true, completion: nil)
     }
 
-    //MARK: - Table view
+    // MARK: - Table view
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         onShowAlertPressed(indexPath: indexPath)
