@@ -55,7 +55,7 @@ class ViewController: UITableViewController {
             Heyou.Section(elements: [
                 Heyou.Body(text: "Some text behind the button"),
                 Heyou.Button(text: "Button", style: .default),
-                Heyou.Button(text: "Cancel", style: .cancel),
+                Heyou.Button(text: "Cancel", style: .cancel)
             ])
         ])
 
