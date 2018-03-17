@@ -14,6 +14,8 @@ class ViewController: UITableViewController {
     let examples: [String] = [
         "First",
         "Second",
+        "Simple",
+        "Buttons section",
         "Normal alert"
     ]
 
@@ -22,65 +24,103 @@ class ViewController: UITableViewController {
         tableView.tableFooterView = UIView()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("View Will Appear")
-    }
-
     func onShowAlertPressed(indexPath: IndexPath) {
 
         switch indexPath.row {
         case 0:
-            let alertController = HYAlertController()
-            alertController.elements = [
-                .title("Title"),
-                .subTitle("A Subtitle"),
-                .image(named: "house"),
-                .description("A long description text goes here.")
-            ]
-
-            let mainAction = HYAlertAction(title: "First main", style: .main)
-            let normalAction = HYAlertAction(title: "Normal button", style: .default)
-            let secondMainAction = HYAlertAction(title: "Second main", style: .main)
-
-            alertController.addAction(mainAction)
-            alertController.addAction(normalAction)
-            alertController.addAction(secondMainAction)
-
-            alertController.show(onViewController: self)
+            showExample_00()
         case 1:
-            let alertController = HYAlertController()
-            alertController.elements = [
-                .image(named: "house"),
-                .title("Title"),
-                .description("Description text")
-            ]
-            let mainAction = HYAlertAction(title: "First main", style: .main)
-
-            let normalAction = HYAlertAction(title: "Normal button", style: .default) { (_) in
-                print("HELLO WORLD!")
-            }
-            alertController.addAction(mainAction)
-            alertController.addAction(normalAction)
-
-            alertController.show(onViewController: self)
-
+            showExample_01()
         case 2:
-            let alertController = UIAlertController(title: "Normal alert", message: "Borring normal alert", preferredStyle: .alert)
-
-            let action01 = UIAlertAction(title: "Default", style: .default)
-            let action02 = UIAlertAction(title: "Destructive", style: .destructive)
-            let action03 = UIAlertAction(title: "Cancel", style: .cancel)
-
-            alertController.addAction(action01)
-            alertController.addAction(action02)
-            alertController.addAction(action03)
-
-            present(alertController, animated: true, completion: nil)
-
-        default: break
+            showExample_02()
+        case 3:
+            showExample_03()
+        default:
+            showDefault()
         }
     }
+
+    //MARK: - Examples
+
+    func showExample_00() {
+        let alertController = Heyou(elements: [
+            Heyou.Section(elements: [
+                Heyou.Button(text: "Main", style: .main),
+                Heyou.Body(text: "Some text behind the button"),
+            ]),
+            Heyou.Section(elements: [
+                Heyou.Title(text: "Title"),
+                Heyou.Body(text: "A long description text goes here."),
+                Heyou.Button(text: "Secondary", style: Heyou.ButtonStyle.normal),
+            ]),
+            Heyou.Section(elements: [
+                Heyou.Image(image: UIImage(named: "alert")!),
+                Heyou.Body(text: "Some text behind the button"),
+            ])
+        ])
+
+        alertController.show(onViewController: self)
+    }
+
+    func showExample_01() {
+        let alertController = Heyou(elements: [
+            Heyou.Section(elements: [
+                Heyou.Image(image: UIImage(named: "alert")!),
+                Heyou.Title(text: "Title"),
+                Heyou.Body(text: "Description text"),
+                Heyou.Button(text: "OK", style: .normal)
+            ])
+        ])
+
+        alertController.show(onViewController: self)
+    }
+
+    func showExample_02() {
+        let alertController = Heyou(elements: [
+            Heyou.Section(elements: [
+                Heyou.Title(text: "Title"),
+                Heyou.Body(text: "Description text"),
+                Heyou.Button(text: "OK", style: .normal),
+                Heyou.Button(text: "Cancel", style: .normal)
+            ])
+        ])
+
+        alertController.show(onViewController: self)
+    }
+
+    func showExample_03() {
+        let alertController = Heyou(elements: [
+            Heyou.Section(elements: [
+                Heyou.Title(text: "Title"),
+                Heyou.Body(text: "Description text")
+                ]),
+            Heyou.Section(elements: [
+                Heyou.ButtonsSection(buttons: [
+                    Heyou.Button(text: "Default", style: .normal),
+                    Heyou.Button(text: "Destructive", style: .normal),
+                    Heyou.Button(text: "Cancel", style: .normal)
+                    ])
+                ])
+            ])
+
+        alertController.show(onViewController: self)
+    }
+
+    func showDefault() {
+        let alertController = UIAlertController(title: "Normal alert", message: "Borring normal alert", preferredStyle: .alert)
+
+        let action01 = UIAlertAction(title: "Default", style: .default)
+        let action02 = UIAlertAction(title: "Destructive", style: .destructive)
+        let action03 = UIAlertAction(title: "Cancel", style: .cancel)
+
+        alertController.addAction(action01)
+        alertController.addAction(action02)
+        alertController.addAction(action03)
+
+        present(alertController, animated: true, completion: nil)
+    }
+
+    //MARK: - Table view
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         onShowAlertPressed(indexPath: indexPath)
