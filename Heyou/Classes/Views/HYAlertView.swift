@@ -40,7 +40,12 @@ extension Heyou {
 
         private func createRootSection() -> UIView {
             let rootSection = Heyou.Section(elements: elements).renderize()
-            rootSection.layoutMargins = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+            rootSection.layoutMargins = UIEdgeInsets(
+                top: Style.topMarging,
+                left: Style.sideMarging,
+                bottom: Style.bottomMarging,
+                right: Style.sideMarging
+            )
             return rootSection
         }
 
