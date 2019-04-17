@@ -2,6 +2,7 @@
   "name": "Heyou",
   "version": "0.2.3",
   "summary": "Alerts",
+  "swift_version": "4.2",
   "description": "Alerts library to replace UIAlertController",
   "homepage": "https://github.com/etoledom/Heyou",
   "license": {
@@ -16,7 +17,7 @@
     "tag": "0.2.3"
   },
   "platforms": {
-    "ios": "9.0"
+    "ios": "10.0"
   },
   "source_files": "Heyou/Classes/**/*"
 }
