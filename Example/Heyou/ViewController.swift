@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  Heyou
-//
-//  Created by E. Toledo on 9/6/16.
-//  Copyright © 2016 eToledo. All rights reserved.
-//
-
 import UIKit
 import Heyou
 

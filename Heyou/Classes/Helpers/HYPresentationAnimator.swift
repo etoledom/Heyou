@@ -1,11 +1,3 @@
-//
-//  HYPresentationAnimator.swift
-//  HeyouDemo
-//
-//  Created by E. Toledo on 9/7/16.
-//  Copyright © 2016 eToledoM. All rights reserved.
-//
-
 import UIKit
 
 protocol HYPresentationAnimatable {

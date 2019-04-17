@@ -1,11 +1,3 @@
-//
-//  HYAlertViewController.swift
-//  HYAlertView
-//
-//  Created by E. Toledo on 6/14/16.
-//  Copyright © 2016 eToledo. All rights reserved.
-//
-
 import UIKit
 
 typealias Layout = NSLayoutConstraint.Attribute

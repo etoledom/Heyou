@@ -1,10 +1,3 @@
-//
-//  ImageElement.swift
-//  Heyou
-//
-//  Created by Eduardo Toledo on 3/14/18.
-//
-
 import Foundation
 
 public extension Heyou {
