@@ -43,9 +43,13 @@ class ViewController: UITableViewController {
     //MARK: - Examples
 
     func showExample_00() {
+        let mainButton = Heyou.Button.init(text: "Main", style: .main) { [weak self] (button) in
+            self?.onPressButton(button)
+        }
+
         let alertController = Heyou(elements: [
             Heyou.Section(elements: [
-                Heyou.Button(text: "Main", style: .main),
+                mainButton,
                 Heyou.Body(text: "Some text behind the button"),
             ]),
             Heyou.Section(elements: [
@@ -60,6 +64,10 @@ class ViewController: UITableViewController {
         ])
 
         alertController.show(onViewController: self)
+    }
+
+    @objc func onPressButton(_ button: Heyou.Button) {
+        print("Pressed button with text: \(button.text)")
     }
 
     func showExample_01() {

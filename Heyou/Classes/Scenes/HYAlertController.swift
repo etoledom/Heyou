@@ -85,19 +85,12 @@ public extension Heyou {
             button.setTitleColor(textColor, for: UIControl.State())
         }
     }
-
 }
 
 open class Heyou: UIViewController {
 
     ///Array of UI Elements to show
     let elements: [ElementProtocol]
-    ///Closure to call when a button is tapped. The return indicates if the alert should be dismissed after pressing the button.
-    open var onButtonTap: (_ index: Int, _ title: String) -> Bool = {_, _ in return true }
-
-    ///Closure to call after the completion animation is finished when the dismiss is trigered by a button press.
-    ///Dismiss triggered by tapping the background does not trigger this closure
-    open var onDismissCompletion: (_ index: Int, _ title: String) -> Void = {_, _ in return }
 
     var animator = HYModalAlertAnimator()
     private var alertView: AlertView?
