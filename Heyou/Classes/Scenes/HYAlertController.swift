@@ -148,11 +148,9 @@ open class Heyou: UIViewController {
         dismiss()
     }
 
-    /**
-     Make the alert be presendted by the given view controller. Use this method to use the custom presentation animation.
-
-     - parameter vc: View Controller that will present this alert.
-     */
+    /// Make the alert be presendted by the given view controller. Use this method to use the custom presentation animation.
+    ///
+    /// - Parameter viewController: View Controller that will present this alert.
     open func show(onViewController viewController: UIViewController) {
         presentingVC = viewController
         viewController.definesPresentationContext = true
