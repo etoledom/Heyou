@@ -85,7 +85,7 @@ open class Heyou: UIViewController {
     let elements: [ElementProtocol]
 
     var animator = HYModalAlertAnimator()
-    private var alertView: AlertView?
+    private let alertView: AlertView
 
     private weak var presentingVC: UIViewController?
 
@@ -93,11 +93,13 @@ open class Heyou: UIViewController {
 
     public init(elements: [Section]) {
         self.elements = elements
+        alertView = AlertView(elements: elements)
         super.init(nibName: nil, bundle: nil)
     }
 
     required public init?(coder aDecoder: NSCoder) {
-        self.elements = []
+        elements = []
+        alertView = AlertView(elements: elements)
         super.init(coder: aDecoder)
     }
 
@@ -114,9 +116,6 @@ open class Heyou: UIViewController {
     }
 
     func configureAlertView() {
-        let alertView = AlertView(elements: elements)
-        self.alertView = alertView
-
         view.addSubview(alertView)
 
         NSLayoutConstraint.activate([
@@ -158,8 +157,7 @@ open class Heyou: UIViewController {
 
 extension Heyou: HYPresentationAnimatable {
     var topView: UIView {
-        guard let view = alertView else { assertionFailure("alertView is nil"); return UIView() }
-        return view
+        return alertView
     }
     var backgroundView: UIView {
         return view
