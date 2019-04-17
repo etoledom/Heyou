@@ -72,7 +72,7 @@ class HYModalAlertAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         alertView.clipsToBounds = true
         alertView.alpha = 0
         backgroundView.alpha = 0
-        containerView.bringSubview(toFront: backgroundView)
+        containerView.bringSubviewToFront(backgroundView)
 
         UIView.animate(withDuration: 0.1, animations: {
                 backgroundView.alpha = CGFloat(1)

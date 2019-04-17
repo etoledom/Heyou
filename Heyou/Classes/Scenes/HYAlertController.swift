@@ -8,7 +8,7 @@
 
 import UIKit
 
-typealias Layout = NSLayoutAttribute
+typealias Layout = NSLayoutConstraint.Attribute
 
 extension Heyou {
     public enum ButtonStyle {
@@ -44,11 +44,11 @@ public extension Heyou {
         static var cornerRadius = 10
 
         //Labels
-        static var titleFont = UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)
+        static var titleFont = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
         static var titleTextColor = UIColor(red:0.20, green:0.27, blue:0.30, alpha:1.0)
-        static var subTitleFont = UIFont.preferredFont(forTextStyle: UIFontTextStyle.subheadline)
+        static var subTitleFont = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.subheadline)
         static var subTitleTextColor = UIColor(red:0.20, green:0.27, blue:0.30, alpha:1.0)
-        static var descriptionFont = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
+        static var descriptionFont = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
         static var descriptionTextColor = UIColor(red:0.20, green:0.27, blue:0.30, alpha:1.0)
 
         //Buttons
@@ -69,7 +69,7 @@ public extension Heyou {
             button.titleLabel?.font = StyleDefaults.mainButtonFont
             button.backgroundColor = StyleDefaults.mainButtonBackgroundColor
             let textColor = StyleDefaults.mainButtonTextColor
-            button.setTitleColor(textColor, for: UIControlState())
+            button.setTitleColor(textColor, for: UIControl.State())
 
             if StyleDefaults.mainButtonObal {
                 button.layer.cornerRadius = CGFloat(Style.mainButtonHeight) / 2
@@ -82,7 +82,7 @@ public extension Heyou {
 
         static func styleNormalButton(_ button: UIButton) {
             let textColor = StyleDefaults.normalButtonTextColor
-            button.setTitleColor(textColor, for: UIControlState())
+            button.setTitleColor(textColor, for: UIControl.State())
         }
     }
 

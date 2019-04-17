@@ -25,7 +25,7 @@ public extension Heyou {
         public func renderize() -> UIView {
             let button = UIButton(type: .system)
             button.heightAnchor.constraint(equalToConstant: Heyou.Style.normalButtonHeight).isActive = true
-            button.setTitle(text, for: UIControlState.normal)
+            button.setTitle(text, for: UIControl.State.normal)
             switch style {
             case .main:
                 Heyou.StyleDefaults.styleMainButton(button)
