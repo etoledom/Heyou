@@ -33,8 +33,9 @@ open class Heyou: UIViewController {
     }
 
     func configureBackground() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.onTap(_:)) )
         view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.onTap))
+        tap.delegate = self
         view.addGestureRecognizer(tap)
     }
 
@@ -95,5 +96,11 @@ extension Heyou: UIViewControllerTransitioningDelegate {
     public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         animator.presenting = false
         return animator
+    }
+}
+
+extension Heyou: UIGestureRecognizerDelegate {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        return !alertView.frame.contains(touch.location(in: view))
     }
 }
