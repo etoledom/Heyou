@@ -1,11 +1,11 @@
 import Foundation
 
 public extension Heyou {
-    struct Section: SectionProtocol, ElementProtocol {
+    struct Section: SectionProtocol, Element {
 
-        let elements: [ElementProtocol]
+        let elements: [Element]
 
-        public init(elements: [ElementProtocol]) {
+        public init(elements: [Element]) {
             self.elements = elements
         }
 

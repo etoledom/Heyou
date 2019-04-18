@@ -1,7 +1,7 @@
 import Foundation
 
 public extension Heyou {
-    @objc class Button: NSObject, ElementProtocol {
+    @objc class Button: NSObject, Element {
         public typealias Handler = ((Button) -> Void)
 
         public let text: String

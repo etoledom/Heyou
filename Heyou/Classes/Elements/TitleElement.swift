@@ -1,7 +1,7 @@
 import Foundation
 
 public extension Heyou {
-    struct Title: ElementProtocol {
+    struct Title: Element {
         let text: String
 
         public init(text: String) {

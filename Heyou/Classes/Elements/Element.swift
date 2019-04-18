@@ -1,6 +1,6 @@
 import UIKit
 
-public protocol ElementProtocol {
+public protocol Element {
     func renderize() -> UIView
 }
 

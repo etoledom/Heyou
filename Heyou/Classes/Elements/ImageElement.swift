@@ -1,7 +1,7 @@
 import Foundation
 
 public extension Heyou {
-    struct Image: ElementProtocol {
+    struct Image: Element {
 
         let image: UIImage
 

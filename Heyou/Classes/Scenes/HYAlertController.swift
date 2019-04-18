@@ -82,7 +82,7 @@ public extension Heyou {
 open class Heyou: UIViewController {
 
     ///Array of UI Elements to show
-    let elements: [ElementProtocol]
+    let elements: [Element]
 
     var animator = HYModalAlertAnimator()
     private let alertView: AlertView

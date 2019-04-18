@@ -2,11 +2,11 @@ import UIKit
 
 extension Heyou {
     final class AlertView: UIView {
-        private let elements: [ElementProtocol]
+        private let elements: [Element]
 
         private var buttonActions: [UIButton: Button] = [:]
 
-        init(elements: [ElementProtocol]) {
+        init(elements: [Element]) {
             self.elements = elements
 
             super.init(frame: CGRect.zero)
