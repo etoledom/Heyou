@@ -68,6 +68,8 @@ class ViewController: UITableViewController {
                 Heyou.Image(image: UIImage(named: "alert")!),
                 Heyou.Title(text: "Title"),
                 Heyou.Body(text: "Description text"),
+            ]),
+            Heyou.ButtonsSection(buttons: [
                 Heyou.Button(text: "OK", style: .normal)
             ])
         ])
@@ -81,7 +83,7 @@ class ViewController: UITableViewController {
                 Heyou.Title(text: "Title"),
                 Heyou.Body(text: "Description text"),
                 Heyou.Button(text: "OK", style: .normal),
-                Heyou.Button(text: "Cancel", style: .normal)
+                Heyou.Button(text: "Cancel", style: .main)
             ])
         ])
 
@@ -93,15 +95,13 @@ class ViewController: UITableViewController {
             Heyou.Section(elements: [
                 Heyou.Title(text: "Title"),
                 Heyou.Body(text: "Description text")
-                ]),
-            Heyou.Section(elements: [
-                Heyou.ButtonsSection(buttons: [
-                    Heyou.Button(text: "Default", style: .normal),
-                    Heyou.Button(text: "Destructive", style: .normal),
-                    Heyou.Button(text: "Cancel", style: .normal)
-                    ])
-                ])
+            ]),
+            Heyou.ButtonsSection(buttons: [
+                Heyou.Button(text: "Default", style: .normal),
+                Heyou.Button(text: "Destructive", style: .normal),
+                Heyou.Button(text: "Cancel", style: .normal)
             ])
+        ])
 
         alertController.show(onViewController: self)
     }

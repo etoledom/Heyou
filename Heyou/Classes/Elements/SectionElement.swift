@@ -21,7 +21,12 @@ public extension Heyou {
             stackView.translatesAutoresizingMaskIntoConstraints = false
             stackView.axis = .vertical
             stackView.isLayoutMarginsRelativeArrangement = true
-            stackView.spacing = Style.labelSeparation
+            stackView.layoutMargins = UIEdgeInsets(
+                top: Style.topMarging,
+                left: 0,
+                bottom: Style.bottomMarging,
+                right: 0
+            )
             return stackView
         }
 
