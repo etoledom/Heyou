@@ -1,7 +1,7 @@
 import Foundation
 
 public extension Heyou {
-    struct Section: SectionProtocol, Element {
+    struct Section: Element {
 
         let elements: [Element]
 

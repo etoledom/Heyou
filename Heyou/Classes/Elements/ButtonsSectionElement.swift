@@ -1,7 +1,7 @@
 import Foundation
 
 public extension Heyou {
-    struct ButtonsSection: SectionProtocol, Element {
+    struct ButtonsSection: Element {
 
         let buttons: [Button]
 
@@ -35,8 +35,6 @@ public extension Heyou {
             let view = UIView()
             view.translatesAutoresizingMaskIntoConstraints = false
             view.backgroundColor = StyleDefaults.backgroundColor
-//            view.layer.cornerRadius = CGFloat(StyleDefaults.cornerRadius)
-//            view.layer.masksToBounds = true
             return view
         }
 

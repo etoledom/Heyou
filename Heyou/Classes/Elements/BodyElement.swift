@@ -1,10 +1,3 @@
-//
-//  BodyElement.swift
-//  Heyou
-//
-//  Created by Eduardo Toledo on 2/25/18.
-//
-
 import Foundation
 
 public extension Heyou {
