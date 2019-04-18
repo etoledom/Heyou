@@ -1,7 +1,6 @@
-import Foundation
-
 public extension Heyou {
     struct Title: Element {
+
         let text: String
 
         public init(text: String) {

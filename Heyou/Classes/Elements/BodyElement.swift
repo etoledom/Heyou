@@ -1,8 +1,8 @@
-import Foundation
-
 public extension Heyou {
     struct Body: Element {
+
         let text: String
+
         public init(text: String) {
             self.text = text
         }

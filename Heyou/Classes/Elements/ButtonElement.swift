@@ -1,4 +1,9 @@
-import Foundation
+extension Heyou {
+    public enum ButtonStyle {
+        case main
+        case normal
+    }
+}
 
 public extension Heyou {
     @objc class Button: NSObject, Element {

@@ -1,5 +1,3 @@
-import Foundation
-
 public extension Heyou {
     struct ButtonsSection: Element {
 

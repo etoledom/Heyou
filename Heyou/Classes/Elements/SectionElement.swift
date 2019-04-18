@@ -1,5 +1,3 @@
-import Foundation
-
 public extension Heyou {
     struct Section: Element {
 
@@ -23,6 +21,7 @@ public extension Heyou {
             stackView.translatesAutoresizingMaskIntoConstraints = false
             stackView.axis = .vertical
             stackView.isLayoutMarginsRelativeArrangement = true
+            stackView.spacing = Style.labelSeparation
             return stackView
         }
 

@@ -9,15 +9,16 @@
 /* Begin PBXBuildFile section */
 		030BE1E7DE391111A835794024C1A48B /* TitleElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C79FB98F53F2A37F80872F20E7BDB /* TitleElement.swift */; };
 		0781C549AAC0104E81B54C7ED6F11632 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6AA13D35EEB4E0BDE5F6240D883272 /* Element.swift */; };
-		1CC8029BE3DB24C354B621503E25F4EB /* HYAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5531A06908EC9615B71730D8E98BB20B /* HYAlertView.swift */; };
+		1CC8029BE3DB24C354B621503E25F4EB /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5531A06908EC9615B71730D8E98BB20B /* AlertView.swift */; };
 		1D201D68D243CD915F18EEDF7CC75ADF /* ButtonElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C841462977A36BCD5BB7D43A567FB087 /* ButtonElement.swift */; };
 		357361F8CB10664949A1B73D9849ACA2 /* SectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A462E94BF2E42FB5C964EB830D1C77 /* SectionElement.swift */; };
 		595640FEF36A437655AC4E9173B2A550 /* Heyou-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEED0A80B56CE655F066174402E427E /* Heyou-dummy.m */; };
 		5A1B20721CCDA20821590F912A017D9A /* Pods-Heyou_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0583E385074DD032F76B641B4D9A50 /* Pods-Heyou_Example-dummy.m */; };
 		60AC03C17B00BBFCB765A58808775CCF /* HYPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA34A568034929A92EB40D06065A01 /* HYPresentationAnimator.swift */; };
 		74ABE7415482ECD9237DC5423177B210 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		7ECAE13A2269162300B7AE51 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECAE1392269162300B7AE51 /* Styles.swift */; };
 		7F7DCCE0DE9240841167765846477866 /* BodyElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90895D126B702367D0D300D811108505 /* BodyElement.swift */; };
-		B618B2D1BC0B9124C7D0AB7DCE8BB100 /* HYAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66586A28C71E779C8C89741BD891122 /* HYAlertController.swift */; };
+		B618B2D1BC0B9124C7D0AB7DCE8BB100 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66586A28C71E779C8C89741BD891122 /* AlertController.swift */; };
 		C129FE46CF152A78A81060E3F8617203 /* ButtonsSectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401F3C86CF000B4724B38BB48CD1A007 /* ButtonsSectionElement.swift */; };
 		D1173F2AACF53EA79DFD21DFBFDACFB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
 		D79491C55E4D225F4F73F02D20305D88 /* ImageElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0287ABC326A20E45EF325B453F2222 /* ImageElement.swift */; };
@@ -45,12 +46,13 @@
 		401F3C86CF000B4724B38BB48CD1A007 /* ButtonsSectionElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ButtonsSectionElement.swift; sourceTree = "<group>"; };
 		4D2B798F8057738A4662AAE461723B53 /* Pods_Heyou_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heyou_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E87498AD05E4E055068F03A554E3DE /* Pods-Heyou_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Heyou_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		5531A06908EC9615B71730D8E98BB20B /* HYAlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HYAlertView.swift; sourceTree = "<group>"; };
+		5531A06908EC9615B71730D8E98BB20B /* AlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		5F4EFF0D8A5C7E384BE429618F25501E /* Heyou-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Heyou-umbrella.h"; sourceTree = "<group>"; };
 		66BC75EA1A66ED9A4657B481A5FB7A1C /* Heyou.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Heyou.xcconfig; sourceTree = "<group>"; };
 		6BEED0A80B56CE655F066174402E427E /* Heyou-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Heyou-dummy.m"; sourceTree = "<group>"; };
 		7109C715B5076CC57DA8D9E2D3EE0DA3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B5C79FB98F53F2A37F80872F20E7BDB /* TitleElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TitleElement.swift; sourceTree = "<group>"; };
+		7ECAE1392269162300B7AE51 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		87F0A535F49AD3F46A926382E16EA9EE /* Pods-Heyou_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Heyou_Example-resources.sh"; sourceTree = "<group>"; };
 		8AC1B7C08447765931D8CBD205AF2A6A /* Heyou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Heyou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C211F5B8D0FE60EE51A753A93BB05FA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -66,7 +68,7 @@
 		DB1F3489B6441F9A34A77F4DF1D29461 /* Pods-Heyou_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Heyou_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DD93B887C6D72C45BE6C3E9BD568C831 /* Pods-Heyou_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Heyou_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		DF632DB9FB232F82EAC0A6F94ABF653E /* Heyou-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Heyou-prefix.pch"; sourceTree = "<group>"; };
-		E66586A28C71E779C8C89741BD891122 /* HYAlertController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HYAlertController.swift; sourceTree = "<group>"; };
+		E66586A28C71E779C8C89741BD891122 /* AlertController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		FB5D2303BD9CA5667477570B45D76E9F /* Heyou.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Heyou.modulemap; sourceTree = "<group>"; };
 		FD4939EBA8F2F1CDD8DD5C224C02AAEE /* Heyou.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = Heyou.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
@@ -94,7 +96,7 @@
 		1C9B2A656F073FAF0A8E36EE52224EA9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5531A06908EC9615B71730D8E98BB20B /* HYAlertView.swift */,
+				5531A06908EC9615B71730D8E98BB20B /* AlertView.swift */,
 			);
 			name = Views;
 			path = Heyou/Classes/Views;
@@ -172,7 +174,8 @@
 		B2705A86E3E2BB75B92AD02EDA223B64 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				E66586A28C71E779C8C89741BD891122 /* HYAlertController.swift */,
+				E66586A28C71E779C8C89741BD891122 /* AlertController.swift */,
+				7ECAE1392269162300B7AE51 /* Styles.swift */,
 			);
 			name = Scenes;
 			path = Heyou/Classes/Scenes;
@@ -353,10 +356,11 @@
 				7F7DCCE0DE9240841167765846477866 /* BodyElement.swift in Sources */,
 				1D201D68D243CD915F18EEDF7CC75ADF /* ButtonElement.swift in Sources */,
 				C129FE46CF152A78A81060E3F8617203 /* ButtonsSectionElement.swift in Sources */,
+				7ECAE13A2269162300B7AE51 /* Styles.swift in Sources */,
 				0781C549AAC0104E81B54C7ED6F11632 /* Element.swift in Sources */,
 				595640FEF36A437655AC4E9173B2A550 /* Heyou-dummy.m in Sources */,
-				B618B2D1BC0B9124C7D0AB7DCE8BB100 /* HYAlertController.swift in Sources */,
-				1CC8029BE3DB24C354B621503E25F4EB /* HYAlertView.swift in Sources */,
+				B618B2D1BC0B9124C7D0AB7DCE8BB100 /* AlertController.swift in Sources */,
+				1CC8029BE3DB24C354B621503E25F4EB /* AlertView.swift in Sources */,
 				60AC03C17B00BBFCB765A58808775CCF /* HYPresentationAnimator.swift in Sources */,
 				D79491C55E4D225F4F73F02D20305D88 /* ImageElement.swift in Sources */,
 				357361F8CB10664949A1B73D9849ACA2 /* SectionElement.swift in Sources */,

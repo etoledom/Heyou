@@ -13,16 +13,11 @@ extension Heyou {
 
             configureView()
             configureHerarchy()
-            createLayout()
         }
 
         required init?(coder aDecoder: NSCoder) {
             self.elements = []
             super.init(coder: aDecoder)
-        }
-
-        fileprivate func createLayout() {
-            widthAnchor.constraint(equalToConstant: CGFloat(StyleDefaults.alertWidth)).isActive = true
         }
 
         private func configureView() {
@@ -55,6 +50,7 @@ extension Heyou {
                 stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
                 stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                 stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                widthAnchor.constraint(equalToConstant: CGFloat(StyleDefaults.alertWidth)),
             ])
         }
     }
