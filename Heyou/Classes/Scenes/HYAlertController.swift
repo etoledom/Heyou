@@ -28,7 +28,7 @@ public extension Heyou {
 }
 
 public extension Heyou {
-    public struct StyleDefaults {
+    struct StyleDefaults {
 
         //Globals
         static var alertWidth  = 300

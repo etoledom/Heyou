@@ -8,7 +8,7 @@
 import Foundation
 
 public extension Heyou {
-    public struct Body: ElementProtocol {
+    struct Body: ElementProtocol {
         let text: String
         public init(text: String) {
             self.text = text

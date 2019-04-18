@@ -1,8 +1,9 @@
 import Foundation
 
 public extension Heyou {
-    public struct Title: ElementProtocol {
+    struct Title: ElementProtocol {
         let text: String
+
         public init(text: String) {
             self.text = text
         }
@@ -20,4 +21,3 @@ public extension Heyou {
         }
     }
 }
-
