@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Heyou'
-  s.version          = '0.2.3'
+  s.version          = '0.3.0'
   s.summary          = 'Alerts'
   s.swift_version    = '4.2'
 # This description is used to generate tags and improve search results.
