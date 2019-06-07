@@ -19,27 +19,27 @@ public extension Heyou {
     struct StyleDefaults {
 
         //Globals
-        static var alertWidth  = 300
-        static var backgroundColor = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1.0)
+        static var alertWidth = 300
+        static var backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1.0)
         static var cornerRadius = 10
 
         //Labels
         static var titleFont = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
-        static var titleTextColor = UIColor(red:0.20, green:0.27, blue:0.30, alpha:1.0)
+        static var titleTextColor = UIColor(red: 0.20, green: 0.27, blue: 0.30, alpha: 1.0)
         static var subTitleFont = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.subheadline)
-        static var subTitleTextColor = UIColor(red:0.20, green:0.27, blue:0.30, alpha:1.0)
+        static var subTitleTextColor = UIColor(red: 0.20, green: 0.27, blue: 0.30, alpha: 1.0)
         static var descriptionFont = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
-        static var descriptionTextColor = UIColor(red:0.20, green:0.27, blue:0.30, alpha:1.0)
+        static var descriptionTextColor = UIColor(red: 0.20, green: 0.27, blue: 0.30, alpha: 1.0)
 
         //Buttons
         static var mainButtonCornerRadius = 0
         static var mainButtonObal = true
-        static var mainButtonBackgroundColor = UIColor(red:0.00, green:0.45, blue:1.00, alpha:1.0)
+        static var mainButtonBackgroundColor = UIColor(red: 0.00, green: 0.45, blue: 1.00, alpha: 1.0)
         static var mainButtonFont = UIFont.boldSystemFont(ofSize: 16)
         static var mainButtonTextColor = UIColor.white
 
         static var normalButtonFont = UIFont.boldSystemFont(ofSize: 16)
-        static var normalButtonTextColor = UIColor(red:0.00, green:0.45, blue:1.00, alpha:1.0)
+        static var normalButtonTextColor = UIColor(red: 0.00, green: 0.45, blue: 1.00, alpha: 1.0)
 
         //Extras
         static var separatorColor = UIColor(white: 0.85, alpha: 1)

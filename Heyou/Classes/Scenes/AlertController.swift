@@ -44,7 +44,7 @@ open class Heyou: UIViewController {
 
         NSLayoutConstraint.activate([
             view.centerXAnchor.constraint(equalTo: alertView.centerXAnchor),
-            view.centerYAnchor.constraint(equalTo: alertView.centerYAnchor),
+            view.centerYAnchor.constraint(equalTo: alertView.centerYAnchor)
         ])
     }
 

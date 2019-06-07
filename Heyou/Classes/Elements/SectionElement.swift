@@ -14,7 +14,7 @@ public extension Heyou {
             return stackView
         }
 
-        //MARK: - Helpers
+        // MARK: - Helpers
 
         private func createStackView() -> UIStackView {
             let stackView = UIStackView()

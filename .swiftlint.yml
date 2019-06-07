@@ -1,3 +1,5 @@
 disabled_rules: # rule identifiers to exclude from running
   - line_length
   - large_tuple
+  - identifier_name
+  - nesting

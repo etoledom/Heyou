@@ -32,7 +32,7 @@ class ViewController: UITableViewController {
         }
     }
 
-    //MARK: - Examples
+    // MARK: - Examples
 
     func showExample_00() {
         let mainButton = Heyou.Button.init(text: "Main", style: .main) { [weak self] (button) in
@@ -42,16 +42,16 @@ class ViewController: UITableViewController {
         let alertController = Heyou(elements: [
             Heyou.Section(elements: [
                 mainButton,
-                Heyou.Body(text: "Some text behind the button"),
+                Heyou.Body(text: "Some text behind the button")
             ]),
             Heyou.Section(elements: [
                 Heyou.Title(text: "Title"),
                 Heyou.Body(text: "A long description text goes here."),
-                Heyou.Button(text: "Secondary", style: Heyou.ButtonStyle.normal),
+                Heyou.Button(text: "Secondary", style: Heyou.ButtonStyle.normal)
             ]),
             Heyou.Section(elements: [
                 Heyou.Image(image: UIImage(named: "alert")!),
-                Heyou.Body(text: "Some text behind the button"),
+                Heyou.Body(text: "Some text behind the button")
             ])
         ])
 
@@ -67,7 +67,7 @@ class ViewController: UITableViewController {
             Heyou.Section(elements: [
                 Heyou.Image(image: UIImage(named: "alert")!),
                 Heyou.Title(text: "Title"),
-                Heyou.Body(text: "Description text"),
+                Heyou.Body(text: "Description text")
             ]),
             Heyou.ButtonsSection(buttons: [
                 Heyou.Button(text: "OK", style: .normal)
@@ -120,7 +120,7 @@ class ViewController: UITableViewController {
         present(alertController, animated: true, completion: nil)
     }
 
-    //MARK: - Table view
+    // MARK: - Table view
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         onShowAlertPressed(indexPath: indexPath)

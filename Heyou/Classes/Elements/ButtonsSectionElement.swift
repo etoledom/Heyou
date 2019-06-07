@@ -18,7 +18,7 @@ public extension Heyou {
             return view
         }
 
-        //MARK: - Helpers
+        // MARK: - Helpers
 
         private func createStackView() -> UIStackView {
             let stackView = UIStackView()
@@ -57,7 +57,7 @@ public extension Heyou {
                 stackView.topAnchor.constraint(equalTo: view.topAnchor),
                 stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
                 stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
             ])
         }
     }

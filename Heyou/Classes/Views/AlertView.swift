@@ -50,7 +50,7 @@ extension Heyou {
                 stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
                 stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                 stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                widthAnchor.constraint(equalToConstant: CGFloat(StyleDefaults.alertWidth)),
+                widthAnchor.constraint(equalToConstant: CGFloat(StyleDefaults.alertWidth))
             ])
         }
     }
