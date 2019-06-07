@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  Heyou
-//
-//  Created by etoledom on 09/24/2017.
-//  Copyright (c) 2017 etoledom. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
@@ -13,8 +5,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
@@ -41,6 +32,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
-

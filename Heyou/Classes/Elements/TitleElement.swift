@@ -1,15 +1,8 @@
-//
-//  TitleElement.swift
-//  Heyou
-//
-//  Created by Eduardo Toledo on 2/25/18.
-//
-
-import Foundation
-
 public extension Heyou {
-    public struct Title: ElementProtocol {
+    struct Title: Element {
+
         let text: String
+
         public init(text: String) {
             self.text = text
         }
@@ -27,6 +20,3 @@ public extension Heyou {
         }
     }
 }
-
-
-

@@ -1,15 +1,5 @@
-//
-//  ButtonsSectionElement.swift
-//  Heyou
-//
-//  Created by Eduardo Toledo on 3/14/18.
-//
-
-import Foundation
-
 public extension Heyou {
-
-    public struct ButtonsSection: SectionProtocol, ElementProtocol {
+    struct ButtonsSection: Element {
 
         let buttons: [Button]
 
@@ -28,7 +18,7 @@ public extension Heyou {
             return view
         }
 
-        //MARK: - Helpers
+        // MARK: - Helpers
 
         private func createStackView() -> UIStackView {
             let stackView = UIStackView()
@@ -43,8 +33,6 @@ public extension Heyou {
             let view = UIView()
             view.translatesAutoresizingMaskIntoConstraints = false
             view.backgroundColor = StyleDefaults.backgroundColor
-//            view.layer.cornerRadius = CGFloat(StyleDefaults.cornerRadius)
-//            view.layer.masksToBounds = true
             return view
         }
 
@@ -69,7 +57,7 @@ public extension Heyou {
                 stackView.topAnchor.constraint(equalTo: view.topAnchor),
                 stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
                 stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
             ])
         }
     }

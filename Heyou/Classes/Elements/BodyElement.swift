@@ -1,15 +1,8 @@
-//
-//  BodyElement.swift
-//  Heyou
-//
-//  Created by Eduardo Toledo on 2/25/18.
-//
-
-import Foundation
-
 public extension Heyou {
-    public struct Body: ElementProtocol {
+    struct Body: Element {
+
         let text: String
+
         public init(text: String) {
             self.text = text
         }

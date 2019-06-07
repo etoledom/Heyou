@@ -1,11 +1,6 @@
+platform :ios, '10.0'
 use_frameworks!
 
 target 'Heyou_Example' do
   pod 'Heyou', :path => '../'
-
-  target 'Heyou_Tests' do
-    inherit! :search_paths
-
-    
-  end
 end

@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  Heyou
-//
-//  Created by E. Toledo on 9/6/16.
-//  Copyright © 2016 eToledo. All rights reserved.
-//
-
 import UIKit
 import Heyou
 
@@ -40,26 +32,34 @@ class ViewController: UITableViewController {
         }
     }
 
-    //MARK: - Examples
+    // MARK: - Examples
 
     func showExample_00() {
+        let mainButton = Heyou.Button.init(text: "Main", style: .main) { [weak self] (button) in
+            self?.onPressButton(button)
+        }
+
         let alertController = Heyou(elements: [
             Heyou.Section(elements: [
-                Heyou.Button(text: "Main", style: .main),
-                Heyou.Body(text: "Some text behind the button"),
+                mainButton,
+                Heyou.Body(text: "Some text behind the button")
             ]),
             Heyou.Section(elements: [
                 Heyou.Title(text: "Title"),
                 Heyou.Body(text: "A long description text goes here."),
-                Heyou.Button(text: "Secondary", style: Heyou.ButtonStyle.normal),
+                Heyou.Button(text: "Secondary", style: Heyou.ButtonStyle.normal)
             ]),
             Heyou.Section(elements: [
                 Heyou.Image(image: UIImage(named: "alert")!),
-                Heyou.Body(text: "Some text behind the button"),
+                Heyou.Body(text: "Some text behind the button")
             ])
         ])
 
         alertController.show(onViewController: self)
+    }
+
+    @objc func onPressButton(_ button: Heyou.Button) {
+        print("Pressed button with text: \(button.text)")
     }
 
     func showExample_01() {
@@ -67,7 +67,9 @@ class ViewController: UITableViewController {
             Heyou.Section(elements: [
                 Heyou.Image(image: UIImage(named: "alert")!),
                 Heyou.Title(text: "Title"),
-                Heyou.Body(text: "Description text"),
+                Heyou.Body(text: "Description text")
+            ]),
+            Heyou.ButtonsSection(buttons: [
                 Heyou.Button(text: "OK", style: .normal)
             ])
         ])
@@ -81,7 +83,7 @@ class ViewController: UITableViewController {
                 Heyou.Title(text: "Title"),
                 Heyou.Body(text: "Description text"),
                 Heyou.Button(text: "OK", style: .normal),
-                Heyou.Button(text: "Cancel", style: .normal)
+                Heyou.Button(text: "Cancel", style: .main)
             ])
         ])
 
@@ -93,15 +95,13 @@ class ViewController: UITableViewController {
             Heyou.Section(elements: [
                 Heyou.Title(text: "Title"),
                 Heyou.Body(text: "Description text")
-                ]),
-            Heyou.Section(elements: [
-                Heyou.ButtonsSection(buttons: [
-                    Heyou.Button(text: "Default", style: .normal),
-                    Heyou.Button(text: "Destructive", style: .normal),
-                    Heyou.Button(text: "Cancel", style: .normal)
-                    ])
-                ])
+            ]),
+            Heyou.ButtonsSection(buttons: [
+                Heyou.Button(text: "Default", style: .normal),
+                Heyou.Button(text: "Destructive", style: .normal),
+                Heyou.Button(text: "Cancel", style: .normal)
             ])
+        ])
 
         alertController.show(onViewController: self)
     }
@@ -120,7 +120,7 @@ class ViewController: UITableViewController {
         present(alertController, animated: true, completion: nil)
     }
 
-    //MARK: - Table view
+    // MARK: - Table view
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         onShowAlertPressed(indexPath: indexPath)

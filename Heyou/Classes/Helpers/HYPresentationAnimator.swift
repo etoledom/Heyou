@@ -1,11 +1,3 @@
-//
-//  HYPresentationAnimator.swift
-//  HeyouDemo
-//
-//  Created by E. Toledo on 9/7/16.
-//  Copyright © 2016 eToledoM. All rights reserved.
-//
-
 import UIKit
 
 protocol HYPresentationAnimatable {
@@ -72,13 +64,13 @@ class HYModalAlertAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         alertView.clipsToBounds = true
         alertView.alpha = 0
         backgroundView.alpha = 0
-        containerView.bringSubview(toFront: backgroundView)
+        containerView.bringSubviewToFront(backgroundView)
 
         UIView.animate(withDuration: 0.1, animations: {
                 backgroundView.alpha = CGFloat(1)
         }, completion: nil)
 
-        UIView.animate(withDuration: duration, delay:0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.0, options: [], animations: {
+        UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.0, options: [], animations: {
             alertView.transform = CGAffineTransform.identity
             alertView.alpha = 1
         }, completion: { _ in
@@ -88,7 +80,7 @@ class HYModalAlertAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 
     fileprivate func dismissAnimation(backgroundView: UIView, alertView: UIView, containerView: UIView, context: UIViewControllerContextTransitioning) {
         // let scaleAnimation = POP
-        UIView.animate(withDuration: duration * 0.8, delay:0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.0, options: [], animations: {
+        UIView.animate(withDuration: duration * 0.8, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.0, options: [], animations: {
             alertView.alpha = 0
         }, completion: nil)
 
