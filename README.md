@@ -7,6 +7,8 @@
 
 ### This project is on alpha stage
 
+#### Create UI Alerts on a declarative way:
+
 Instantiate a Heyou alert instance with the elements you want in any order you want.
 You can bundle the elements in sections or have all of them in the root.
 
