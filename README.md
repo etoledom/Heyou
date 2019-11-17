@@ -7,36 +7,29 @@
 
 ### This project is on alpha stage
 
-Instanciate HYAlertController
-```swift
-let alertController = HYAlertController()
-```
+Instantiate a Heyou alert instance with the elements you want in any order you want.
+You can bundle the elements in sections or have all of them in the root.
 
-Add elements to the alert (in any order)
 ```swift
-alertController.elements = [
-.title("Title"),
-.subTitle("A Subtitle"),
-.image(named: "house"),
-.description("A long description text goes here.")
-]
-```
-
-Add actions (buttons)
-```swift
-let mainAction = HYAlertAction(title: "First main", style: .main)
-let normalAction = HYAlertAction(title: "Normal button", style: .default)
-let secondMainAction = HYAlertAction(title: "Second main", style: .main)
-
-alertController.addAction(mainAction)
-alertController.addAction(normalAction)
-alertController.addAction(secondMainAction)
+let alertController = Heyou(elements: [
+    Heyou.Section(elements: [
+        Heyou.Image(image: UIImage(named: "alert")!),
+        Heyou.Title(text: "Title"),
+        Heyou.Body(text: "Description text")
+    ]),
+    Heyou.ButtonsSection(buttons: [
+        Heyou.Button(text: "OK", style: .normal)
+    ])
+])
 ```
 
 Show the alert
 ```swift
 alertController.show(onViewController: self)
 ```
+
+![heyou](https://user-images.githubusercontent.com/9772967/69012078-d2c06500-0971-11ea-9647-398be5be65f1.png)
+
 
 ## Example
 
