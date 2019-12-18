@@ -7,292 +7,271 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		030BE1E7DE391111A835794024C1A48B /* TitleElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C79FB98F53F2A37F80872F20E7BDB /* TitleElement.swift */; };
-		0781C549AAC0104E81B54C7ED6F11632 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6AA13D35EEB4E0BDE5F6240D883272 /* Element.swift */; };
-		1CC8029BE3DB24C354B621503E25F4EB /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5531A06908EC9615B71730D8E98BB20B /* AlertView.swift */; };
-		1D201D68D243CD915F18EEDF7CC75ADF /* ButtonElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C841462977A36BCD5BB7D43A567FB087 /* ButtonElement.swift */; };
-		357361F8CB10664949A1B73D9849ACA2 /* SectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A462E94BF2E42FB5C964EB830D1C77 /* SectionElement.swift */; };
-		595640FEF36A437655AC4E9173B2A550 /* Heyou-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEED0A80B56CE655F066174402E427E /* Heyou-dummy.m */; };
-		5A1B20721CCDA20821590F912A017D9A /* Pods-Heyou_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0583E385074DD032F76B641B4D9A50 /* Pods-Heyou_Example-dummy.m */; };
-		60AC03C17B00BBFCB765A58808775CCF /* HYPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA34A568034929A92EB40D06065A01 /* HYPresentationAnimator.swift */; };
-		74ABE7415482ECD9237DC5423177B210 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
-		7ECAE13A2269162300B7AE51 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECAE1392269162300B7AE51 /* Styles.swift */; };
-		7F7DCCE0DE9240841167765846477866 /* BodyElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90895D126B702367D0D300D811108505 /* BodyElement.swift */; };
-		B618B2D1BC0B9124C7D0AB7DCE8BB100 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66586A28C71E779C8C89741BD891122 /* AlertController.swift */; };
-		C129FE46CF152A78A81060E3F8617203 /* ButtonsSectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401F3C86CF000B4724B38BB48CD1A007 /* ButtonsSectionElement.swift */; };
-		D1173F2AACF53EA79DFD21DFBFDACFB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
-		D79491C55E4D225F4F73F02D20305D88 /* ImageElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0287ABC326A20E45EF325B453F2222 /* ImageElement.swift */; };
-		F465E13FA73B6CC842DCD597F8B73B04 /* Pods-Heyou_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 30FD49F2DC7777909AD5E4BEB0AED90B /* Pods-Heyou_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F609724429285179AB2FE4AFE9740DE8 /* Heyou-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F4EFF0D8A5C7E384BE429618F25501E /* Heyou-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0542FE2567162E3F7C016CDB77EAE488 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		0662E126727EA3DA068F5A59D047C846 /* BodyElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CB99E0E93894DE30CAD9A729A224BF /* BodyElement.swift */; };
+		087A5AF396132097A813546F7D451B2E /* HYPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB08C3DACCA823AE7AB82348E72143E /* HYPresentationAnimator.swift */; };
+		0EEB6C2F3DA1700ADDB08B4020981A3C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		2634D9D1793FADA1DF60360E2F0829FF /* Pods-Heyou_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A12AD3F43DD62321BEB138CE3C3B1F /* Pods-Heyou_Example-dummy.m */; };
+		2E452A23548ADBA037D16035D4ED95CD /* Heyou-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 20444E814BF8AE8DC2AB9BBAB2E55924 /* Heyou-dummy.m */; };
+		31F1DD8ACA41698AE54886B74738E06D /* ButtonsSectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592142DD05F05F15EC60F30E5473EEBA /* ButtonsSectionElement.swift */; };
+		42B565F6A2ED368DC11FEA626D4ED7D4 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA79423D23FA5CDC865F1A876F47F7C /* AlertController.swift */; };
+		55EABAB66F38C65F556C5B4275504BAA /* ImageElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278EEE855B2BB8190EBC920FACE3F74B /* ImageElement.swift */; };
+		5AEC15314FCF70417510105569040C86 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F78CB16D61EE556C8F3DF60B53BE77C /* Styles.swift */; };
+		64AFC96B641A35CBA76E2D7C07D0B4D7 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DD655FCB1F817FAA365C247E463F11 /* Element.swift */; };
+		95DEBCACABB37C98737F24E3EE2287A0 /* ButtonElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0DBE6689E024003B8F946164377AC7 /* ButtonElement.swift */; };
+		9FB2BF031EAFADE51DA3E6783839C498 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDFAEF001803E3018D8FD6889F646B0 /* AlertView.swift */; };
+		BAB0F7F73DE4E0231D2A885DF9C49909 /* Heyou-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8ED708300E5A254B7018E8AE29951BE1 /* Heyou-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C49FAA8AFA3B112060819A05F0F51D03 /* TitleElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7826B2B62BAF59945623841978CDAF69 /* TitleElement.swift */; };
+		D26A643F4A52654EC1C19391417C2F31 /* Pods-Heyou_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A088E9ED19033512CC58285B1B1BEAA /* Pods-Heyou_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F665FD333D8BF4955B625DF0CBB4E80F /* SectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF44F117221F96B1A959C9D490A7237 /* SectionElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E67696726CAA0F98395DC50C6FD4F9E7 /* PBXContainerItemProxy */ = {
+		925A8654A6553C2D0881780CCD76FFE0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = EFAC4EF7550BD4AA88E13A844CAE1BA9;
+			remoteGlobalIDString = 09426CC5553FAC73094DA620DCED6ACC;
 			remoteInfo = Heyou;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B1ED21BC5449C66906F492CACB45D48 /* Pods-Heyou_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Heyou_Example.modulemap"; sourceTree = "<group>"; };
-		1D0287ABC326A20E45EF325B453F2222 /* ImageElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageElement.swift; sourceTree = "<group>"; };
-		2C6AA13D35EEB4E0BDE5F6240D883272 /* Element.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
-		30FD49F2DC7777909AD5E4BEB0AED90B /* Pods-Heyou_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Heyou_Example-umbrella.h"; sourceTree = "<group>"; };
-		34A462E94BF2E42FB5C964EB830D1C77 /* SectionElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SectionElement.swift; sourceTree = "<group>"; };
-		36DD4257CBCB98C9D6D3DAFC65BBB44F /* Pods-Heyou_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Heyou_Example.release.xcconfig"; sourceTree = "<group>"; };
-		401F3C86CF000B4724B38BB48CD1A007 /* ButtonsSectionElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ButtonsSectionElement.swift; sourceTree = "<group>"; };
-		4D2B798F8057738A4662AAE461723B53 /* Pods_Heyou_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heyou_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		52E87498AD05E4E055068F03A554E3DE /* Pods-Heyou_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Heyou_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		5531A06908EC9615B71730D8E98BB20B /* AlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
-		5F4EFF0D8A5C7E384BE429618F25501E /* Heyou-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Heyou-umbrella.h"; sourceTree = "<group>"; };
-		66BC75EA1A66ED9A4657B481A5FB7A1C /* Heyou.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Heyou.xcconfig; sourceTree = "<group>"; };
-		6BEED0A80B56CE655F066174402E427E /* Heyou-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Heyou-dummy.m"; sourceTree = "<group>"; };
-		7109C715B5076CC57DA8D9E2D3EE0DA3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7B5C79FB98F53F2A37F80872F20E7BDB /* TitleElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TitleElement.swift; sourceTree = "<group>"; };
-		7ECAE1392269162300B7AE51 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
-		87F0A535F49AD3F46A926382E16EA9EE /* Pods-Heyou_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Heyou_Example-resources.sh"; sourceTree = "<group>"; };
-		8AC1B7C08447765931D8CBD205AF2A6A /* Heyou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Heyou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C211F5B8D0FE60EE51A753A93BB05FA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		90895D126B702367D0D300D811108505 /* BodyElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BodyElement.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		B28A1E96CF9DCA7DAA11711BAE251669 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C841462977A36BCD5BB7D43A567FB087 /* ButtonElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ButtonElement.swift; sourceTree = "<group>"; };
-		CCB77E4777FE04AEB76C98879985B20D /* Pods-Heyou_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Heyou_Example-frameworks.sh"; sourceTree = "<group>"; };
-		CE0583E385074DD032F76B641B4D9A50 /* Pods-Heyou_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Heyou_Example-dummy.m"; sourceTree = "<group>"; };
-		CFBA34A568034929A92EB40D06065A01 /* HYPresentationAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HYPresentationAnimator.swift; sourceTree = "<group>"; };
-		D4F50240244E54F19362760E34377A68 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		DB1F3489B6441F9A34A77F4DF1D29461 /* Pods-Heyou_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Heyou_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		DD93B887C6D72C45BE6C3E9BD568C831 /* Pods-Heyou_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Heyou_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		DF632DB9FB232F82EAC0A6F94ABF653E /* Heyou-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Heyou-prefix.pch"; sourceTree = "<group>"; };
-		E66586A28C71E779C8C89741BD891122 /* AlertController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
-		FB5D2303BD9CA5667477570B45D76E9F /* Heyou.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Heyou.modulemap; sourceTree = "<group>"; };
-		FD4939EBA8F2F1CDD8DD5C224C02AAEE /* Heyou.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = Heyou.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		0DC608B53457733FDC291187AD544AD8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		0EF44F117221F96B1A959C9D490A7237 /* SectionElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SectionElement.swift; sourceTree = "<group>"; };
+		14A12AD3F43DD62321BEB138CE3C3B1F /* Pods-Heyou_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Heyou_Example-dummy.m"; sourceTree = "<group>"; };
+		187DFE2266423BA0BABCC32B5D3CED20 /* Heyou.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Heyou.xcconfig; sourceTree = "<group>"; };
+		20444E814BF8AE8DC2AB9BBAB2E55924 /* Heyou-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Heyou-dummy.m"; sourceTree = "<group>"; };
+		20C968FE21A58B7C057D6882CD6F8329 /* Heyou.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Heyou.modulemap; sourceTree = "<group>"; };
+		278EEE855B2BB8190EBC920FACE3F74B /* ImageElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageElement.swift; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3F78CB16D61EE556C8F3DF60B53BE77C /* Styles.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		4A088E9ED19033512CC58285B1B1BEAA /* Pods-Heyou_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Heyou_Example-umbrella.h"; sourceTree = "<group>"; };
+		5217B0EC61D81646ACA82C92C3577C0F /* Pods-Heyou_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Heyou_Example-frameworks.sh"; sourceTree = "<group>"; };
+		592142DD05F05F15EC60F30E5473EEBA /* ButtonsSectionElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ButtonsSectionElement.swift; sourceTree = "<group>"; };
+		5CDCC4D233F0A436ED450291D23A8D98 /* Pods-Heyou_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Heyou_Example.modulemap"; sourceTree = "<group>"; };
+		6BE2944F9B64BD7B1ECEC9022C7186F9 /* Heyou-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Heyou-prefix.pch"; sourceTree = "<group>"; };
+		6FDFAEF001803E3018D8FD6889F646B0 /* AlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		7826B2B62BAF59945623841978CDAF69 /* TitleElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TitleElement.swift; sourceTree = "<group>"; };
+		7BB08C3DACCA823AE7AB82348E72143E /* HYPresentationAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HYPresentationAnimator.swift; sourceTree = "<group>"; };
+		7CA79423D23FA5CDC865F1A876F47F7C /* AlertController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		85DD655FCB1F817FAA365C247E463F11 /* Element.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
+		8ED708300E5A254B7018E8AE29951BE1 /* Heyou-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Heyou-umbrella.h"; sourceTree = "<group>"; };
+		8F58E02088F736E3992086AD66D16EBD /* Pods-Heyou_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Heyou_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AAFE9D25A7E4B1E4D472DEE01124E133 /* Pods-Heyou_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Heyou_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B40E0435C6D50CF61EDF643049DFFCA7 /* Heyou.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Heyou.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B8CB99E0E93894DE30CAD9A729A224BF /* BodyElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BodyElement.swift; sourceTree = "<group>"; };
+		C2C788476862B9291F6B7AFC85441A3C /* Pods-Heyou_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Heyou_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		C8B7A1AEB8D8D7093F1CC4243B56AEB0 /* Pods-Heyou_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Heyou_Example-Info.plist"; sourceTree = "<group>"; };
+		C9FFA18D2F7DD0526F18EF10CC5FC3F5 /* Heyou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Heyou.framework; path = Heyou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E04BD31D94ED7B98D4932B72DB4265BE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		E9AB0FDB28791D80B58903415F876411 /* Pods_Heyou_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Heyou_Example.framework; path = "Pods-Heyou_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFD9D6CFBFF6D2C933B1262A46B768F8 /* Heyou-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Heyou-Info.plist"; sourceTree = "<group>"; };
+		F6A084474FA9AEBD24C28DB60950A349 /* Pods-Heyou_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Heyou_Example.release.xcconfig"; sourceTree = "<group>"; };
+		FA0DBE6689E024003B8F946164377AC7 /* ButtonElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ButtonElement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1FD6B815123A0A93CFE7BAF7ADD39DFF /* Frameworks */ = {
+		9261FC6DBA6CCF6C26D6D7957D6FBF65 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1173F2AACF53EA79DFD21DFBFDACFB0 /* Foundation.framework in Frameworks */,
+				0542FE2567162E3F7C016CDB77EAE488 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FD0F5DF4924137EA758B31AED82A84E4 /* Frameworks */ = {
+		EC0F8B68E22F3035065D25912F06768B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74ABE7415482ECD9237DC5423177B210 /* Foundation.framework in Frameworks */,
+				0EEB6C2F3DA1700ADDB08B4020981A3C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1C9B2A656F073FAF0A8E36EE52224EA9 /* Views */ = {
+		267C97BB1F4535089A3B780A37189323 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				5531A06908EC9615B71730D8E98BB20B /* AlertView.swift */,
+				B948E1AEEDD8F6BE67E7C89FCD93054D /* Pods-Heyou_Example */,
 			);
-			name = Views;
-			path = Heyou/Classes/Views;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		395927A551E46E9C7E27E7EF6209DBA9 /* Helpers */ = {
+		35E0CD08A0F6A636B16966D995B593F0 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CFBA34A568034929A92EB40D06065A01 /* HYPresentationAnimator.swift */,
-			);
-			name = Helpers;
-			path = Heyou/Classes/Helpers;
-			sourceTree = "<group>";
-		};
-		44D5347904CF754D6785B84253F2574A /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		75AEAF437B9C1EFEB321C464996E8DAD /* Heyou */ = {
-			isa = PBXGroup;
-			children = (
-				BDC4BA4DF8F5EB1F40AB9DDAB8DF1E7B /* Elements */,
-				395927A551E46E9C7E27E7EF6209DBA9 /* Helpers */,
-				8961ED32A04CE2D5BD49EF896B832040 /* Pod */,
-				B2705A86E3E2BB75B92AD02EDA223B64 /* Scenes */,
-				C3881FD69298F4ADB34DC02CBC637724 /* Support Files */,
-				1C9B2A656F073FAF0A8E36EE52224EA9 /* Views */,
-			);
-			name = Heyou;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				8C3434F6B31588E256A5BB8540646EFB /* Development Pods */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				ACBA6F288CCEA2081938557F3238FED7 /* Products */,
-				DAC5C53430FB31426420CA609CB8CA19 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		8961ED32A04CE2D5BD49EF896B832040 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				FD4939EBA8F2F1CDD8DD5C224C02AAEE /* Heyou.podspec */,
-				8C211F5B8D0FE60EE51A753A93BB05FA /* LICENSE */,
-				D4F50240244E54F19362760E34377A68 /* README.md */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		8C3434F6B31588E256A5BB8540646EFB /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				75AEAF437B9C1EFEB321C464996E8DAD /* Heyou */,
+				4CBEDEF9EBAC972C8C070310D97E2434 /* Heyou */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		ACBA6F288CCEA2081938557F3238FED7 /* Products */ = {
+		3E6D257D411868914006C140AD9097C4 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				8AC1B7C08447765931D8CBD205AF2A6A /* Heyou.framework */,
-				4D2B798F8057738A4662AAE461723B53 /* Pods_Heyou_Example.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		B2705A86E3E2BB75B92AD02EDA223B64 /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-				E66586A28C71E779C8C89741BD891122 /* AlertController.swift */,
-				7ECAE1392269162300B7AE51 /* Styles.swift */,
+				7CA79423D23FA5CDC865F1A876F47F7C /* AlertController.swift */,
+				3F78CB16D61EE556C8F3DF60B53BE77C /* Styles.swift */,
 			);
 			name = Scenes;
 			path = Heyou/Classes/Scenes;
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		4CBEDEF9EBAC972C8C070310D97E2434 /* Heyou */ = {
 			isa = PBXGroup;
 			children = (
-				44D5347904CF754D6785B84253F2574A /* iOS */,
+				6FE02F54E804E48EAB6B06040A6CEE6D /* Elements */,
+				A4BBA6A916AC76E460ADB7DB5BD0760E /* Helpers */,
+				94A138D057681770CFA7EC875D4D5CA0 /* Pod */,
+				3E6D257D411868914006C140AD9097C4 /* Scenes */,
+				5E668D2432008D062A2A3551E49B16E6 /* Support Files */,
+				B9CC89F99590EFE2C47290B5A8C5B8EF /* Views */,
 			);
-			name = Frameworks;
+			name = Heyou;
+			path = ../..;
 			sourceTree = "<group>";
 		};
-		BDC4BA4DF8F5EB1F40AB9DDAB8DF1E7B /* Elements */ = {
+		5E668D2432008D062A2A3551E49B16E6 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				2C6AA13D35EEB4E0BDE5F6240D883272 /* Element.swift */,
-				90895D126B702367D0D300D811108505 /* BodyElement.swift */,
-				C841462977A36BCD5BB7D43A567FB087 /* ButtonElement.swift */,
-				401F3C86CF000B4724B38BB48CD1A007 /* ButtonsSectionElement.swift */,
-				1D0287ABC326A20E45EF325B453F2222 /* ImageElement.swift */,
-				34A462E94BF2E42FB5C964EB830D1C77 /* SectionElement.swift */,
-				7B5C79FB98F53F2A37F80872F20E7BDB /* TitleElement.swift */,
-			);
-			name = Elements;
-			path = Heyou/Classes/Elements;
-			sourceTree = "<group>";
-		};
-		C36A36E3F50D3E7A6E7E7952EB7B7CA0 /* Pods-Heyou_Example */ = {
-			isa = PBXGroup;
-			children = (
-				7109C715B5076CC57DA8D9E2D3EE0DA3 /* Info.plist */,
-				1B1ED21BC5449C66906F492CACB45D48 /* Pods-Heyou_Example.modulemap */,
-				52E87498AD05E4E055068F03A554E3DE /* Pods-Heyou_Example-acknowledgements.markdown */,
-				DD93B887C6D72C45BE6C3E9BD568C831 /* Pods-Heyou_Example-acknowledgements.plist */,
-				CE0583E385074DD032F76B641B4D9A50 /* Pods-Heyou_Example-dummy.m */,
-				CCB77E4777FE04AEB76C98879985B20D /* Pods-Heyou_Example-frameworks.sh */,
-				87F0A535F49AD3F46A926382E16EA9EE /* Pods-Heyou_Example-resources.sh */,
-				30FD49F2DC7777909AD5E4BEB0AED90B /* Pods-Heyou_Example-umbrella.h */,
-				DB1F3489B6441F9A34A77F4DF1D29461 /* Pods-Heyou_Example.debug.xcconfig */,
-				36DD4257CBCB98C9D6D3DAFC65BBB44F /* Pods-Heyou_Example.release.xcconfig */,
-			);
-			name = "Pods-Heyou_Example";
-			path = "Target Support Files/Pods-Heyou_Example";
-			sourceTree = "<group>";
-		};
-		C3881FD69298F4ADB34DC02CBC637724 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				FB5D2303BD9CA5667477570B45D76E9F /* Heyou.modulemap */,
-				66BC75EA1A66ED9A4657B481A5FB7A1C /* Heyou.xcconfig */,
-				6BEED0A80B56CE655F066174402E427E /* Heyou-dummy.m */,
-				DF632DB9FB232F82EAC0A6F94ABF653E /* Heyou-prefix.pch */,
-				5F4EFF0D8A5C7E384BE429618F25501E /* Heyou-umbrella.h */,
-				B28A1E96CF9DCA7DAA11711BAE251669 /* Info.plist */,
+				20C968FE21A58B7C057D6882CD6F8329 /* Heyou.modulemap */,
+				187DFE2266423BA0BABCC32B5D3CED20 /* Heyou.xcconfig */,
+				20444E814BF8AE8DC2AB9BBAB2E55924 /* Heyou-dummy.m */,
+				EFD9D6CFBFF6D2C933B1262A46B768F8 /* Heyou-Info.plist */,
+				6BE2944F9B64BD7B1ECEC9022C7186F9 /* Heyou-prefix.pch */,
+				8ED708300E5A254B7018E8AE29951BE1 /* Heyou-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/Heyou";
 			sourceTree = "<group>";
 		};
-		DAC5C53430FB31426420CA609CB8CA19 /* Targets Support Files */ = {
+		6FE02F54E804E48EAB6B06040A6CEE6D /* Elements */ = {
 			isa = PBXGroup;
 			children = (
-				C36A36E3F50D3E7A6E7E7952EB7B7CA0 /* Pods-Heyou_Example */,
+				B8CB99E0E93894DE30CAD9A729A224BF /* BodyElement.swift */,
+				FA0DBE6689E024003B8F946164377AC7 /* ButtonElement.swift */,
+				592142DD05F05F15EC60F30E5473EEBA /* ButtonsSectionElement.swift */,
+				85DD655FCB1F817FAA365C247E463F11 /* Element.swift */,
+				278EEE855B2BB8190EBC920FACE3F74B /* ImageElement.swift */,
+				0EF44F117221F96B1A959C9D490A7237 /* SectionElement.swift */,
+				7826B2B62BAF59945623841978CDAF69 /* TitleElement.swift */,
 			);
-			name = "Targets Support Files";
+			name = Elements;
+			path = Heyou/Classes/Elements;
+			sourceTree = "<group>";
+		};
+		94A138D057681770CFA7EC875D4D5CA0 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				B40E0435C6D50CF61EDF643049DFFCA7 /* Heyou.podspec */,
+				0DC608B53457733FDC291187AD544AD8 /* LICENSE */,
+				E04BD31D94ED7B98D4932B72DB4265BE /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		A4BBA6A916AC76E460ADB7DB5BD0760E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7BB08C3DACCA823AE7AB82348E72143E /* HYPresentationAnimator.swift */,
+			);
+			name = Helpers;
+			path = Heyou/Classes/Helpers;
+			sourceTree = "<group>";
+		};
+		ACA73A9537C2FFE2D45AF24201E9423C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9FFA18D2F7DD0526F18EF10CC5FC3F5 /* Heyou.framework */,
+				E9AB0FDB28791D80B58903415F876411 /* Pods_Heyou_Example.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B948E1AEEDD8F6BE67E7C89FCD93054D /* Pods-Heyou_Example */ = {
+			isa = PBXGroup;
+			children = (
+				5CDCC4D233F0A436ED450291D23A8D98 /* Pods-Heyou_Example.modulemap */,
+				AAFE9D25A7E4B1E4D472DEE01124E133 /* Pods-Heyou_Example-acknowledgements.markdown */,
+				C2C788476862B9291F6B7AFC85441A3C /* Pods-Heyou_Example-acknowledgements.plist */,
+				14A12AD3F43DD62321BEB138CE3C3B1F /* Pods-Heyou_Example-dummy.m */,
+				5217B0EC61D81646ACA82C92C3577C0F /* Pods-Heyou_Example-frameworks.sh */,
+				C8B7A1AEB8D8D7093F1CC4243B56AEB0 /* Pods-Heyou_Example-Info.plist */,
+				4A088E9ED19033512CC58285B1B1BEAA /* Pods-Heyou_Example-umbrella.h */,
+				8F58E02088F736E3992086AD66D16EBD /* Pods-Heyou_Example.debug.xcconfig */,
+				F6A084474FA9AEBD24C28DB60950A349 /* Pods-Heyou_Example.release.xcconfig */,
+			);
+			name = "Pods-Heyou_Example";
+			path = "Target Support Files/Pods-Heyou_Example";
+			sourceTree = "<group>";
+		};
+		B9CC89F99590EFE2C47290B5A8C5B8EF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6FDFAEF001803E3018D8FD6889F646B0 /* AlertView.swift */,
+			);
+			name = Views;
+			path = Heyou/Classes/Views;
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				35E0CD08A0F6A636B16966D995B593F0 /* Development Pods */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				ACA73A9537C2FFE2D45AF24201E9423C /* Products */,
+				267C97BB1F4535089A3B780A37189323 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		B98FC67F712D01EA9C89B65F61D7EF8F /* Headers */ = {
+		1C7C87397BB98571313B794F140BF921 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F609724429285179AB2FE4AFE9740DE8 /* Heyou-umbrella.h in Headers */,
+				D26A643F4A52654EC1C19391417C2F31 /* Pods-Heyou_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BEEB9D3AAFBC41CD23B7AB46E08DD21E /* Headers */ = {
+		2CDB4FE8A6ECA977F8D1C50797EF8BBB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F465E13FA73B6CC842DCD597F8B73B04 /* Pods-Heyou_Example-umbrella.h in Headers */,
+				BAB0F7F73DE4E0231D2A885DF9C49909 /* Heyou-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		A88C1B2391D6E5B0A74D686A110F2FDE /* Pods-Heyou_Example */ = {
+		09426CC5553FAC73094DA620DCED6ACC /* Heyou */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D94A5DE0A40F2B9BE99CA661729326C /* Build configuration list for PBXNativeTarget "Pods-Heyou_Example" */;
+			buildConfigurationList = 98AACBB93DED589F801D3F87CBC3F222 /* Build configuration list for PBXNativeTarget "Heyou" */;
 			buildPhases = (
-				BEEB9D3AAFBC41CD23B7AB46E08DD21E /* Headers */,
-				100F68B6D45C0618C0786E4B1B506EE6 /* Sources */,
-				1FD6B815123A0A93CFE7BAF7ADD39DFF /* Frameworks */,
-				5535BAD0C889BB7088BB04C2173359F8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				914500D8BA9946AEBBBD374D75D410E4 /* PBXTargetDependency */,
-			);
-			name = "Pods-Heyou_Example";
-			productName = "Pods-Heyou_Example";
-			productReference = 4D2B798F8057738A4662AAE461723B53 /* Pods_Heyou_Example.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		EFAC4EF7550BD4AA88E13A844CAE1BA9 /* Heyou */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 14EEDD64487F5DC3B720EAF5D0B2C94D /* Build configuration list for PBXNativeTarget "Heyou" */;
-			buildPhases = (
-				B98FC67F712D01EA9C89B65F61D7EF8F /* Headers */,
-				046DD47BE6AB9AF5A0FB301C4BB2E51D /* Sources */,
-				FD0F5DF4924137EA758B31AED82A84E4 /* Frameworks */,
-				C48E5CBE193613073EB636EEDE0ED57A /* Resources */,
+				2CDB4FE8A6ECA977F8D1C50797EF8BBB /* Headers */,
+				A720E3B8D9A60A0E37F397F9EB31C84F /* Sources */,
+				EC0F8B68E22F3035065D25912F06768B /* Frameworks */,
+				935D9873A7853920099E352467DD4AA4 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -300,46 +279,65 @@
 			);
 			name = Heyou;
 			productName = Heyou;
-			productReference = 8AC1B7C08447765931D8CBD205AF2A6A /* Heyou.framework */;
+			productReference = C9FFA18D2F7DD0526F18EF10CC5FC3F5 /* Heyou.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		38126668692643FC6BE68FB5C34C49FD /* Pods-Heyou_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45B7A89BD54A235E2766FC6527D8CBA3 /* Build configuration list for PBXNativeTarget "Pods-Heyou_Example" */;
+			buildPhases = (
+				1C7C87397BB98571313B794F140BF921 /* Headers */,
+				E14B38ED053EDF5D18C179E2BE6A6300 /* Sources */,
+				9261FC6DBA6CCF6C26D6D7957D6FBF65 /* Frameworks */,
+				901F4506B4DA4A8E9C0FDD04214EF86B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F500DE2D1E34D5DE80AC151D41FC5B3B /* PBXTargetDependency */,
+			);
+			name = "Pods-Heyou_Example";
+			productName = "Pods-Heyou_Example";
+			productReference = E9AB0FDB28791D80B58903415F876411 /* Pods_Heyou_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
 			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
+				Base,
 			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = ACBA6F288CCEA2081938557F3238FED7 /* Products */;
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = ACA73A9537C2FFE2D45AF24201E9423C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EFAC4EF7550BD4AA88E13A844CAE1BA9 /* Heyou */,
-				A88C1B2391D6E5B0A74D686A110F2FDE /* Pods-Heyou_Example */,
+				09426CC5553FAC73094DA620DCED6ACC /* Heyou */,
+				38126668692643FC6BE68FB5C34C49FD /* Pods-Heyou_Example */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5535BAD0C889BB7088BB04C2173359F8 /* Resources */ = {
+		901F4506B4DA4A8E9C0FDD04214EF86B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C48E5CBE193613073EB636EEDE0ED57A /* Resources */ = {
+		935D9873A7853920099E352467DD4AA4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -349,111 +347,46 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		046DD47BE6AB9AF5A0FB301C4BB2E51D /* Sources */ = {
+		A720E3B8D9A60A0E37F397F9EB31C84F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F7DCCE0DE9240841167765846477866 /* BodyElement.swift in Sources */,
-				1D201D68D243CD915F18EEDF7CC75ADF /* ButtonElement.swift in Sources */,
-				C129FE46CF152A78A81060E3F8617203 /* ButtonsSectionElement.swift in Sources */,
-				7ECAE13A2269162300B7AE51 /* Styles.swift in Sources */,
-				0781C549AAC0104E81B54C7ED6F11632 /* Element.swift in Sources */,
-				595640FEF36A437655AC4E9173B2A550 /* Heyou-dummy.m in Sources */,
-				B618B2D1BC0B9124C7D0AB7DCE8BB100 /* AlertController.swift in Sources */,
-				1CC8029BE3DB24C354B621503E25F4EB /* AlertView.swift in Sources */,
-				60AC03C17B00BBFCB765A58808775CCF /* HYPresentationAnimator.swift in Sources */,
-				D79491C55E4D225F4F73F02D20305D88 /* ImageElement.swift in Sources */,
-				357361F8CB10664949A1B73D9849ACA2 /* SectionElement.swift in Sources */,
-				030BE1E7DE391111A835794024C1A48B /* TitleElement.swift in Sources */,
+				42B565F6A2ED368DC11FEA626D4ED7D4 /* AlertController.swift in Sources */,
+				9FB2BF031EAFADE51DA3E6783839C498 /* AlertView.swift in Sources */,
+				0662E126727EA3DA068F5A59D047C846 /* BodyElement.swift in Sources */,
+				95DEBCACABB37C98737F24E3EE2287A0 /* ButtonElement.swift in Sources */,
+				31F1DD8ACA41698AE54886B74738E06D /* ButtonsSectionElement.swift in Sources */,
+				64AFC96B641A35CBA76E2D7C07D0B4D7 /* Element.swift in Sources */,
+				2E452A23548ADBA037D16035D4ED95CD /* Heyou-dummy.m in Sources */,
+				087A5AF396132097A813546F7D451B2E /* HYPresentationAnimator.swift in Sources */,
+				55EABAB66F38C65F556C5B4275504BAA /* ImageElement.swift in Sources */,
+				F665FD333D8BF4955B625DF0CBB4E80F /* SectionElement.swift in Sources */,
+				5AEC15314FCF70417510105569040C86 /* Styles.swift in Sources */,
+				C49FAA8AFA3B112060819A05F0F51D03 /* TitleElement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		100F68B6D45C0618C0786E4B1B506EE6 /* Sources */ = {
+		E14B38ED053EDF5D18C179E2BE6A6300 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A1B20721CCDA20821590F912A017D9A /* Pods-Heyou_Example-dummy.m in Sources */,
+				2634D9D1793FADA1DF60360E2F0829FF /* Pods-Heyou_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		914500D8BA9946AEBBBD374D75D410E4 /* PBXTargetDependency */ = {
+		F500DE2D1E34D5DE80AC151D41FC5B3B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Heyou;
-			target = EFAC4EF7550BD4AA88E13A844CAE1BA9 /* Heyou */;
-			targetProxy = E67696726CAA0F98395DC50C6FD4F9E7 /* PBXContainerItemProxy */;
+			target = 09426CC5553FAC73094DA620DCED6ACC /* Heyou */;
+			targetProxy = 925A8654A6553C2D0881780CCD76FFE0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		15CB9C1D45C91BE117B777ED0F40CB99 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66BC75EA1A66ED9A4657B481A5FB7A1C /* Heyou.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Heyou/Heyou-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Heyou/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Heyou/Heyou.modulemap";
-				PRODUCT_MODULE_NAME = Heyou;
-				PRODUCT_NAME = Heyou;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		2E4C88109E2348D98863775C89D62060 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66BC75EA1A66ED9A4657B481A5FB7A1C /* Heyou.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Heyou/Heyou-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Heyou/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Heyou/Heyou.modulemap";
-				PRODUCT_MODULE_NAME = Heyou;
-				PRODUCT_NAME = Heyou;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8DDFA5FA8D4131BFD96E5E26F3672644 /* Debug */ = {
+		196DFA3E4A09A28224918543529A1885 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -485,8 +418,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -514,14 +445,14 @@
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		B4A99F254FB612E09CB1D97A2328F49A /* Release */ = {
+		3245FD29C58781877663C99F1266FF07 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 36DD4257CBCB98C9D6D3DAFC65BBB44F /* Pods-Heyou_Example.release.xcconfig */;
+			baseConfigurationReference = 8F58E02088F736E3992086AD66D16EBD /* Pods-Heyou_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -534,7 +465,41 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Heyou_Example/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Heyou_Example/Pods-Heyou_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Heyou_Example/Pods-Heyou_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		60B7DEA1194967A62CD0CF7888163F5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6A084474FA9AEBD24C28DB60950A349 /* Pods-Heyou_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Heyou_Example/Pods-Heyou_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -554,7 +519,7 @@
 			};
 			name = Release;
 		};
-		D5F759C82752B2EB010DB3CD3D69707C /* Release */ = {
+		B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -586,8 +551,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -609,17 +572,17 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		F20F54B36E9DD532515F88D86D82F2DF /* Debug */ = {
+		B1894011171D3C1CCB6A7E90A5BB7F3F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB1F3489B6441F9A34A77F4DF1D29461 /* Pods-Heyou_Example.debug.xcconfig */;
+			baseConfigurationReference = 187DFE2266423BA0BABCC32B5D3CED20 /* Heyou.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -630,56 +593,88 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Heyou_Example/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Heyou/Heyou-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Heyou/Heyou-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Heyou_Example/Pods-Heyou_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/Heyou/Heyou.modulemap";
+				PRODUCT_MODULE_NAME = Heyou;
+				PRODUCT_NAME = Heyou;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
+		F0CC66726F1BFF42CF2946F4D3EA29BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 187DFE2266423BA0BABCC32B5D3CED20 /* Heyou.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Heyou/Heyou-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Heyou/Heyou-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Heyou/Heyou.modulemap";
+				PRODUCT_MODULE_NAME = Heyou;
+				PRODUCT_NAME = Heyou;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		14EEDD64487F5DC3B720EAF5D0B2C94D /* Build configuration list for PBXNativeTarget "Heyou" */ = {
+		45B7A89BD54A235E2766FC6527D8CBA3 /* Build configuration list for PBXNativeTarget "Pods-Heyou_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				15CB9C1D45C91BE117B777ED0F40CB99 /* Debug */,
-				2E4C88109E2348D98863775C89D62060 /* Release */,
+				3245FD29C58781877663C99F1266FF07 /* Debug */,
+				60B7DEA1194967A62CD0CF7888163F5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8DDFA5FA8D4131BFD96E5E26F3672644 /* Debug */,
-				D5F759C82752B2EB010DB3CD3D69707C /* Release */,
+				196DFA3E4A09A28224918543529A1885 /* Debug */,
+				B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D94A5DE0A40F2B9BE99CA661729326C /* Build configuration list for PBXNativeTarget "Pods-Heyou_Example" */ = {
+		98AACBB93DED589F801D3F87CBC3F222 /* Build configuration list for PBXNativeTarget "Heyou" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F20F54B36E9DD532515F88D86D82F2DF /* Debug */,
-				B4A99F254FB612E09CB1D97A2328F49A /* Release */,
+				B1894011171D3C1CCB6A7E90A5BB7F3F /* Debug */,
+				F0CC66726F1BFF42CF2946F4D3EA29BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }
