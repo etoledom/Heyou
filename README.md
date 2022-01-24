@@ -50,7 +50,7 @@ pod 'Heyou'
 
 ## Author
 
-etoledom, etoledom@icloud.com
+etoledom
 
 ## License
 
